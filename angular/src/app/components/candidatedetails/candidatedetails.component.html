@@ -5,21 +5,23 @@
         <h6>{{c?.LNameCandidates}}</h6>
         <h6>{{c?.dateOFbirth| date: 'dd/MM/yyyy'}}</h6>
         <h6>{{c?.heightCandidates}}</h6>
-        <h6><img src="../../assets/{{myRecipe?.CategoryRecipe.CategoryIcon}}" height="40" width="40" /></h6>
+        <h6 height="400" width="400" >{{c?.photoLink}}</h6>
         <h6>{{c?.address}}</h6>
-        <h6>{{c?.nameFather.}}</h6>
+        <h6>{{c?.nameFather}}</h6>
         <h6>{{c?.nameMother}}</h6>
-        <h6>{{c?.AdaNameFather}}</h6>
-        <h6>{{c?.AdaNameMother}}</h6>
-        <h6>{{c?.status.statusName}}</h6>
+        <h6>{{c?.occupationFather}}</h6>
         <h6>{{c?.occupationMother}}</h6>
         <h6>{{c?.familyStatus}}</h6>
-        <h6>{{c?.wigORhandkerchief}}</h6>
+        <h6>{{c?.AdaNameFather}}</h6>
+        <h6>{{c?.AdaNameMother}}</h6>
+        <h6>{{c?.phone}}</h6>
+        <h6>{{c?.StatusName}}</h6>
+        <!-- <h6>{{c?.wigORhandkerchief}}</h6>
         <h6>{{c?.OccupationAfterName}}</h6>
-        <h6>{{c?.currentOccupationName}}</h6>
-        <h1><p *ngFor="let x of c?.Contacts">{{x}}</p>
-        <h1><p *ngFor="let x of c?.Siblings">{{x}}</p>
-        <h1><p *ngFor="let x of c?.Mosdot">{{x}}</p>
+        <h6>{{c?.currentOccupationName}}</h6> -->
+        <h1><p *ngFor="let x of c?.Siblings">{{x}}</p></h1>
+        <h1><p *ngFor="let x of c?.Contacts">{{x}}</p></h1>
+        <h1><p *ngFor="let x of c?.Mosdot">{{x}}</p></h1>
     </div>
     <div class="wil">
         <h6>{{w?.MaxAge| date: 'dd/MM/yyyy'}}</h6>
@@ -27,13 +29,16 @@
         <h6>{{w?.MaxHeight}}</h6>
         <h6>{{w?.MinHeight}}</h6>
         <h6>{{w?.description}}</h6>
-        <h1><p *ngFor="let x of w?.Comunities">{{x}}</p>
-        <h1><p *ngFor="let x of w?.status1">{{x}}</p>
+        <h1><p *ngFor="let x of w?.Comunities">{{x}}</p></h1>
+        <h1><p *ngFor="let x of w?.status1">{{x}}</p></h1>
     </div>
 </div>
 </body>
 
-
+<!-- public occupationFather?:string,public occupationMother?:string,  public familyStatus?:string,public AdaNameFather?:string,
+public AdaNameMother?:string, public phone?:string, public  StatusName?:string,public Siblings?:Sibling[],public Contacts?:Contact[],public Mosdot?:MosdotToCandidate[]
+){ -->
+ 
 
 
 <!--     

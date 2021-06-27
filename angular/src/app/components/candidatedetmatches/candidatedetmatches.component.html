@@ -1,5 +1,5 @@
-
-  <div id="accordion" *ngIf="mORs" && *ngIf="show">
+<div *ngIf="mORs">
+  <div id="accordion"   *ngIf="show">
     <div class="card">
       <div class="card-header" id="headingTwo" >
         <h5 class="mb-0" >
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
   <div id="accordion" *ngIf="!mORs" >
     <div class="card">
@@ -31,7 +31,7 @@
         <h5 class="mb-0" >
           <button class="btn btn-link collapsed" data-toggle="collapse" (click)="showcandidate()" routerLink={{link}}
           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{c.codeCandidate}}">
-           {{c.FNameCandidates}} {{c.LNameCandidates}}
+           {{c.FNameCandidates}} {{c.LNameCandidates}}</button>
         </h5>
       </div>
   

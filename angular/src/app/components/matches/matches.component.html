@@ -113,9 +113,9 @@
             <br><br>
             <input type="button"  class="save"value="ביטול הסינון" (click)="onclickB()">
             <br><br>
-          </div>        
-            <app-candidatedetmathches *ngIf="mORs" [mORs]="true" class="a" *ngFor="let item of serchlist" [c]="item"></app-candidatedetmathches>
-            <app-candidatedetmathches *ngIf="!mORs" [mORs]="false"class="a"  *ngFor="let item of macheslist" [c]="item"></app-candidatedetmathches>
+          </div>   
+           <div *ngIf="mORs" ><app-candidatedetmatches  [mORs]="true" class="a" *ngFor="let item of serchlist" [c]="item"></app-candidatedetmatches></div>
+            <div *ngIf="!mORs"><app-candidatedetmatches  [mORs]="false"class="a"  *ngFor="let item of macheslist" [c]="item"></app-candidatedetmatches></div>
          
 
 </div>
