@@ -1,0 +1,57 @@
+// @font-face {
+//   font-family: myFont;
+//   src:url(../fonts/dorian/dorianclm-bookitalic-webfont.ttf);
+// }
+html, body { height: 100%; }
+body { margin: 0;  font-family: myFont; }
+  input{
+      font-family: myFont;
+      direction:rtl;
+  }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(114, 109, 109);
+    font-family: myFont;
+  }
+  navbar-nav{
+    direction: rtl;
+  }
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: rgb(231, 78, 78);
+  }
+
+  .logo {
+    display: block;
+    height: 90px;
+    width: 220px;
+  
+  }
+
+
+  .navbar-brand{
+    // background: radial-gradient(#cfc09f 22%, #eea31f 24%, #c8a35a 26%, #c0aa78 27%, #a4862c 40%, #3a2c0f 78%) !important;      -webkit-background-clip: text !important;
+    //   -webkit-text-fill-color: transparent !important;
+text-align: right;
+font-size: 22px;
+      text-transform: uppercase !important;
+      // font-size: 2.3vw !important;
+      font-weight: 400 !important;
+      line-height: 25px;
+
+  }

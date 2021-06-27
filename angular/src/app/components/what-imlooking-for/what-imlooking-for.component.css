@@ -1,0 +1,27 @@
+div.re{
+    text-align: right;
+}
+
+.save{
+        background-color:rgb(207, 173, 121);
+        width:100px;
+       height:30px ;
+      }       
+
+.form-control{
+    width:200px;
+    text-align: right;
+    direction: rtl;
+}
+
+.form-group {
+    direction: rtl;
+    text-align: right;
+}
+.col-sm-10{
+    text-align:right;
+}
+
+h1{
+    text-align: center;
+}

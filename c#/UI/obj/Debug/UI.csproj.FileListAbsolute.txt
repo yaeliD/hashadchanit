@@ -1,0 +1,8 @@
+C:\dev\project\c#\UI\bin\Debug\UI.dll
+C:\dev\project\c#\UI\bin\Debug\UI.pdb
+C:\dev\project\c#\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\dev\project\c#\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\dev\project\c#\UI\obj\Debug\UI.dll
+C:\dev\project\c#\UI\obj\Debug\UI.pdb
+C:\dev\project\c#\UI\bin\Debug\BL.dll
+C:\dev\project\c#\UI\bin\Debug\BL.pdb

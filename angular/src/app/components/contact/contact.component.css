@@ -1,0 +1,13 @@
+.form-control{
+    width:200px;
+    text-align: right;
+    direction: rtl;
+}
+
+.form-group {
+    direction: rtl;
+    text-align: right;
+}
+.col-sm-10{
+    text-align:right;
+}

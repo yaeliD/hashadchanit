@@ -1,0 +1,33 @@
+<form #form="ngForm">
+  
+    <div *ngFor="let s of mc ;let i=index">
+      <div *ngIf="showEda">
+          <div class="form-group row" >
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">שם מוסד :</label>
+              <select [name]=" i+1"  [(ngModel)]="mc[i].codeMC">
+                  <option *ngFor="let ml of mosdList" [value]="ml.codeM">{{ml.nameM}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+          <div class="form-group row">  
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">תאריך סיום :</label>
+              <input [name]="i+1" type="date" class="form-control" id="inputEmail3" placeholder="קש תאריך סיום"
+              [(ngModel)]="mc[i].yearOfFinish">
+            </div>
+          </div>   
+            
+    </div>
+    
+    <input type="button" (click)="addmosad()" value="+" >
+    <input type="submit" value="next" (click)="finish()">
+    
+    </form>
+           
+           
+
+
+
+<!-- public codeMC ?: number,public codeCandidate?:Candidates,public yearOfFinish ?:Date  -->

@@ -1,0 +1,81 @@
+<div *ngIf="!view" class="m">
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">אינך רשאי/ת לצפות בתוכן</h4>
+          <!-- <button style="text-align: left; direction: ltr;" type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+              aria-hidden="true">&times;</span></button> -->
+        </div>
+        <br>
+        <div class="modal-body">
+          <p>עליך להירשם למערכת</p>
+          <!-- <p  style="margin-right:20px;    font-size:20px; "></p> -->
+          <a class="nav-link" routerLink="/Register" routerLinkActive="active">הרשמה</a>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="onCloseHandled()">סגור</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <a>
+    <h1>
+    אינך רשאי להכנס לתוכן זה !!!
+    </h1>
+  </a>  </div> -->
+  <div *ngIf="view">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne">
+              הדס דדון דוד ביטון
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            פגישה חמישית היה מצוין פגיש שישית יום שני
+
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              מיכאל זיגדון שירי אברגל
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            פרטי הזוג:
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              אסתר שלטי יעקוב דיין
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            פרטי הזוג :
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,107 @@
+<!-- 
+<div class="login">
+    <h1>התחברות</h1>
+<input type="text"  [(ngModel)]="s.username"><a>: שם משתמש</a>
+ <br><br>
+ <input type="password"  [(ngModel)]="s.password_shadchanit"><a>:סיסמה</a>
+ <br><br>
+ <input type="button" value="login"  class="login"(click)="loginShadchanit()">
+
+</div> -->
+
+
+<form [formGroup]="form" class="form-horizontal justify-content-center">
+
+
+ <h5>שם משתמש</h5>
+        <input type="text" [(ngModel)]="s.username" formControlName="UserNameF" required matInput> 
+
+ <!-- <br>
+ <br> -->
+ <h5>סיסמה</h5>
+
+        <input type="password" [(ngModel)]="s.password_shadchanit" formControlName="UserPasswordF" required matInput>    
+ 
+    <br>
+
+    <button type="button" class="btn-log btn-ok btn btn-info btn-lg" [disabled]="!form.valid" (click)="loginShadchanit()">התחבר</button>
+
+    
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="form" class="form-horizontal justify-content-center">
+
+
+    <mat-form-field appearance="legacy">
+        <mat-label>שם פרטי</mat-label>
+        <input type="text" matInput placeholder="הקש שם פרטי" formControlName="FirstNameF"
+            [(ngModel)]="registerUser.UserName" />
+    </mat-form-field>
+    <br>
+  
+  
+    <mat-form-field appearance="legacy">
+        <mat-label>שם משפחה</mat-label>
+        <input type="text" placeholder="הקש שם משפחה" formControlName="LastNameF" matInput
+            [(ngModel)]="registerUser.UserLastName" />
+    </mat-form-field>
+    <br>
+  
+    <mat-form-field appearance="legacy">
+        <mat-label>כתובת מייל</mat-label>
+        <input type="email" placeholder="הקש מייל" autocomplete="off" formControlName="EmailF" matInput
+            [(ngModel)]="registerUser.UserMail" />
+    </mat-form-field>
+    <br>
+  
+  
+    <mat-form-field appearance="legacy">
+        <mat-label>סיסמא</mat-label>
+        <input class="btn btn-outline-secondary mr-1" placement="right" ngbTooltip="הסיסמא חייבת להכיל לפחות אות אחת גדולה, אות אחת קטנה ומספר"
+         style="margin-right: 5px;" type="password" placeholder="הקש סיסמא" formControlName="PasswordF" matInput
+            [(ngModel)]="registerUser.UserPassword" />
+    </mat-form-field>
+    <br>
+  
+    <mat-form-field appearance="legacy">
+        <mat-label>תאריך האירוע</mat-label>
+        <input type="date" formControlName="DateF" [(ngModel)]="eventToAdd.EventDate" matInput />
+    </mat-form-field>
+    <br>
+  
+  
+    <mat-radio-group name="radio" dir="rtl">
+        <mat-radio-button style="margin-right: 10px;" (change)="handleChange($event.value)" id="groom"
+            class="example-margin" [value]=" 'groom' ">🤵חתן
+        </mat-radio-button>
+        <br>
+        <mat-radio-button style="margin-right: 14px;" (change)="handleChange($event.value)" id="bride"
+            class="example-margin" [value]=" 'bride' ">👰 כלה
+        </mat-radio-button>
+    </mat-radio-group> <br>
+  
+    <button type="button" class="btn-log btn-ok btn btn-info btn-lg" [disabled]="!form.valid" (click)="registerClick()">הירשם</button>
+  
+  </form> -->

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: myFont;
+  src: url(fonts/comixno2/comixno2clm_medium-webfont.ttf);
+}
+html, body { height: 100%; }
+body,h1,a,h2, img,h3,p,h4,form{ margin: 0;  font-family: myFont; }
+  input{
+      font-family: myFont;
+      direction:rtl;
+  }
+  body {
+    background-image:url('/assets/רקע הרשמה.jpg');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    }
+    

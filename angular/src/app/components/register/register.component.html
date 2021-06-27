@@ -1,0 +1,194 @@
+<body>
+  <div class="re">
+  <h1>הרשמה</h1>
+
+        <form #form="ngForm">
+          <div class="my"  class="card-header" *ngIf="step==1">
+            <h3>פרטים אישיים </h3>
+          <div class="form-group row">  
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">שם פרטי :</label>
+              <input name="FNameCandidates" type="text" class="form-control" id="inputEmail3" placeholder="הקש שם פרטי"
+              [(ngModel)]="c.FNameCandidates">
+            </div>
+          </div>
+               <div class="form-group row">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">שם משפחה:</label>
+              <input name="LNameCandidates" type="text" class="form-control" id="inputEmail3" placeholder="הקש שם משפחה"
+               [(ngModel)]="c.LNameCandidates">
+            </div>
+          </div>  
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">תאריך לידה:</label>
+              <input name="dateOFbirth" type="date" class="form-control" id="inputEmail3" placeholder="הקש תאריך לידה"
+              [(ngModel)]="c.dateOFbirth">
+            </div>
+          </div>   
+          <div class="form-group row" *ngIf="st">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">סטטוס:</label>
+              <select name="status" [(ngModel)]="c.status">
+                  <option *ngFor="let s of statusList" [value]="s.statusCode">{{s.statusName}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">גובה:</label>
+              <input name="heightCandidates" type="text" class="form-control" id="inputEmail3" placeholder="הקש גובה"
+              [(ngModel)]="c.heightCandidates">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">תמונה:</label>
+              <input name="photoLink" type="file" class="form-control" id="inputEmail3" placeholder="בחר תמונה"
+              [(ngModel)]="c.photoLink">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="next()">הבאה</button>
+        </div>
+        
+
+
+        <div *ngIf="step==2">
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">כתובת:</label>
+              <input name="address" type="text" class="form-control" id="inputEmail3" placeholder="הקש כתובת"
+              [(ngModel)]="c.address">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">פלאפון אישי:</label>
+              <input name="phone" type="tel" class="form-control" id="inputEmail3" placeholder="הקש פון"
+              [(ngModel)]="c.phone">
+            </div>
+          </div>
+          <fieldset class="form-group"> 
+            <div class="row">
+              <div class="col-sm-10">
+                <legend class="col-form-label col-sm-2 pt-0">מין :</legend> 
+                <div class="form-check"> 
+                <label class="form-check-label" for="gridRadios1">
+                  🤵
+                </label>
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="זכר"  (click)="man=true;woman=false">
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="gridRadios2">
+                    👰
+                  </label>
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="נקבה" (click)="woman=true;man=false;">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-10">
+            </div>
+          </div>
+            <app-register-man *ngIf="man" (saveMan)="saveMan($event)" ></app-register-man>
+            <app-register-woman *ngIf="woman" (savewomen)="saveWoman($event)"></app-register-woman>
+            <button type="submit" class="btn btns-primary" [disabled]="!form.valid" (click)="next()">הבאה</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="return()">חזור</button>
+
+
+          </div>
+          <div class="li" *ngIf="step==3">
+            <h3>פרטי ההורים  </h3>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">: שם אב</label>
+                <input name="nameFather" type="text" class="form-control" id="inputEmail3" placeholder="הקש שם אב"
+                [(ngModel)]="c.nameFather">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">: שם אם</label>
+                <input name="nameMother" type="text" class="form-control" id="inputEmail3" placeholder="הקש שם אם "
+                [(ngModel)]="c.nameMother">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">: עיסוק אב</label>
+                <input name="occupationFather" type="text" class="form-control" id="inputEmail3" placeholder="הקש עיסוק אב"
+                [(ngModel)]="c.occupationFather">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">: עיסוק אם</label>
+                <input name="occupationMother" type="text" class="form-control" id="inputEmail3" placeholder="הקש עיסוק אם "
+                [(ngModel)]="c.occupationMother">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">:  סטטוס משפחה </label>
+                <input name="familyStatus" type="text" class="form-control" id="inputEmail3" placeholder="הקש  סטטוס משפחה "
+                [(ngModel)]="c.familyStatus">
+              </div>
+            </div>
+            <div *ngIf="showEda">
+            <div class="form-group row" >
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">: עדה אב</label>
+                <select name="AdaFather"  [(ngModel)]="c.AdaFather">
+                  <option  *ngFor="let item of arrAda" [value]="item.codeC">{{item.nameC}}</option>
+                </select  >
+              </div>
+            </div>
+            <!-- <div [(ngModel)]="c.AdaNameFather" [value]="item.nameC"></div> -->
+            <div class="form-group row" >
+              <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">: עדה אם</label>
+                <select name="AdaMother"  [(ngModel)]="c.AdaMother">
+                  <option *ngFor="let item of arrAda" [value]="item.codeC">{{item.nameC}}</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div [(ngModel)]="c.AdaNameMother" [value]="item.nameC"></div> -->
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="next()">הבאה</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="return()">חזור</button>
+
+          </div>
+            <div *ngIf="step==4">
+              <h3>פרטי המשפחה </h3>
+                <app-add-sibling (sendSibling)="saveSiblings($event)"></app-add-sibling>
+               <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="return()">חזור</button>
+
+          </div>
+          <div  *ngIf="step==5">
+            <h3>פרטי מוסדות הלימוד </h3>
+             <app-mosdot-to-candidate (sendMosdotToCandidate)="savemosdot($event)"></app-mosdot-to-candidate>
+             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="return()">חזור</button>
+
+          </div>     
+          <div *ngIf="step==6">
+            <h3> טלפונים לבירורים  </h3>
+             <app-contact (sendContact)="savecontact($event)"></app-contact>
+            
+             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="return()">חזור</button>
+
+          </div>    
+        </form>
+       
+
+  </div>
+</body>
+
+
+
+
+
+
+<!--     Contacts?:Contact[],public Siblings?:Sibling[],public Mosdot?:MosdotToCandidate[]
+       ){ -->
