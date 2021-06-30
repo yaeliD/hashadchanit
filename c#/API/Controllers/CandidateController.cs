@@ -37,15 +37,15 @@ namespace shadchanut.Controllers
         }
 
         [HttpGet]
-        [Route("getAcandidtes")]// הצגת כל המועמדים 
-        public IHttpActionResult GetAlcandidets()
+        [Route("getAcandidtes/{id}")]// הצגת כל המועמדים 
+        public IHttpActionResult GetAlcandidets(int id)
         {
-            List<candidatesDto> candidetList = BL.CandidatesBL.GetAlcandidets();
-            if (candidetList.Count() > 0)
+            candidatesDto candidetList = BL.CandidatesBL.GetAlcandidets(id);
+            if (candidetList  != null)
                 return Ok(candidetList);
             return BadRequest();
         }
-        [HttpGet]
+        [HttpPost]
         [Route("fiiltering")]//לפי סינון הצגת  המועמדים 
         public IHttpActionResult Filteriing(SearchDto s)
         {

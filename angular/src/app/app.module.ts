@@ -28,6 +28,7 @@ import { MosdotToCandidateComponent } from './components/mosdot-to-candidate/mos
 import { ContactComponent } from './components/contact/contact.component';
 import { CandidatedetailsComponent } from './components/candidatedetails/candidatedetails.component';
 import { CandidatedetmatchesComponent } from './components/candidatedetmatches/candidatedetmatches.component';
+import { ShiducimComponent } from './components/shiducim/shiducim.component';
 
 
 
@@ -50,7 +51,8 @@ import { CandidatedetmatchesComponent } from './components/candidatedetmatches/c
    MosdotToCandidateComponent,
    ContactComponent,
    CandidatedetailsComponent,
-   CandidatedetmatchesComponent
+   CandidatedetmatchesComponent,
+   ShiducimComponent
   ],
   imports: [
     

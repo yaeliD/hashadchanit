@@ -33,20 +33,21 @@ export class WhatImLookingforService {
    }
 AddManw(man)
 {   
+  if(man.wigORhandkerchief==1)
+  man.wigORhandkerchief=true;
+   else
+   if(man.wigORhandkerchief==2)
+   man.wigORhandkerchief=false;
+  else
+  man.wigORhandkerchief=null;
+  
   return this.http.post<boolean>("https://localhost:44390//api/WhatLooking/addManWhatLooking",man)
 
 }
 
 AddWomanw(woman)
 {
-  if(woman.wigORhandkerchief==1)
-  woman.wigORhandkerchief=true;
-   else
-   if(woman.wigORhandkerchief==2)
-   woman.wigORhandkerchief=false;
-  else
-  woman.wigORhandkerchief=null;
-  
+
   return this.http.post<boolean>("https://localhost:44390//api/WhatLooking/addWomanWhatLooking",woman)
 
 }

@@ -2,7 +2,7 @@
     <div class="form-group row">
         <div class="col-sm-10">
           <label for="inputEmail3" class="col-sm-2 col-form-label">כיסוי ראש:</label>
-          <select name="wigORhandkerchief" [(ngModel)]="wcm.wigORhandkerchief">
+          <select name="wigORhandkerchief" [(ngModel)]="wcm.wigORhandkerchief" (change)="save()">
               <option [value]="1">פאה</option>
               <option [value]="2">מטםחת</option>
               <option [value]="3">לא משנה</option>

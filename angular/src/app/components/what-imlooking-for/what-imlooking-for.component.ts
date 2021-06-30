@@ -50,12 +50,12 @@ mw:boolean;
   }
   selectstayus(ids)
   {
-    this.wIl.status1.push(new CandidateStatus(0,ids,true));
+    this.wIl.status1.push(new CandidateStatus(this.wIl.CodeCW,ids,true));
   }
   selectComunity(idC)
   {
 
-  this.wIl.Comunities.push(new CandidateWCommunity(0,idC,"",true));
+  this.wIl.Comunities.push(new CandidateWCommunity(this.wIl.CodeCW,idC,"",true));
   }
 
   getStatusList() { this.ser.getStatusList().subscribe(suc => { this.statusList = suc; console.log(suc); this.showEda = true; }); }// פו המציגה את רשימת העדות
@@ -68,14 +68,15 @@ mw:boolean;
     if(this.isMan)
     {
       this.manw.WhatLooking=this.wIl;
-       this.ser.AddManw(this.manw).subscribe(suc =>{this.w=suc;})
+      console.log(this.manw);
+       this.ser.AddManw(this.manw).subscribe(suc =>{this.w=suc;console.log(suc);})
        if(this.w)
        alert("mannn")
     }
        else
       {
        this.womanw.WhatLooking=this.wIl;
-       this.ser.AddWomanw(this.womanw).subscribe(suc =>{this.w=suc;});
+       this.ser.AddWomanw(this.womanw).subscribe(suc =>{this.w=suc;console.log(suc);});
        if(this.w)
        alert("womannn")
 
@@ -83,11 +84,11 @@ mw:boolean;
 
     }
     
-    saveWoman(mc)
+  savewoman(mc)
   {
    this.womanw=mc;
   }
-  saveMan(wcm)
+  savemen(wcm)
   {
     this.manw=wcm;
   }

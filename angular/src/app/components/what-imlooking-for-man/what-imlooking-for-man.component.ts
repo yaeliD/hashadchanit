@@ -10,10 +10,10 @@ import { WhatImLookingforMan } from 'class/WhatImLookingforMan';
 })
 export class WhatImlookingForManComponent implements OnInit {
 
+ 
+  constructor() { }
   wcm:WhatImLookingforMan=new WhatImLookingforMan();
   @Output() savemen:EventEmitter<WhatImLookingforMan>=new EventEmitter<WhatImLookingforMan>()
-  constructor() { }
-
   ngOnInit(): void {
   }
   save()

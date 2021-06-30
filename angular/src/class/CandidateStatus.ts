@@ -4,6 +4,7 @@ export class CandidateStatus
     public StatusId ?:number,
     public Wanted ?: boolean   )
   {
-this.StatusId=0;
+//     this.CandidateId=0;
+// this.StatusId=0;
   }
 }

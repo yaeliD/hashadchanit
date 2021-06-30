@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
        else{alert("סיסמה שגויה:");}
     })
       }
+      
 }
 
 

@@ -15,7 +15,7 @@ namespace shadchanut.Controllers
     {
         [HttpPost]
         [Route("addWomanWhatLooking")]
-        public IHttpActionResult AddWomanWhatLooking(WhatLookingWomanDto w)
+        public IHttpActionResult AddWomanWhatLooking([FromBody] WhatLookingWomanDto w)
         {
             bool success = BL.WhatLookingBL.AddWomanWhatLooking(w); ;
             return Ok(success);
@@ -23,12 +23,12 @@ namespace shadchanut.Controllers
 
         [HttpPost]
         [Route("addManWhatLooking")]
-        public IHttpActionResult AddManWhatLooking(Dto.WhatLookingManDto w)
+        public IHttpActionResult AddManWhatLooking([FromBody] WhatLookingManDto w)
         {
             bool success = BL.WhatLookingBL.AddManWhatLooking(w);;
             return Ok(success);
         }
-    
-    
+
+
     }
 }

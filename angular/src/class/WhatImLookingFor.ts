@@ -9,11 +9,11 @@ export class WhatImLookingFor{
         public Comunities?:CandidateWCommunity[],
         public status1?:CandidateStatus[]
         ){
+            this.CodeCW=0;
             this.Comunities=[]
             this.status1=[]
         }
 }
-
 
 
 

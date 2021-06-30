@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,17 @@ namespace Dto
     {
         public ManCandidateDto Man { get; set; }
         public WomanCandidateDto Woman { get; set; }
+
+        public MatchPosibilityDto()
+        {
+
+        }
+
+        public MatchPosibilityDto(ManCandidate man,WomenCandidate woman)
+        {
+            Man = new ManCandidateDto(man);
+            Woman = new WomanCandidateDto(woman);
+        }
     }
 
 }

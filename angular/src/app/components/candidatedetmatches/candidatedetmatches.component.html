@@ -1,15 +1,15 @@
-<div *ngIf="mORs">
+
   <div id="accordion"   *ngIf="show">
     <div class="card">
       <div class="card-header" id="headingTwo" >
         <h5 class="mb-0" >
-          <button class="btn btn-link collapsed" data-toggle="collapse" (click)="showcandidate()" routerLink={{link}}
-          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{c.codeCandidate}}">
-           {{c.FNameCandidates}} {{c.LNameCandidates}}
+          <button class="btn btn-link collapsed" data-toggle="collapse" 
+          data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" value="{{m.Man.codeCandidates}}">
+           {{m.Man.FNameCandidates}} {{m.Man.LNameCandidates}}
           </button>
-          <button class="btn btn-link collapsed" data-toggle="collapse" (click)="showcandidate()"routerLink={{link}}
-           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{c.codeCandidate}}" >
-          {{c.FNameCandidates}} {{c.LNameCandidates}}
+          <button class="btn btn-link collapsed" data-toggle="collapse" 
+           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{m.Woman.codeCandidates}}" >
+          {{m.Woman.FNameCandidates}} {{m.Woman.LNameCandidates}}
            </button>
            <input type="button" value="מחיקה" (click)="delale()" >
            <input type="button" value="הוצעה" (click)="matchesinprocess()" >
@@ -18,28 +18,30 @@
   
       <div *ngIf="entermamad" id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
-        <!-- <app-candidatedetails ></app-candidatedetails> -->
+          <app-candidatedetails class="a"  [c]="value"></app-candidatedetails>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-  <div id="accordion" *ngIf="!mORs" >
+
+  <div id="accordion" >
     <div class="card">
       <div class="card-header" id="headingTwo" >
         <h5 class="mb-0" >
-          <button class="btn btn-link collapsed" data-toggle="collapse" (click)="showcandidate()" routerLink={{link}}
-          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{c.codeCandidate}}">
+          <button class="btn btn-link " data-toggle="collapse" 
+          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{c.codeCandidates}}">
            {{c.FNameCandidates}} {{c.LNameCandidates}}</button>
+           <input type="button" value="מחיקה" (click)="delale()" >
         </h5>
       </div>
-  
-      <div *ngIf="entermamad" id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <!-- <app-candidatedetails></app-candidatedetails> -->
+      <div *ngIf="entermamad" >
+      <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion" >
+        <div class="card-body" >
+          <app-candidatedetails class="a"  [cm]="c.codeCandidates"></app-candidatedetails>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
@@ -50,18 +52,22 @@
 
 
 
-
-
-
-
-<!-- 
-<div class="gallery">
-    <a target="_blank" href="../../assets/{{myRecipeNow.Image}}">
-      <img src="../../assets/{{myRecipeNow.Image}}" alt="Cinque Terre"/>
-    </a>
-    <div class="desc">
-      <h1>{{myRecipeNow.NameRecipe}}</h1>
-      <h1>{{myRecipeNow.Time|Minit}}</h1>
-      <h1>{{myRecipeNow?.Difficulty|DifficultyPipe}}</h1>
-      <input type="button" value="{{myRecipeNow.NameRecipe}}" (click)="showRecipe()" routerLink={{link}}></div>
+  <!-- (click)="entermamadm()" -->
+  <!-- <div id="accordion" >
+    <div class="card">
+      <div class="card-header" id="headingTwo" >
+        <h5 class="mb-0" >
+          <button class="btn btn-link " data-toggle="collapse" 
+          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{c.codeCandidates}}">
+           {{c.FNameCandidates}} {{c.LNameCandidates}}</button>
+        </h5>
+      </div>
+      <div *ngIf="entermamad" >
+      <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion" >
+        <div class="card-body" >
+          <app-candidatedetails class="a"  [cm]="c.codeCandidates"></app-candidatedetails>
+        </div>
+      </div>
+    </div>
+    </div>
   </div> -->

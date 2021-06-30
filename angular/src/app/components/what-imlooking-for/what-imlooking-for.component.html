@@ -61,7 +61,7 @@
                 <div class="form-check" *ngFor="let item of Comunitieslist; let i=index">
                   {{item.nameC}}
                   <input 
-                   type="checkbox" [name]="'eda'+i"  class="form-check-input" [id]="'eda'+i" (click)="selectComunity(item.codeC)">
+                   type="checkbox" [name]="'eda'+i"  class="form-check-input" [id]="'eda'+i" (click)="selectComunity(Comunitieslist[i].codeC)">
                 </div>
               </div>
             </div>  
@@ -71,12 +71,12 @@
                 <div class="form-check"  *ngFor="let s of statusList ; let i=index">
                   {{s.statusName}}
                   <input 
-                   type="checkbox" [name]="'sta'+i"  class="form-check-input" [id]="'sta'+i" (click)="selectstayus(s.statusCode)">
+                   type="checkbox" [name]="'sta'+i"  class="form-check-input" [id]="'sta'+i" (click)="selectstayus(statusList[i].statusCode)">
                 </div>
               </div>
             </div>  
           </div>
-            <app-what-imlooking-for-man *ngIf="isMan" (saveman)="manw=$event" ></app-what-imlooking-for-man>
+            <app-what-imlooking-for-man *ngIf="isMan" (savemen)="manw=$event" ></app-what-imlooking-for-man>
             <app-what-imlooking-forwomen *ngIf="!isMan" (savewomen)="womanw=$event"></app-what-imlooking-forwomen> 
          
             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="addCandidates()">שמור את הפרטים  </button> 

@@ -13,6 +13,10 @@ namespace Dto
         public int ComunityId { get; set; }
         public string ComunityName { get; set; }
         public bool Interested { get; set; }
+        public ComunityWantedDto()
+        {
+
+        }
 
         public ComunityWantedDto(CandidateWantedComunities cw )
         {

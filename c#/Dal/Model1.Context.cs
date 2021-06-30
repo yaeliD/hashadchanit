@@ -18,8 +18,10 @@ namespace Dal
         public The_MatchmakerEntities()
             : base("name=The_MatchmakerEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
+
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

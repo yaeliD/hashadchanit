@@ -14,7 +14,10 @@ namespace Dto
             public int StatusId { get; set; }
             public bool Wanted { get; set; }
 
-      
+        public candidateStatusWDto()
+        {
+            
+        }
 
         public candidateStatusWDto (CandidateStatuses c)
         {

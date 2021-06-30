@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatchPosibility } from 'class/MatchPosibility';
 
 @Component({
   selector: 'app-match-in-process',
@@ -9,6 +10,7 @@ export class MatchInProcessComponent implements OnInit {
   view: boolean = true;
   usernow: string;
   display = "none";
+ @Input() m:MatchPosibility=new MatchPosibility();
 
   constructor() { }
 
@@ -25,6 +27,10 @@ export class MatchInProcessComponent implements OnInit {
   }
   onCloseHandled() {
     this.display = "none";
+  }
+  delale()
+  {
+      
   }
 }
 

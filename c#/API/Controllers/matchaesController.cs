@@ -10,14 +10,14 @@ namespace matchaes.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/matchaes")]
-    public class listofmosdotController : ApiController
+    public class matchaesController : ApiController
     {
         //[HttpGet]
-        //[Route("mathescandidat")]
+        //[Route("findAllMatchesForCandidate")]
         //public IHttpActionResult FindAllMatchesForCandidate()
         //{
         //    //MatchPosibilityDto
-        //    List<candidatesDto> matcheslist = BL.MatchingBL.FindAllMatchesForCandidate();
+        //    List<MatchPosibilityDto> matcheslist = BL.MatchingBL.FindAllMatchesForCandidate();
         //    if (matcheslist.Count() > 0)
         //        return Ok(matcheslist);
         //    return BadRequest();

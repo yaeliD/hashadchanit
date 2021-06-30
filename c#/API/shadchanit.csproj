@@ -171,6 +171,10 @@
       <Project>{120b5c59-642c-480e-86b7-d227f0f0102d}</Project>
       <Name>BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dal\Dal.csproj">
+      <Project>{426D2785-A9BE-4A0A-ACDF-1B195FA0D706}</Project>
+      <Name>Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dto\Dto.csproj">
       <Project>{3f348752-c809-469f-86bb-b4cdc1ec9e58}</Project>
       <Name>Dto</Name>

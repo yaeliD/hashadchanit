@@ -11,6 +11,7 @@ import { WhatImlookingForComponent } from './components/what-imlooking-for/what-
 import { CandidatedetailsComponent } from './components/candidatedetails/candidatedetails.component';
 import { AddSiblingComponent } from './components/add-sibling/add-sibling.component';
 import { CandidatedetmatchesComponent } from './components/candidatedetmatches/candidatedetmatches.component';
+import { ShiducimComponent } from './components/shiducim/shiducim.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:"Candidatedetails/:code",component:CandidatedetailsComponent},
   {path:"siblings/:IDcn",component:AddSiblingComponent},
   {path:"ditals/:idc",component:CandidatedetailsComponent},
-  {path:"short/",component:CandidatedetmatchesComponent},
+  {path:"short",component:CandidatedetmatchesComponent},
+  {path:"shiduchim",component:ShiducimComponent},
   {path:"",redirectTo:"/Hashadchanit",pathMatch:"full"}
 ];
 

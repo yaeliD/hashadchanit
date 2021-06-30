@@ -25,10 +25,11 @@ namespace BL
 
         }
 
-        public static List<candidatesDto> GetAlcandidets()
+        public static candidatesDto GetAlcandidets(int id)
         {
             List<Candidates> candidetListDal = Dal.CandidatesDal.GetAlcandidets();
-            List<candidatesDto> candidetDTOs = candidatesDto.Todto1(candidetListDal);
+
+           candidatesDto candidetDTOs = candidatesDto.Todto(candidetListDal.FirstOrDefault(c=>c.codeCandidates==id));
             return candidetDTOs;
         }
 
@@ -41,16 +42,16 @@ namespace BL
 
             foreach (var item in candidates)
             {
-                if ((string.IsNullOrEmpty(s.FirstName) || item.FNameCandidates.Contains(s.FirstName)
-                    && (string.IsNullOrEmpty(s.LastName) || item.FNameCandidates.Contains(s.LastName)
+                if ((string.IsNullOrEmpty(s.FirstName) || item.FNameCandidates.Contains(s.FirstName))
+                    && (string.IsNullOrEmpty(s.LastName) || item.FNameCandidates.Contains(s.LastName))
                     && (s.MinAge == null || s.MinAge > item.dateOFbirth)
                     && (s.MinAge == null || s.MinAge > item.dateOFbirth)
                     && (s.statusid==null ||s.statusid==item.status)
                     && (s.IdEda == null || s.IdEda == item.AdaFather || s.IdEda == item.AdaMother)
                     && (s.wigORhandkerchief == null || s.wigORhandkerchief == item.wigORhandkerchief)
-                   // && (s.mosdid == null || s.mosdid == item.MosdotToCandidate.co)
+                    && (s.mosdid == null || item.MosdotToCandidate.Any(m=>m.codeMosad==s.mosdid))
                     && (s.occupationAfter == null || s.occupationAfter == item.occupationAfter)
-                    && (s.currentOccupation == null || s.currentOccupation == item.currentOccupation))))
+                    && (s.currentOccupation == null || s.currentOccupation == item.currentOccupation))
                     
                     matchingCandidates.Add(new candidatesDto(item));
                     

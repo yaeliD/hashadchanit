@@ -5,7 +5,8 @@ export class CandidateWCommunity
     public ComunityName ?:string,
     public Interested ?: boolean   )
   {
-
+  //   this.CandidateId=0;
+  //  this. ComunityId=0;
   }
 }
 

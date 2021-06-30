@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Candidates } from 'class/Candidates';
 import { community } from 'class/community';
+import { FullCandidate } from 'class/FullCandidate';
 import { ListOfMosdot } from 'class/ListOfMosdot';
+import { MatchPosibility } from 'class/MatchPosibility';
 import { OccupationTyes } from 'class/OccupationTyes';
 import { Serch } from 'class/Serch';
 import { Status } from 'class/Status';
@@ -49,18 +51,19 @@ getoccupationlist()
  
  getallcandidet(c)
 {
-  return this.http.get<Candidates>("https://localhost:44390//api/candidets/getAcandidtes"+c)
+  return this.http.get<FullCandidate>("https://localhost:44390//api/Candidates/getAcandidtes/"+c)
 
  }
  filtering(c:Serch)
  {
-  return this.http.get<Serch[]>("https://localhost:44390//api/candidets/fiiltering"+c)
+   console.log(JSON.stringify(c))
+  return this.http.post<Candidates[]>("https://localhost:44390//api/Candidates/fiiltering",c)
  }
  matches()
  {
-  return this.http.get<Candidates[]>("https://localhost:44390//api/matchaes/FindAllMatchesForCandidate")
+  return this.http.get<MatchPosibility[]>("https://localhost:44390//api/matchaes/findAllMatchesForCandidate")
  }
-//  addCandidates(w:WhatImLookingFor)
+//  addCandidates(w:WhatImLookingFor)matchaes
 // {
 //   return this.http.post<WhatImLookingFor>("https://localhost:44390//api/Candidates/addWomanCandidates",w)
 

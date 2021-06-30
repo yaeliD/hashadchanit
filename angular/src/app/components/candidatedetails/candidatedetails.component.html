@@ -1,36 +1,36 @@
 <body>
     <div class="detaillscandideta">
     <div class="wi">
-        <h6>{{c?.FNameCandidates}}</h6>
-        <h6>{{c?.LNameCandidates}}</h6>
-        <h6>{{c?.dateOFbirth| date: 'dd/MM/yyyy'}}</h6>
-        <h6>{{c?.heightCandidates}}</h6>
-        <h6 height="400" width="400" >{{c?.photoLink}}</h6>
-        <h6>{{c?.address}}</h6>
-        <h6>{{c?.nameFather}}</h6>
-        <h6>{{c?.nameMother}}</h6>
-        <h6>{{c?.occupationFather}}</h6>
-        <h6>{{c?.occupationMother}}</h6>
-        <h6>{{c?.familyStatus}}</h6>
-        <h6>{{c?.AdaNameFather}}</h6>
-        <h6>{{c?.AdaNameMother}}</h6>
-        <h6>{{c?.phone}}</h6>
-        <h6>{{c?.StatusName}}</h6>
-        <!-- <h6>{{c?.wigORhandkerchief}}</h6>
+        <h6>{{c?.Candidate.FNameCandidates}}</h6>
+        <h6>{{c?.Candidate.LNameCandidates}}</h6>
+        <h6>{{c?.Candidate.dateOFbirth| date: 'dd/MM/yyyy'}}</h6>
+        <h6>{{c?.Candidate.heightCandidates}}</h6>
+        <h6 height="400" width="400" >{{c?.Candidate.photoLink}}</h6>
+        <h6>{{c?.Candidate.address}}</h6>
+        <h6>{{c?.Candidate.nameFather}}</h6>
+        <h6>{{c?.Candidate.nameMother}}</h6>
+        <h6>{{c?.Candidate.occupationFather}}</h6>
+        <h6>{{c?.Candidate.occupationMother}}</h6>
+        <h6>{{c?.Candidate.familyStatus}}</h6>
+        <h6>{{c?.Candidate.AdaNameFather}}</h6>
+        <h6>{{c?.Candidate.AdaNameMother}}</h6>
+        <h6>{{c?.Candidate.phone}}</h6>
+        <h6>{{c?.Candidate.StatusName}}</h6>
+        <h6>{{c?.wigORhandkerchief}}</h6>
         <h6>{{c?.OccupationAfterName}}</h6>
-        <h6>{{c?.currentOccupationName}}</h6> -->
-        <h1><p *ngFor="let x of c?.Siblings">{{x}}</p></h1>
-        <h1><p *ngFor="let x of c?.Contacts">{{x}}</p></h1>
-        <h1><p *ngFor="let x of c?.Mosdot">{{x}}</p></h1>
+        <h6>{{c?.currentOccupationName}}</h6>
+        <h1><p *ngFor="let x of c?.Candidate.Siblings">{{x}}</p></h1>
+        <h1><p *ngFor="let x of c?.Candidate.Contacts">{{x}}</p></h1>
+        <h1><p *ngFor="let x of c?.Candidate.Mosdot">{{x}}</p></h1>
     </div>
     <div class="wil">
-        <h6>{{w?.MaxAge| date: 'dd/MM/yyyy'}}</h6>
-        <h6>{{w?.MinAge| date: 'dd/MM/yyyy'}}</h6>
-        <h6>{{w?.MaxHeight}}</h6>
-        <h6>{{w?.MinHeight}}</h6>
-        <h6>{{w?.description}}</h6>
-        <h1><p *ngFor="let x of w?.Comunities">{{x}}</p></h1>
-        <h1><p *ngFor="let x of w?.status1">{{x}}</p></h1>
+        <h6>{{c?.Candidate.MaxAge| date: 'dd/MM/yyyy'}}</h6>
+        <h6>{{c?.Candidate.MinAge| date: 'dd/MM/yyyy'}}</h6>
+        <h6>{{c?.Candidate.MaxHeight}}</h6>
+        <h6>{{c?.Candidate.MinHeight}}</h6>
+        <h6>{{c?.Candidate.description}}</h6>
+        <h1><p *ngFor="let x of c?.Candidate.Comunities">{{x}}</p></h1>
+        <h1><p *ngFor="let x of c?.Candidate.status1">{{x}}</p></h1>
     </div>
 </div>
 </body>
