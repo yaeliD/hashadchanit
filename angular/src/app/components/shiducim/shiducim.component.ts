@@ -35,7 +35,7 @@ export class ShiducimComponent implements OnInit {
   macheslist:MatchPosibility [] = []
   arrAda:community[]=[];
   serchlist:Candidates[]=[];
-  thiscandideta:Candidates[]=[];
+  thiscandideta:FullCandidate[]=[];
   showEda=false;
   shows=false;
   showocc=false;

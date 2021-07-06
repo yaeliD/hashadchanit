@@ -26,11 +26,14 @@
         <div class="form-row">
             <div class="col-md-2 mb-2">
                       <label for="validationCustom01">שם פרטי :</label>
+                      <br>
                       <input name="FNameCandidates" type="text" class="form-control" id="validationCustom01" placeholder="הקש שם פרטי"
                       [(ngModel)]="c.FirstName">
+                      <br>
                     </div>
                     <div class="col-md-2 mb-2">
                       <label for="validationCustom02" >שם משפחה:</label>
+                      <br>
                       <input name="LNameCandidates" type="text" class="form-control" id="validationCustom02" placeholder="הקש שם משפחה"
                        [(ngModel)]="c.LastName">
                     </div>
@@ -103,6 +106,7 @@
             </div>
               <br><br>
             </div>
+            <div class="oun">
             <div class="form-row"> 
                 <div class="col-md-2 mb-2">
                   <legend class="col-form-label col-sm-2 pt-0">מין :</legend> 
@@ -142,9 +146,17 @@
               <div class="save"  (click)="a()">סינון  </div>
               <div class="save" (click)="sinun()">ביטול הסינו</div>
             </div>
+        </div>
             <br><br>
-            <div *ngIf="mORw" ><app-candidatedetmatches  class="a" *ngFor="let item of serchlist" [c]="item"></app-candidatedetmatches></div>           
+            <div *ngIf="mORw" ><app-candidatedetmatches  class="a" *ngFor="let item of thiscandideta" [c]="item"></app-candidatedetmatches></div>           
              <div *ngIf="!mORs" ><app-candidatedetmatches  class="a" *ngFor="let item of serchlist" [c]="item"></app-candidatedetmatches></div>           
     </form>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Clearable input</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
   </div>
   

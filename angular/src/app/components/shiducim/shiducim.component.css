@@ -52,3 +52,15 @@ app-candidatedetmatches.a {
     text-align: center;
    
 }
+.all{
+    border: 2px solid red;
+    float: right;
+}
+.oun
+{
+    border: 2px solid red;
+    float: left;
+}
+.example-form-field {
+    width: 200px;
+  }
