@@ -12,6 +12,8 @@ import { CandidatedetailsComponent } from './components/candidatedetails/candida
 import { AddSiblingComponent } from './components/add-sibling/add-sibling.component';
 import { CandidatedetmatchesComponent } from './components/candidatedetmatches/candidatedetmatches.component';
 import { ShiducimComponent } from './components/shiducim/shiducim.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -32,6 +34,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppRoutingModule { }

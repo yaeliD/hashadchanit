@@ -51,7 +51,14 @@ namespace Dal
             }
         }
 
-
+        public static Candidates GetCandidate(int id)
+        {
+            using (The_MatchmakerEntities db = new The_MatchmakerEntities())
+            {
+               return db.Candidates.Include(c=>c.WhatImLookingFor).FirstOrDefault(c=>c.codeCandidates==id);
+               
+            }
+        }
 
         //public static List<Candidates> Filteriing(Candidates c)
         //{
@@ -70,7 +77,8 @@ namespace Dal
                 using (The_MatchmakerEntities db = new The_MatchmakerEntities())
                 {
 
-                    List<Candidates> candidetsList = db.Candidates.Include(c=>c.community)
+                    List<Candidates> candidetsList = db.Candidates
+                        .Include(c=>c.community)
                         .Include(c=>c.Contacts)
                         .Include("community1")
                         .Include("MosdotToCandidate")

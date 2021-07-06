@@ -5,7 +5,9 @@ import { Candidates } from 'class/Candidates';
 import { Candidesmane } from 'class/Candidesmane';
 import { Candideswomen } from 'class/Candideswomen';
 import { community } from 'class/community';
+import { FullCandidate } from 'class/FullCandidate';
 import { ListOfMosdot } from 'class/ListOfMosdot';
+import { MachestoOunCDto } from 'class/MachestoOunCDto';
 import { MatchPosibility } from 'class/MatchPosibility';
 import { OccupationTyes } from 'class/OccupationTyes';
 import { Serch } from 'class/Serch';
@@ -18,10 +20,13 @@ import { Status } from 'class/Status';
 })
 export class ShiducimComponent implements OnInit {
 
+
+
   w: Candideswomen = new Candideswomen();
-  cc:Candidates=new Candidates();
+  cd:Candidates=new Candidates();
   m: Candidesmane = new Candidesmane();
   c:Serch=new Serch();
+  cc:MachestoOunCDto=new MachestoOunCDto();
   arrcandidtes:Candidates[]=[];
   arrcandidtesEzer:Candidates[]=[];
   occupationlist:OccupationTyes[]=[];
@@ -30,6 +35,7 @@ export class ShiducimComponent implements OnInit {
   macheslist:MatchPosibility [] = []
   arrAda:community[]=[];
   serchlist:Candidates[]=[];
+  thiscandideta:Candidates[]=[];
   showEda=false;
   shows=false;
   showocc=false;
@@ -37,6 +43,7 @@ export class ShiducimComponent implements OnInit {
   view: boolean=true;
   flag:boolean;
   mORs: boolean;
+  mORw:boolean=false;
 
   constructor(public ser: ServicMatchesService, public router: Router) { }
 
@@ -59,13 +66,45 @@ getoccupationlist() { this.ser.getoccupationlist().subscribe(suc => { this.occup
 findmosdot() { this.ser.findmosdot().subscribe(suc => { this.mosdList = suc; console.log(suc); this.showEda = true; }); }// פו המציגה את רשימת מוסדות
   onclick()
 {
-  this.ser.filtering(this.c).subscribe(suc => {this.serchlist=suc; console.log(this.serchlist)},err=>{console.log("err")});
+  this.ser.filtering(this.c).subscribe(suc => {this.serchlist=suc; console.log(this.serchlist)},err=>{console.log(err)});
+  if(this.serchlist==null)
+  {
+    alert("אין תוצאות");
+  }
   this.mORs=false;
-  // this.router.navigate(['short',this.mORs]);
+ 
 }
  onclickB()
 {
+  this.c.FirstName=null;
+  this.c.LastName=null;
+  this.c.MaxAge=null;
+  this.c.MinAge=null;
+  this.c.IdEda=null;
+  this.c.currentOccupation=null;
+  this.c.mosdid=null;
+  this.c.occupationAfter=null;
+  this.c.wigORhandkerchief=null;
+  this.c.statusid=null;
   this.mORs=true;
-  // this.matches();
+}
+a(){
+debugger
+  this.ser.findmaches(this.cc).subscribe(suc => {this.thiscandideta=suc; console.log(this.thiscandideta)},err=>{console.log("err")});
+this.mORw=true;
+}
+minW(){
+  this.cc.IsMan=true;
+}
+minM(){
+  this.cc.IsMan=false;
+}
+sinun()
+{
+  this.cc.FirstName=null;
+  this.cc.LastName=null;
+  this.cc.phone=null;
+  this.cc.IsMan=null;
+  this.mORs=true;
 }
 }

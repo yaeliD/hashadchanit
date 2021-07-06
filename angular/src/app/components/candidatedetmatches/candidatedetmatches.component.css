@@ -7,7 +7,7 @@ div.m{
         width:100px;
        height:30px ;
       }       
-.m{
+.m .row{
     text-align: right;
     direction: rtl;
 }
@@ -17,3 +17,17 @@ div.m{
 .card-body{
     text-align: right; 
 }
+.accordion{
+    width:500px;
+}
+.card{
+    width:470px;
+    direction: rtl;
+
+}
+.card-header{
+        direction: ltr;
+
+}
+
+

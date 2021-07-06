@@ -24,7 +24,6 @@ namespace Dto
             codeMosad = m.codeMosad;
             codeCandidate = m.codeCandidate;
             yearOfFinish = m.yearOfFinish;
-            MosadName = m.ListOfMosdot.nameM;
         }
         //
         //in order to make instance in the convertionss

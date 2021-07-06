@@ -1,4 +1,4 @@
-<!-- כשמועמד מנסה להכנס לתוכן 
+<!-- כשמועמד מנסה להכנס לתוכן  -->
 <div *ngIf="!view" class="m">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
@@ -17,42 +17,33 @@
       </div>
     </div>
    </div>
-</div> -->
+</div>
 <!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
+
 <div *ngIf="view">
     <form  class="needs-validation" novalidate> 
-      <!-- <div class="form-row"> -->
       <div class="all">
-  
         <div class="form-row">
-                  <!-- <div class="form-group row">   -->
-                    <div class="col-md-2 mb-2">
+            <div class="col-md-2 mb-2">
                       <label for="validationCustom01">שם פרטי :</label>
                       <input name="FNameCandidates" type="text" class="form-control" id="validationCustom01" placeholder="הקש שם פרטי"
                       [(ngModel)]="c.FirstName">
                     </div>
-                  <!-- </div> -->
-                  <!-- <div class="form-group row"> -->
                     <div class="col-md-2 mb-2">
                       <label for="validationCustom02" >שם משפחה:</label>
                       <input name="LNameCandidates" type="text" class="form-control" id="validationCustom02" placeholder="הקש שם משפחה"
                        [(ngModel)]="c.LastName">
                     </div>
-                  <!-- </div>
-                  <div class="form-group row">   -->
                     <div class="col-md-2 mb-2">
-                      <label for="validationCustom01" > גיל</label>
+                      <label for="validationCustom01" >גיל מינימלי</label>
                       <input name="MinAge" type="date"  class="form-control" id="inputEmail3" 
                       [(ngModel)]="c.MinAge" >
                     </div>
-                  <!-- </div>
-                  <div class="form-group row">   -->
                     <div class="col-md-2 mb-2">
-                      <label for="validationCustom01" > גיל</label>
+                      <label for="validationCustom01" > גיל מקסימלי</label>
                       <input name="MaxAge" type="date" class="form-control" id="inputEmail3" 
                       [(ngModel)]="c.MaxAge"   >
                     </div>
-                  <!-- </div> -->
                </div>
                <br>
         <div class="form-row">
@@ -72,7 +63,6 @@
                       </select>
                     </div>
                   </div>
-                  <!-- <div class="form-group row"> -->
                     <div class="col-md-2 mb-2">
                       <label for="inputEmail3">כיסוי ראש: </label><br>
                       <select name="wigORhandkerchief" [(ngModel)]="c.wigORhandkerchief">
@@ -81,20 +71,17 @@
                           <option [value]="3">לא משנה</option>
                       </select>
                     </div>
-                  <!-- </div>   -->
                 <div *ngIf="showEda">
-                  <!-- <div class="form-group row" > -->
                     <div class="col-md-2 mb-2">
-                      <label for="inputEmail3" >שם מוסד:</label><br>
+                      <label for="validationCustom01" >שם מוסד:</label><br>
                       <select name="codeMC"  [(ngModel)]="c.mosdid">
                           <option *ngFor="let ml of mosdList" [value]="ml.codeM">{{ml.nameM}}</option>
                       </select>
                     </div>
-                  <!-- </div> -->
                 </div>
                   <div class="f" *ngIf="showocc">
                     <div class="col-md-2 mb-2">
-                      <label for="inputEmail3" >עיסוק עתידי:</label>
+                      <label for="validationCustom01" >עיסוק עתידי:</label>
                       <select name="occupationAfter" [(ngModel)]="c.occupationAfter">
                           <option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">{{o.OccupationTypeName}}</option>
                       </select>
@@ -102,7 +89,7 @@
                </div>
                <div class="f" *ngIf="showocc">
                 <div class="col-md-2 mb-2">
-                  <label for="inputEmail3" >עיסוק נוכחי:</label>
+                  <label for="validationCustom01" >עיסוק נוכחי:</label>
                   <select name="currentOccupation" [(ngModel)]="c.currentOccupation">
                       <option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">{{o.OccupationTypeName}}</option>
                   </select>
@@ -115,9 +102,49 @@
               <input type="button"  class="save"value="ביטול הסינון" (click)="onclickB()">
             </div>
               <br><br>
-            </div>   
+            </div>
+            <div class="form-row"> 
+                <div class="col-md-2 mb-2">
+                  <legend class="col-form-label col-sm-2 pt-0">מין :</legend> 
+                  <div class="form-check"> 
+                  <label class="form-check-label" for="gridRadios1">
+                    🤵
+                  </label>
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="זכר"  (click)="minM()">
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label" for="gridRadios2">
+                      👰
+                    </label>
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="נקבה" (click)="minW()">
+                  </div>
+                </div>
+            <div class="col-md-2 mb-2">
+                <label for="validationCustom01">שם פרטי :</label>
+                <input name="FNameC" type="text" class="form-control" id="validationCustom01" placeholder="הקש שם פרטי"
+                [(ngModel)]="cc.FNameCandidates">
+              </div>
+              <div class="col-md-2 mb-2">
+                <label for="validationCustom02" >שם משפחה:</label>
+                <input name="LNameC" type="text" class="form-control" id="validationCustom02" placeholder="הקש שם משפחה"
+                 [(ngModel)]="cc.LNameCandidates">
+              </div>
+              <div class="col-md-2 mb-2">
+                <div class="col-sm-10">
+                  <label for="validationCustom03">פלאפון אישי:</label>
+                  <input name="phone" type="tel" class="form-control" id="validationCustom03" placeholder="הקש פון"
+                  [(ngModel)]="cc.phone">
+                </div>
+              </div>
+            </div>
+              <br>
+              <div class="form-row">
+              <div class="save"  (click)="a()">סינון  </div>
+              <div class="save" (click)="sinun()">ביטול הסינו</div>
+            </div>
+            <br><br>
+            <div *ngIf="mORw" ><app-candidatedetmatches  class="a" *ngFor="let item of serchlist" [c]="item"></app-candidatedetmatches></div>           
              <div *ngIf="!mORs" ><app-candidatedetmatches  class="a" *ngFor="let item of serchlist" [c]="item"></app-candidatedetmatches></div>           
-      <!-- </div> -->
     </form>
   </div>
   

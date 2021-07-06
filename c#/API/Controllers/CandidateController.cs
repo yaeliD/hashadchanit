@@ -37,7 +37,7 @@ namespace shadchanut.Controllers
         }
 
         [HttpGet]
-        [Route("getAcandidtes/{id}")]// הצגת כל המועמדים 
+        [Route("getAcandidtes/{id}")]// הצגת מועמד עי קוד מועמד 
         public IHttpActionResult GetAlcandidets(int id)
         {
             candidatesDto candidetList = BL.CandidatesBL.GetAlcandidets(id);
@@ -52,7 +52,7 @@ namespace shadchanut.Controllers
             List<candidatesDto> candidetList = BL.CandidatesBL.Filteriing(s);
             if (candidetList.Count() > 0)
                 return Ok(candidetList);
-            return BadRequest();
+            return null;
         }
 
 

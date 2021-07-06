@@ -32,9 +32,6 @@ namespace BL
            candidatesDto candidetDTOs = candidatesDto.Todto(candidetListDal.FirstOrDefault(c=>c.codeCandidates==id));
             return candidetDTOs;
         }
-
-
-
         public static List<candidatesDto> Filteriing(SearchDto s)
         {
             List<Candidates> candidates = Dal.CandidatesDal.GetAlcandidets();
@@ -43,9 +40,10 @@ namespace BL
             foreach (var item in candidates)
             {
                 if ((string.IsNullOrEmpty(s.FirstName) || item.FNameCandidates.Contains(s.FirstName))
-                    && (string.IsNullOrEmpty(s.LastName) || item.FNameCandidates.Contains(s.LastName))
+                    && (string.IsNullOrEmpty(s.LastName) || item.LNameCandidates.Contains(s.LastName))
+                    && (string.IsNullOrEmpty(s.phone) || item.phone.Contains(s.phone))
                     && (s.MinAge == null || s.MinAge > item.dateOFbirth)
-                    && (s.MinAge == null || s.MinAge > item.dateOFbirth)
+                    && (s.MaxAge == null || s.MaxAge > item.dateOFbirth)
                     && (s.statusid==null ||s.statusid==item.status)
                     && (s.IdEda == null || s.IdEda == item.AdaFather || s.IdEda == item.AdaMother)
                     && (s.wigORhandkerchief == null || s.wigORhandkerchief == item.wigORhandkerchief)

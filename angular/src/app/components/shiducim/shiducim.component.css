@@ -20,6 +20,7 @@ div.re{
 .form-row {
     direction: rtl;
     text-align: center;
+    
 }
 .col-md-2{
     text-align:right;
@@ -31,4 +32,23 @@ h1{
  
 .save{
     text-align: center;
+}
+app-candidatedetmatches.a {
+    direction: rtl;
+    text-align: center;
+    width: 33%;
+    float: left;
+    height: 90px;
+  }
+
+
+.save{
+  background-color:rgb(189, 61, 67);
+  width:100px;
+ height:30px ;
+}
+.row{
+    direction: rtl;
+    text-align: center;
+   
 }

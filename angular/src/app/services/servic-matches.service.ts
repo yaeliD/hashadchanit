@@ -4,6 +4,7 @@ import { Candidates } from 'class/Candidates';
 import { community } from 'class/community';
 import { FullCandidate } from 'class/FullCandidate';
 import { ListOfMosdot } from 'class/ListOfMosdot';
+import { MachestoOunCDto } from 'class/MachestoOunCDto';
 import { MatchPosibility } from 'class/MatchPosibility';
 import { OccupationTyes } from 'class/OccupationTyes';
 import { Serch } from 'class/Serch';
@@ -58,6 +59,9 @@ getoccupationlist()
  {
    console.log(JSON.stringify(c))
   return this.http.post<Candidates[]>("https://localhost:44390//api/Candidates/fiiltering",c)
+ }
+ findmaches(cc:MachestoOunCDto){
+  return this.http.post<Candidates[]>("https://localhost:44390//api/matchaes/Findmaches",cc)
  }
  matches()
  {

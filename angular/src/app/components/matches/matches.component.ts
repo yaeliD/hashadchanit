@@ -46,15 +46,16 @@ export class MatchesComponent implements OnInit {
       this.view=false;
     }
    
-    this.matches();
+    // this.matches();
     
   }
 
 
 
 matches()
-{
-  this.ser.matches().subscribe(suc => {this.macheslist=suc; console.log(this.macheslist),  this.mORs=true},err=>{console.log("err")});
+ {
+//   this.ser.matches().subscribe(suc => {this.macheslist=suc; console.log(this.macheslist),  this.mORs=true}
+//   ,err=>{ this.mORs=true, console.log("err"),alert("אין תוצאות")});
   // this.router.navigate(['short',this.mORs]);
 
 }

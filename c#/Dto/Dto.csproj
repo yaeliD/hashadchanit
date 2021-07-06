@@ -74,6 +74,7 @@
     <Compile Include="ContactDto.cs" />
     <Compile Include="FullCandidate.cs" />
     <Compile Include="listofmosdotDto.cs" />
+    <Compile Include="MachestoOunCDto.cs" />
     <Compile Include="ManCandidateDto.cs" />
     <Compile Include="MatchPosibilityDto.cs" />
     <Compile Include="MosdotToCandidateDto.cs" />

@@ -15,6 +15,7 @@ export class CandidatedetmatchesComponent implements OnInit {
   link;
   @Input() c: Candidates = new Candidates();
   m:MatchPosibility=new MatchPosibility();
+  Man:FullCandidate=new FullCandidate();
   arrcandidate: Candidates[] = [];
   show: boolean=false;
   entermamad=false;
@@ -23,29 +24,8 @@ export class CandidatedetmatchesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // showcandidate() {
-      
-  //    this.router.navigate(["ditals" , this.c.codeCandidates ]);
-  //   }
-  // showcandidatem() {
-      
-  //     this.router.navigate(["ditals" , this.m.Man.Candidate.codeCandidates ]);
-  //    }
-  // showcandidatew() {
-      
-  //     this.router.navigate(["ditals" , this.m.Woman.Candidate.codeCandidates ]);
-  //    }
-  // entermamadm()
-  // {
-  //   if( this. entermamad=true)
-  //     this. entermamad=false;
-  //     else
-  //     this. entermamad=true
-  // }
   delale()
   {
-    // delete(this.c);
-  //  this.c=null;
   }
   matchesinprocess(){ 
       this.router.navigate(["ditals" , this.m ]);

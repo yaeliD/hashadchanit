@@ -55,25 +55,27 @@ namespace Dal
 
         }
 
-        //public static List<Candidates> Mathescandidat()
-        //{
-        //    using (The_MatchmakerEntities db = new The_MatchmakerEntities())
-        //    {
 
-        //        return db.Candidates
-        //            .Include(c => c.community)
-        //                .Include(c => c.Contacts)
-        //                .Include("community1")
-        //                .Include("MosdotToCandidate")
-        //                .Include("Siblings")
-        //                .Include("MosdotToCandidate.ListOfMosdot")
-        //                .Include(c => c.CandidateStatuses)
-        //                .Include(c => c.Status1)
-        //                .Include(c => c.OccupationTypes)
-        //                .Include(c => c.OccupationTypes1)
-        //                .Include(c => c.WhatImLookingFor)
-        //            .Select(c => c).ToList();
-        //    }
-        //}
+
+        public static List<Candidates> Mathescandidat()
+        {
+            using (The_MatchmakerEntities db = new The_MatchmakerEntities())
+            {
+
+                return db.Candidates
+                    .Include(c => c.community)
+                        .Include(c => c.Contacts)
+                        .Include("community1")
+                        .Include("MosdotToCandidate")
+                        .Include("Siblings")
+                        .Include("MosdotToCandidate.ListOfMosdot")
+                        .Include(c => c.CandidateStatuses)
+                        .Include(c => c.Status1)
+                        .Include(c => c.OccupationTypes)
+                        .Include(c => c.OccupationTypes1)
+                        .Include(c => c.WhatImLookingFor)
+                    .Select(c => c).ToList();
+            }
+        }
     }
 }

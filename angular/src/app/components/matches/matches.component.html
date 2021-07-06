@@ -1,6 +1,4 @@
-
-
-<!-- כשמועמד מנסה להכנס לתוכן 
+<!--  כשמועמד מנסה להכנס לתוכן  -->
 <div *ngIf="!view" class="m">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
@@ -19,98 +17,13 @@
       </div>
     </div>
    </div>
-</div> -->
+</div> 
 <!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
 
 <div *ngIf="view">
+  <h1>התאמות אוטומטיות ע"י המערכת</h1>
+  <div *ngIf="!mORs"><h2>אין תוצאות מערכת </h2></div>
   <form  class="needs-validation" novalidate> 
-
-    <!-- <div class="all">
-
-      <div class="form-row">
-                  <div class="col-md-2 mb-2">
-                    <label for="validationCustom01">שם פרטי :</label>
-                    <input name="FNameCandidates" type="text" class="form-control" id="validationCustom01" placeholder="הקש שם פרטי"
-                    [(ngModel)]="c.FirstName">
-                  </div>
-                  <div class="col-md-2 mb-2">
-                    <label for="validationCustom02" >שם משפחה:</label>
-                    <input name="LNameCandidates" type="text" class="form-control" id="validationCustom02" placeholder="הקש שם משפחה"
-                     [(ngModel)]="c.LastName">
-                  </div>
-                  <div class="col-md-2 mb-2">
-                    <label for="validationCustom01" > גיל</label>
-                    <input name="MinAge" type="date"  class="form-control" id="inputEmail3" 
-                    [(ngModel)]="c.MinAge" >
-                  </div>
-                  <div class="col-md-2 mb-2">
-                    <label for="validationCustom01" > גיל</label>
-                    <input name="MaxAge" type="date" class="form-control" id="inputEmail3" 
-                    [(ngModel)]="c.MaxAge"   >
-                  </div>
-             </div>
-             <br>
-      <div class="form-row">
-                <div class="f" *ngIf="shows">
-                  <div class="col-md-2 mb-2">
-                    <label for="inputEmail3">סטטוס:</label>
-                    <select name="status" [(ngModel)]="c.statusid">
-                        <option *ngFor="let s of statusList" [value]="s.statusCode">{{s.statusName}}</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="fo" *ngIf="showEda">
-                  <div class="col-md-2 mb-2">
-                    <label for="inputEmail3" >עדה: </label>
-                    <select name="AdaFather"  [(ngModel)]="c.IdEda">
-                      <option *ngFor="let item of arrAda" [value]="item.codeC">{{item.nameC}}</option>
-                    </select>
-                  </div>
-                </div>
-                  <div class="col-md-2 mb-2">
-                    <label for="inputEmail3">כיסוי ראש: </label><br>
-                    <select name="wigORhandkerchief" [(ngModel)]="c.wigORhandkerchief">
-                        <option [value]="1">פאה</option>
-                        <option [value]="2">מטםחת</option>
-                        <option [value]="3">לא משנה</option>
-                    </select>
-                  </div>
-              <div *ngIf="showEda">
-                  <div class="col-md-2 mb-2">
-                    <label for="inputEmail3" >שם מוסד:</label><br>
-                    <select name="codeMC"  [(ngModel)]="c.mosdid">
-                        <option *ngFor="let ml of mosdList" [value]="ml.codeM">{{ml.nameM}}</option>
-                    </select>
-                  </div>
-               
-              </div>
-                <div class="f" *ngIf="showocc">
-                  <div class="col-md-2 mb-2">
-                    <label for="inputEmail3" >עיסוק עתידי:</label>
-                    <select name="occupationAfter" [(ngModel)]="c.occupationAfter">
-                        <option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">{{o.OccupationTypeName}}</option>
-                    </select>
-                  </div>
-             </div>
-             <div class="f" *ngIf="showocc">
-              <div class="col-md-2 mb-2">
-                <label for="inputEmail3" >עיסוק נוכחי:</label>
-                <select name="currentOccupation" [(ngModel)]="c.currentOccupation">
-                    <option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">{{o.OccupationTypeName}}</option>
-                </select>
-              </div>
-         </div>
-         </div>
-            <br>
-            <div class="form-row">
-            <input type="button" class="save" value="סינון" (click)="onclick()">  
-            <input type="button"  class="save"value="ביטול הסינון" (click)="onclickB()">
-          </div>
-            <br><br>
-          </div>    -->
-
-            <div *ngIf="mORs"><app-candidatedetmatches  class="a"  *ngFor="let item of macheslist" [m]="item"></app-candidatedetmatches></div>
-         
-    <!-- </div> -->
+    <div *ngIf="mORs"><app-candidatedetmatches  class="a"  *ngFor="let item of macheslist" [m]="item"></app-candidatedetmatches></div>
   </form>
 </div>

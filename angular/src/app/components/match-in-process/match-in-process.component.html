@@ -1,58 +1,29 @@
+<!--  כשמועמד מנסה להכנס לתוכן  -->
 <div *ngIf="!view" class="m">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">אינך רשאי/ת לצפות בתוכן</h4>
-          <!-- <button style="text-align: left; direction: ltr;" type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-              aria-hidden="true">&times;</span></button> -->
         </div>
         <br>
         <div class="modal-body">
           <p>עליך להירשם למערכת</p>
-          <!-- <p  style="margin-right:20px;    font-size:20px; "></p> -->
           <a class="nav-link" routerLink="/Register" routerLinkActive="active">הרשמה</a>
         </div>
-
-
         <div class="modal-footer">
           <button type="button" class="btn btn-default" (click)="onCloseHandled()">סגור</button>
         </div>
       </div>
     </div>
-  </div>
-</div>
+   </div>
+</div> 
+<!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
 
-  <!-- <a>
-    <h1>
-    אינך רשאי להכנס לתוכן זה !!!
-    </h1>
-  </a>  </div> -->
-  <div *ngIf="view">
-   
-  <div id="accordion"   *ngIf="show">
-    <div class="card">
-      <div class="card-header" id="headingTwo" >
-        <h5 class="mb-0" >
-          <button class="btn btn-link collapsed" data-toggle="collapse" 
-          data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" value="{{m.Man.codeCandidates}}">
-           {{m.Man.FNameCandidates}} {{m.Man.LNameCandidates}}
-          </button>
-          <button class="btn btn-link collapsed" data-toggle="collapse" 
-           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{m.Woman.codeCandidates}}" >
-          {{m.Woman.FNameCandidates}} {{m.Woman.LNameCandidates}}
-           </button>
-           <input type="button" value="מחיקה" (click)="delale()" >
-           <input type="button" value="תהליך" (click)="t()" >
-        </h5>
-      </div>
-  
-      <div *ngIf="entermamad" id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <app-candidatedetails class="a"  [c]="value"></app-candidatedetails>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  
+<div *ngIf="view">
+  <h1>שידוכים בתהליכים מתקדמים</h1>
+  <div *ngIf="!mORs"><h2>כרגע במערכת לא רשומים שידוכים בתהליך </h2></div>
+  <form  class="needs-validation" novalidate> 
+    <div *ngIf="mORs"><app-candidatedetmatches  class="a" [m]="item"></app-candidatedetmatches></div>
+  </form>
+</div>

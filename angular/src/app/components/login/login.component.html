@@ -1,13 +1,3 @@
-<!-- 
-<div class="login">
-    <h1>התחברות</h1>
-<input type="text"  [(ngModel)]="s.username"><a>: שם משתמש</a>
- <br><br>
- <input type="password"  [(ngModel)]="s.password_shadchanit"><a>:סיסמה</a>
- <br><br>
- <input type="button" value="login"  class="login"(click)="loginShadchanit()">
-
-</div> -->
 
 
 <form [formGroup]="form" class="form-horizontal justify-content-center">
@@ -16,8 +6,7 @@
  <h5>שם משתמש</h5>
         <input type="text" [(ngModel)]="s.username" formControlName="UserNameF" required matInput> 
 
- <!-- <br>
- <br> -->
+
  <h5>סיסמה</h5>
 
         <input type="password" [(ngModel)]="s.password_shadchanit" formControlName="UserPasswordF" required matInput>    

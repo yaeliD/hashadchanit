@@ -37,16 +37,18 @@ namespace Dto
 
         public static WhatImLookingFor Todal(WhatLookingDto w)
         {
-            WhatImLookingFor wDal = new WhatImLookingFor();
-            wDal.MaxAge = w.MaxAge;
-            wDal.MinAge = w.MinAge;
-            wDal.MaxHeight = w.MaxHeight;
-            wDal.MinHeight = w.MinHeight;
-            wDal.CodeCW = w.CodeCW;
-            wDal.description = w.description;
-            wDal.Candidates.CandidateWantedComunities = w.Comunities.Select(c => ComunityWantedDto.Todal(c)).ToList();
-            wDal.Candidates.CandidateStatuses = w.status1.Select(c =>  candidateStatusWDto.Todal(c)).ToList();
-            return wDal;    
+             Candidates c=  Dal.CandidatesDal.GetCandidate(w.CodeCW);
+             c.WhatImLookingFor = new WhatImLookingFor();
+             c.WhatImLookingFor.MaxAge = w.MaxAge;
+             c.WhatImLookingFor.MinAge = w.MinAge;
+             c.WhatImLookingFor.MaxHeight = w.MaxHeight;
+             c.WhatImLookingFor.MinHeight = w.MinHeight;
+             c.WhatImLookingFor.CodeCW = w.CodeCW;
+             c.WhatImLookingFor.description = w.description;
+             c.CandidateWantedComunities = w.Comunities.Select(c1 => ComunityWantedDto.Todal(c1)).ToList();
+             c.CandidateStatuses = w.status1.Select(c1 =>  candidateStatusWDto.Todal(c1)).ToList();
+             c.WhatImLookingFor.Candidates = c;
+             return  c.WhatImLookingFor;    
             
         }
     }

@@ -11,6 +11,10 @@ namespace Dto
     {
         public Nullable<bool> wigORhandkerchief { get; set; }
         public WhatLookingDto WhatLooking { get; set; }
+        public WhatLookingManDto()
+        {
+
+        }
 
         public WhatLookingManDto(WhatImLookingFor w)
         {

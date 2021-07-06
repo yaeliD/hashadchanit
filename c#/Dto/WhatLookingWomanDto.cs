@@ -14,7 +14,10 @@ namespace Dto
         public int? currentOccupation { get; set; }
         public string currentOccupationName { get; set; }
         public WhatLookingDto WhatLooking { get; set; }
+        public WhatLookingWomanDto()
+        {
 
+        }
         public WhatLookingWomanDto(WhatImLookingFor w)
         {
             WhatLooking = new WhatLookingDto(w);
