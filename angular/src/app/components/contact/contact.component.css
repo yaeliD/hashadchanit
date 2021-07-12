@@ -11,3 +11,12 @@
 .col-sm-10{
     text-align:right;
 }
+h3{
+    color: rgb(240, 83, 83);
+    margin-top:100px ;
+}
+.btn {
+    color: #fff;
+    background-color: #e82b49;
+    border-color: #fbfcfd;
+}

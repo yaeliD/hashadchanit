@@ -12,8 +12,8 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+  
     overflow: hidden;
-    background-color: rgb(114, 109, 109);
     font-family: myFont;
   }
   navbar-nav{
@@ -22,18 +22,25 @@ ul {
   li {
     float: left;
   }
-  
+  .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    direction: rtl;
+}
   li a {
     display: block;
-    color: white;
+    color: rgb(12, 11, 11);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+      border-bottom:0.5px solid rgb(231, 78, 78);
+      border-left:0.5px solid rgb(231, 78, 78);
+
   }
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: rgb(231, 78, 78);
+    background-color: rgb(218, 136, 136);
   }
 
   .logo {

@@ -1,12 +1,10 @@
-<form #form="ngForm">
-    <div class="form-group row">
-        <div class="col-sm-10">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">כיסוי ראש:</label>
-          <select name="wigORhandkerchief" [(ngModel)]="wcm.wigORhandkerchief" (change)="save()">
-              <option [value]="1">פאה</option>
-              <option [value]="2">מטםחת</option>
-              <option [value]="3">לא משנה</option>
-          </select>
-        </div>
-      </div>     
- </form>
+
+ <form #form="ngForm">
+  <mat-form-field appearance="fill" class="e" >
+   <mat-label>כיסוי ראש</mat-label>
+   <mat-select  name="wigORhandkerchief" [(ngModel)]="wcm.wigORhandkerchief" (selectionChange)="save()">
+     <mat-option [value]="1">פאה</mat-option>
+     <mat-option [value]="2">מטפחת</mat-option>
+     <mat-option [value]="3">לא משנה</mat-option>
+   </mat-select>
+ </mat-form-field><br>    </form>

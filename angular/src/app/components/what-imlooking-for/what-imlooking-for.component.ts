@@ -54,7 +54,7 @@ mw:boolean;
   }
   selectComunity(idC)
   {
-
+debugger
   this.wIl.Comunities.push(new CandidateWCommunity(this.wIl.CodeCW,idC,"",true));
   }
 
@@ -64,7 +64,7 @@ mw:boolean;
   addCandidates()
   {
     console.log(this.wIl)
-
+debugger
     if(this.isMan)
     {
       this.manw.WhatLooking=this.wIl;

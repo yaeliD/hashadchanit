@@ -1,7 +1,36 @@
 div.re{
-    text-align: right;
+    text-align: center;
+    direction: rtl;
+  
+
+}
+div.my ,.y{
+margin-right: 200px;
+}
+h1{
+    color: rgb(240, 83, 83);
+    margin-top:90px ;
+    text-align: center;
+
 }
 
+div.m{
+    border:3px rounded  rgb(240, 83, 83);
+margin-right: 500px;
+margin-left: 500px;
+
+
+}
+.btnch{
+    color: #fff;
+    background-color: #554648;
+    float: right 0.1px;
+}
+.btn {
+    color: #fff;
+    background-color: #e82b49;
+    border-color: #fbfcfd;
+}
 .save{
         background-color:rgb(207, 173, 121);
         width:100px;
@@ -21,35 +50,21 @@ div.re{
 .col-sm-10{
     text-align:right;
 }
-// .card-header{
-//     width:700px;
-//     // text-align: right;
-//     direction: rtl;
-// }
 h1{
     text-align: center;
 }
-    //   form{
-    //     padding-top: 5%;
-    // }
-    
-    // mat-form-field{
-    //     text-align: right;
-    //     font-size: 20px;
-       
-    //    }
-    //    mat-label{
-    //        font-size: 20px;
-    //    }
-    
-    //    .btn {
-    // margin-top: 15px;
-    // }
-    // app-candidatedetmatches.a {
-    //     direction: rtl;
-    //     text-align: center;
-    //     width: 33%;
-    //     float: left;
-    //     height: 90px;
-    //   }
-    
+.e{
+    text-align:right;
+    direction: rtl;
+ }
+//  .mat-form-field-infix {
+//     display: block;
+//     position: relative;
+//     flex: auto;
+//     min-width: 0;
+//     width: 120px;
+//     height:20px;
+// }
+// .mat-form-field-appearance-fill .mat-form-field-flex {
+//     background-color: rgb(128, 211, 128);
+// }

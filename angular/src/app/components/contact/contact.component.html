@@ -1,36 +1,25 @@
 <form #form="ngForm">
 
     <div *ngFor="let s of c;let i=index">
-        
-        <div class="form-group row">  
-            <div class="col-sm-10">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">  שם פרטי  :</label>
-              <input [name]="i+1" type="text" class="form-control" id="inputEmail3" placeholder="הקש שם פרטי"
-              [(ngModel)]="c[i].ContactName">
-            </div>
-          </div>  
-          <div class="form-group row">  
-            <div class="col-sm-10">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">פון לברורים :</label>
-              <input [name]="i+1" type="tel" class="form-control" id="inputEmail3" placeholder="הקש מספר "
-              [(ngModel)]="c[i].PhoneNumber">
-            </div>
-          </div>   
-             <div class="form-group row">  
-            <div class="col-sm-10">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">תאור כללי:</label>
-              <input [name]="i+1" type="text" class="form-control" id="inputEmail3" placeholder="הקש תאור"
-              [(ngModel)]="c[i].description">
-            </div>
-          </div>  
-    
-      
-    
+      <h3> טלפונים לבירורים </h3>
+      <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+        <mat-label> שם פרטי </mat-label>
+        <input matInput [name]="i+1" [(ngModel)]="c[i].ContactName">
+      </mat-form-field></td><br>  
+      <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+        <mat-label> פון לברורים  </mat-label>
+        <input matInput [name]="i+1" [(ngModel)]="c[i].PhoneNumber">
+      </mat-form-field></td><br>  
+      <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+        <mat-label> תאור כללי  </mat-label>
+        <input matInput [name]="i+1" [(ngModel)]="c[i].description">
+      </mat-form-field></td><br> 
     </div>
     <input type="button" (click)="addContact()" value="+" >
-    <br>
-    <input type="submit" value="הבא" (click)="finish()">
-    
+    <br><br>
+
+    <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="finish()">הבא</button>
+
     </form>
            
            

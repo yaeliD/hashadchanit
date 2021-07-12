@@ -13,8 +13,7 @@ import { WhatImLookingFor } from 'class/WhatImLookingFor';
 export class CandidatedetailsComponent implements OnInit {
   c: FullCandidate = new FullCandidate();
   cmw:Candidates[]=[];
-  arrcandidtes:FullCandidate;
-  @Input() cm:Candidates =new Candidates();
+  @Input() cm:number;
   constructor(public ser: ServicMatchesService , public router: Router, public active: ActivatedRoute,  public route:ActivatedRoute) { }
 
   ngOnInit():void {
@@ -26,8 +25,7 @@ export class CandidatedetailsComponent implements OnInit {
     //   this.c.Candidate.codeCandidates=p.idc
 
     //   })
-    this.c.Candidate.codeCandidates=this.cm.codeCandidates;
-    this.ser.getallcandidet(this.c.Candidate.codeCandidates).subscribe(suc => { this.arrcandidtes = suc; console.log(this.arrcandidtes);});
+    this.ser.getallcandidet(this.cm).subscribe(suc => { this.c = suc; console.log(this.c);});
 
   }
 

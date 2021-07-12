@@ -15,7 +15,7 @@ export class WhatImlookingForwomenComponent implements OnInit {
   occupationlist:OccupationTyes[]=[];
   showEda=false;
   mc:WhatImLookingForWomen=new WhatImLookingForWomen();
-  @Output() savewomen:EventEmitter<WhatImLookingForWomen>=new EventEmitter<WhatImLookingForWomen>()
+  @Output() savewoman:EventEmitter<WhatImLookingForWomen>=new EventEmitter<WhatImLookingForWomen>()
 
   constructor(public ser: WhatImLookingforService) { }
 
@@ -25,7 +25,7 @@ export class WhatImlookingForwomenComponent implements OnInit {
 
   save()
   {
-    this.savewomen.emit(this.mc)
+    this.savewoman.emit(this.mc)
   }
 
   getoccupationlist() { this.ser.getoccupationlist().subscribe(suc => { this.occupationlist = suc; console.log(suc); this.showEda = true; }); }// פו המציגה את רשימת מוסדות

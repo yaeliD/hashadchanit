@@ -3,85 +3,101 @@
     <div class="re">
     <h1>מה אני מחפש</h1>
           <form #form="ngForm">
+             <div class="m">
             <div class="my"  class="card-header" >
   
             <div class="form-group row">  
               <div class="col-sm-10">
-                <label for="inputEmail3" class="col-sm-2 col-form-label"> גיל מינימלי</label>
+                <label for="inputEmail3"  > גיל מינימלי</label>
                 <input name="AgeRange" type="date" class="form-control" id="inputEmail3" 
                 [(ngModel)]="wIl.MaxAge"   >
               </div>
             </div>
             <div class="form-group row">  
                 <div class="col-sm-10">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label"> גיל מקסימלי</label>
+                  <label for="inputEmail3"  > גיל מקסימלי</label>
                   <input name="MinAge" type="date"  class="form-control" id="inputEmail3" 
                   [(ngModel)]="wIl.MinAge" >
                 </div>
               </div>
               <!-- <div class="form-group row">  
                 <div class="col-sm-10">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label"> תווח הגובה שתרצה</label>
+                  <label for="inputEmail3"  > תווח הגובה שתרצה</label>
                   <input name="MaxHeight" type="range"  min="1.50" max="2.50" class="form-control" id="inputEmail3" 
                   [(ngModel)]="wIl.MaxHeight"   >
                 </div>
               </div>
               <div class="form-group row">  
                   <div class="col-sm-10">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label"> </label>
+                    <label for="inputEmail3"  > </label>
                     <input name="MinHeight" type="range"   min="1.50" max="2.50" class="form-control" id="inputEmail3" 
                     [(ngModel)]="wIl.MinHeight" >
                   </div>
                 </div> -->
                 <div class="form-group row">
                   <div class="col-sm-10">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label"> גובה מקסימלי:</label>
+                    <label for="inputEmail3"  > גובה מקסימלי:</label>
                     <input name="MaxHeight" type="text" class="form-control" id="inputEmail3" placeholder="  הקש גובהm"
                     [(ngModel)]="wIl.MaxHeight">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-10">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">גובה מינימלי:</label>
+                    <label for="inputEmail3"  >גובה מינימלי:</label>
                     <input name="MinHeight" type="text" class="form-control" id="inputEmail3" placeholder="nהקש גובה"
                     [(ngModel)]="wIl.MinHeight">
                   </div>
                 </div>
                  <div class="form-group row">
               <div class="col-sm-10">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">הערות נוספות :</label>
+                <label for="inputEmail3"  >הערות נוספות :</label>
                 <input name="description" type="text" class="form-control" id="inputEmail3" placeholder="כתוב הערות"
                  [(ngModel)]="wIl.description">
               </div>
             </div>  
-             <div  *ngIf="showEda">
+            <div  *ngIf="showEda">
+            <mat-form-field appearance="fill">
+              <mat-label>Toppings</mat-label>
+              <mat-select  multiple>
+                <mat-option *ngFor="let item of Comunitieslist; let i=index"
+                [id]="'eda'+i" (click)="selectComunity(Comunitieslist[i].codeC)">{{item.nameC}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+<!--         
             <div class="form-group row">
               <div class="col-sm-10">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">עדה:</label>
+                <label for="inputEmail3"  >עדה:</label>
                 <div class="form-check" *ngFor="let item of Comunitieslist; let i=index">
                   {{item.nameC}}
-                  <input 
-                   type="checkbox" [name]="'eda'+i"  class="form-check-input" [id]="'eda'+i" (click)="selectComunity(Comunitieslist[i].codeC)">
+                  <input type="checkbox" [name]="'eda'+i"  class="form-check-input" [id]="'eda'+i" (click)="selectComunity(Comunitieslist[i].codeC)">
                 </div>
               </div>
-            </div>  
-            <div class="form-group row">
+            </div>   -->
+            <mat-form-field appearance="fill">
+              <mat-label>Toppings</mat-label>
+              <mat-select  multiple>
+                <mat-option *ngFor="let s of statusList ; let i=index"
+                [id]="'sta'+i" (click)="selectstayus(statusList[i].statusCode)">{{s.statusName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- <div class="form-group row">
               <div class="col-sm-10">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">סטטוס:</label>
+                <label for="inputEmail3"  >סטטוס:</label>
                 <div class="form-check"  *ngFor="let s of statusList ; let i=index">
                   {{s.statusName}}
                   <input 
                    type="checkbox" [name]="'sta'+i"  class="form-check-input" [id]="'sta'+i" (click)="selectstayus(statusList[i].statusCode)">
                 </div>
               </div>
-            </div>  
+            </div>   -->
           </div>
-            <app-what-imlooking-for-man *ngIf="isMan" (savemen)="manw=$event" ></app-what-imlooking-for-man>
-            <app-what-imlooking-forwomen *ngIf="!isMan" (savewomen)="womanw=$event"></app-what-imlooking-forwomen> 
+            <app-what-imlooking-for-man *ngIf="isMan" (savemen)="savemen($event)" ></app-what-imlooking-for-man>
+            <app-what-imlooking-forwomen *ngIf="!isMan" (savewoman)="savewoman($event)"></app-what-imlooking-forwomen> 
          
             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="addCandidates()">שמור את הפרטים  </button> 
   
            </div>
+          </div>
           </form>
          
   

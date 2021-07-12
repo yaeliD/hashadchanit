@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   s : shadchanit = new shadchanit;
   form: any;
   constructor(public router:Router ,public ser:ServicShadchanitService ) { }//
+  hide = true;
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
        else{alert("סיסמה שגויה:");}
     })
       }
-      
+
 }
 
 

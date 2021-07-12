@@ -94,8 +94,8 @@ namespace BL
                     if ((m.wigORhandkerchief == null || m.wigORhandkerchief == candidete.wigORhandkerchief)
                          && (m.occupationAfter == candidete.occupationAfter)
                          && (m.currentOccupation == candidete.currentOccupation)
-                         && (candidete.WhatImLookingFor.Candidates.community.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaFather))
-                         || (candidete.WhatImLookingFor.Candidates.community1.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaMother))
+                         && (candidete.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaFather))
+                         || (candidete.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaMother))
                          && (m.status == candidete.status)
                          && (m.dateOFbirth > candidete.WhatImLookingFor.MinAge || m.dateOFbirth < candidete.WhatImLookingFor.MaxAge)
                          && (m.heightCandidates > candidete.WhatImLookingFor.MinHeight ||
@@ -108,8 +108,8 @@ namespace BL
                         if ((m.wigORhandkerchief == null || m.wigORhandkerchief == candidete.wigORhandkerchief) &&
                             (m.occupationAfter == candidete.occupationAfter)
                           && (m.currentOccupation == candidete.currentOccupation)
-                          && (candidete.WhatImLookingFor.Candidates.community.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaFather))
-                          || (candidete.WhatImLookingFor.Candidates.community1.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaMother))
+                          && (candidete.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaFather))
+                          || (candidete.CandidateWantedComunities.Any(mm => mm.ComunityId == m.AdaMother))
                           && (m.status == candidete.status)
                           && ((m.dateOFbirth > candidete.WhatImLookingFor.MinAge.Value.AddYears(- 1)) ||
                              (m.dateOFbirth < candidete.WhatImLookingFor.MaxAge.Value.AddYears(1)))
@@ -122,6 +122,7 @@ namespace BL
 
 
 
+            
             List<FullCandidateDto>[] res = new List<FullCandidateDto>[2];
             res[0] = matchingBOOLCandidates.Select(m=>new FullCandidateDto(m)).ToList();
             res[1] = matchingCandidates.Select(m => new FullCandidateDto(m)).ToList();

@@ -20,12 +20,17 @@ export class CandidatedetmatchesComponent implements OnInit {
   show: boolean=false;
   entermamad=false;
   mORs:boolean;
+  hide:boolean=false;
   constructor(public router: Router, public ser: ServicMatchesService,  public route:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
-  delale()
+  entermamad1()
   {
+this.entermamad=true;
+  }
+  delale()
+  {this.hide=true;
   }
   matchesinprocess(){ 
       this.router.navigate(["ditals" , this.m ]);

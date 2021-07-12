@@ -55,7 +55,8 @@ namespace Dal
         {
             using (The_MatchmakerEntities db = new The_MatchmakerEntities())
             {
-               return db.Candidates.Include(c=>c.WhatImLookingFor).FirstOrDefault(c=>c.codeCandidates==id);
+               return GetAlcandidets()
+                    .FirstOrDefault(c=>c.codeCandidates==id);
                
             }
         }
@@ -77,20 +78,27 @@ namespace Dal
                 using (The_MatchmakerEntities db = new The_MatchmakerEntities())
                 {
 
-                    List<Candidates> candidetsList = db.Candidates
-                        .Include(c=>c.community)
-                        .Include(c=>c.Contacts)
-                        .Include("community1")
-                        .Include("MosdotToCandidate")
-                        .Include("Siblings")
-                        .Include("MosdotToCandidate.ListOfMosdot")
-                        .Include(c=>c.CandidateStatuses)
-                        .Include(c => c.Status1)
-                        .Include(c => c.OccupationTypes)
-                        .Include(c => c.OccupationTypes1)
-                        .Include(c => c.WhatImLookingFor)
-                        .Select(x => x).ToList();
-                    return candidetsList;
+                    return db.Candidates
+                      .Include(c => c.community)
+                          .Include(c => c.Contacts)
+                          .Include(c => c.ManCandidate)
+                          .Include(c => c.WomenCandidate)
+                          .Include("community1")
+                          .Include("MosdotToCandidate")
+                          .Include("Siblings")
+                          .Include("MosdotToCandidate.ListOfMosdot")
+                          .Include(c => c.CandidateStatuses)
+                          .Include(c => c.Status1)
+                          .Include(c => c.OccupationTypes)
+                          .Include(c => c.OccupationTypes1)
+                          .Include(c => c.WhatImLookingFor)
+                          .Include(c => c.CandidateWantedComunities)
+                          .Include("CandidateWantedComunities.community")
+                           .Include("CandidateStatuses.Status")
+
+                          .Include(c => c.ProposalInProcess)
+
+                      .Select(c => c).ToList();
                 }
             }
             catch (Exception e)

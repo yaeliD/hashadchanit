@@ -1,21 +1,30 @@
+<form >
+
+    <div class="example-container">
+        <h1>התחברות למערכת</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>שם משתמש</mat-label>
+            <input matInput  [(ngModel)]="s.username" name="nam">
+          </mat-form-field>
+
+ <br>
+            <mat-form-field appearance="fill">
+              <mat-label> הקש סיסמה</mat-label>
+              <input matInput  [(ngModel)]="s.password_shadchanit" name="pass" [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <br>    <br>
 
 
-<form [formGroup]="form" class="form-horizontal justify-content-center">
+            <button type="button" class="btn-log btn-ok btn btn-info btn-lg"  (click)="loginShadchanit()">התחבר</button>
 
+          </div>
 
- <h5>שם משתמש</h5>
-        <input type="text" [(ngModel)]="s.username" formControlName="UserNameF" required matInput> 
-
-
- <h5>סיסמה</h5>
-
-        <input type="password" [(ngModel)]="s.password_shadchanit" formControlName="UserPasswordF" required matInput>    
  
-    <br>
 
-    <button type="button" class="btn-log btn-ok btn btn-info btn-lg" [disabled]="!form.valid" (click)="loginShadchanit()">התחבר</button>
-
-    
+ 
 </form>
 
 

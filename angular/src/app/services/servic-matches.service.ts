@@ -59,6 +59,7 @@ getoccupationlist()
  {
    console.log(JSON.stringify(c))
   return this.http.post<Candidates[]>("https://localhost:44390//api/Candidates/fiiltering",c)
+  debugger
  }
  findmaches(cc:MachestoOunCDto){
   return this.http.post<FullCandidate[]>("https://localhost:44390//api/matchaes/Findmaches",cc)

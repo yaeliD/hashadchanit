@@ -66,13 +66,23 @@ getoccupationlist() { this.ser.getoccupationlist().subscribe(suc => { this.occup
 findmosdot() { this.ser.findmosdot().subscribe(suc => { this.mosdList = suc; console.log(suc); this.showEda = true; }); }// פו המציגה את רשימת מוסדות
   onclick()
 {
-  this.ser.filtering(this.c).subscribe(suc => {this.serchlist=suc; console.log(this.serchlist)},err=>{console.log(err)});
-  if(this.serchlist==null)
-  {
-    alert("אין תוצאות");
-  }
-  this.mORs=false;
- 
+this.ser.filtering(this.c).subscribe(suc => {this.serchlist=suc; console.log(this.serchlist)},err=>{this.serchlist=null; alert("אין תוצאות");
+console.log(err)});
+this.mORs=false;
+ this. onclickB2();
+}
+onclickB2(){
+  this.c.FirstName=null;
+  this.c.LastName=null;
+  this.c.MaxAge=null;
+  this.c.MinAge=null;
+  this.c.IdEda=null;
+  this.c.currentOccupation=null;
+  this.c.mosdid=null;
+  this.c.occupationAfter=null;
+  this.c.wigORhandkerchief=null;
+  this.c.statusid=null;
+
 }
  onclickB()
 {

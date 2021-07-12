@@ -1,20 +1,23 @@
 <form #form="ngForm" *ngIf="showEda">
-  <div class="form-group row">
-       <div class="col-sm-10">
-         <label for="inputEmail3" class="col-sm-2 col-form-label">עיסוק נוכחי :</label>
-         <select name="currentOccupation" [(ngModel)]="mc.currentOccupation" >
-             <option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">{{o.OccupationTypeName}}</option>
-         </select>
-       </div>
-     </div><form #form="ngForm">
-     <div class="form-group row">
-       <div class="col-sm-10">
-         <label for="inputEmail3" class="col-sm-2 col-form-label">עיסוק אחרי החתונה:</label>
-         <select name="occupationAfter" [(ngModel)]="mc.occupationAfter" (change)="save()">
-             <option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">{{o.OccupationTypeName}}</option>
-         </select>
-       </div>
-     </div>
+  <mat-form-field appearance="fill" class="e" >
+    <mat-label>עיסוק נוכחי</mat-label>
+    <mat-select  name="currentOccupation" [(ngModel)]="mc.currentOccupation" >
+      <mat-option  *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">
+        {{o.OccupationTypeName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill" class="e" >
+    <mat-label>עיסוק אחרי החתונה</mat-label>
+    <mat-select  name="occupationAfter" [(ngModel)]="mc.occupationAfter" (selectionChange)="save()" >
+      <mat-option  *ngFor="let o of occupationlist" [value]="o.OccupationTypeId" >
+        {{o.OccupationTypeName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+
+
   
     
 </form>

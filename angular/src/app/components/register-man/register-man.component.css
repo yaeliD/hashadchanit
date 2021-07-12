@@ -11,3 +11,7 @@
 .col-sm-10{
     text-align:right;
 }
+.e{
+    text-align:right;
+    direction: rtl;
+ }

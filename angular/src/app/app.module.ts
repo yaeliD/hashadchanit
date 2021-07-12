@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +27,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CandidatedetailsComponent } from './components/candidatedetails/candidatedetails.component';
 import { CandidatedetmatchesComponent } from './components/candidatedetmatches/candidatedetmatches.component';
 import { ShiducimComponent } from './components/shiducim/shiducim.component';
+import { MaterialModule } from './material/material.module';
 
 
 
@@ -63,8 +62,7 @@ import { ShiducimComponent } from './components/shiducim/shiducim.component';
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
-    MatFormFieldModule,
-    MatInputModule
+    MaterialModule
 
   ],
   providers: [],

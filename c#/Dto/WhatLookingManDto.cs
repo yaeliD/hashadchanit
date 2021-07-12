@@ -26,8 +26,9 @@ namespace Dto
         public static WhatImLookingFor Todal(WhatLookingManDto w)
         {
             WhatImLookingFor wDal = WhatLookingDto.Todal(w.WhatLooking);
-            wDal = WhatLookingDal.AddWhatLooking(wDal);
             wDal.Candidates.wigORhandkerchief = w.wigORhandkerchief;
+
+            wDal = WhatLookingDal.AddWhatLooking(wDal);
             return wDal;
 
         }

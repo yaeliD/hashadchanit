@@ -25,11 +25,11 @@ namespace BL
 
         }
 
-        public static candidatesDto GetAlcandidets(int id)
+        public static FullCandidateDto GetAlcandidets(int id)
         {
             List<Candidates> candidetListDal = Dal.CandidatesDal.GetAlcandidets();
 
-           candidatesDto candidetDTOs = candidatesDto.Todto(candidetListDal.FirstOrDefault(c=>c.codeCandidates==id));
+           FullCandidateDto candidetDTOs =new FullCandidateDto(candidetListDal.FirstOrDefault(c=>c.codeCandidates==id));
             return candidetDTOs;
         }
         public static List<candidatesDto> Filteriing(SearchDto s)

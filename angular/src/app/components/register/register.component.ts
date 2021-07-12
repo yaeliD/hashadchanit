@@ -11,6 +11,7 @@ import { Candideswomen } from 'class/Candideswomen';
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { ListOfMosdot } from 'class/ListOfMosdot';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -43,8 +44,10 @@ export class RegisterComponent implements OnInit {
   manm:ListOfMosdot[]=[];
   womem:ListOfMosdot[]=[];
   isMan: boolean;
-
-  constructor(public router: Router, public ser: ServicRegisterService) { }
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  isEditable = false;
+  constructor(public router: Router, public ser: ServicRegisterService,private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
    
@@ -54,6 +57,13 @@ export class RegisterComponent implements OnInit {
       heightCandidates: new FormControl("", Validators.required),
       dateOFbirth: new FormControl("", Validators.required),
     })
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+  
     // this.siblings();
     // this.code=this.c.codeCandidates;
 

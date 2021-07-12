@@ -18,7 +18,6 @@ namespace Dal
         public The_MatchmakerEntities()
             : base("name=The_MatchmakerEntities")
         {
-            this.Configuration.LazyLoadingEnabled = false;
 
         }
 

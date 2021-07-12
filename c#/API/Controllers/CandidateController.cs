@@ -40,7 +40,7 @@ namespace shadchanut.Controllers
         [Route("getAcandidtes/{id}")]// הצגת מועמד עי קוד מועמד 
         public IHttpActionResult GetAlcandidets(int id)
         {
-            candidatesDto candidetList = BL.CandidatesBL.GetAlcandidets(id);
+            FullCandidateDto candidetList = BL.CandidatesBL.GetAlcandidets(id);
             if (candidetList  != null)
                 return Ok(candidetList);
             return BadRequest();
@@ -52,7 +52,7 @@ namespace shadchanut.Controllers
             List<candidatesDto> candidetList = BL.CandidatesBL.Filteriing(s);
             if (candidetList.Count() > 0)
                 return Ok(candidetList);
-            return null;
+            return Ok();
         }
 
 
