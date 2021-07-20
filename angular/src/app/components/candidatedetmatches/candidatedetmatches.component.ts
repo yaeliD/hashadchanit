@@ -14,7 +14,7 @@ import { MatchPosibility } from 'class/MatchPosibility';
 export class CandidatedetmatchesComponent implements OnInit {
   link;
   @Input() c: Candidates = new Candidates();
-  m:MatchPosibility=new MatchPosibility();
+  listmatchesinprocess:MatchPosibility=new MatchPosibility();
   Man:FullCandidate=new FullCandidate();
   arrcandidate: Candidates[] = [];
   show: boolean=false;
@@ -27,13 +27,17 @@ export class CandidatedetmatchesComponent implements OnInit {
   }
   entermamad1()
   {
-this.entermamad=true;
+    if(this.entermamad==false)
+       this.entermamad=true;  
+       else
+       this.entermamad=false;
   }
   delale()
   {this.hide=true;
   }
-  matchesinprocess(){ 
-      this.router.navigate(["ditals" , this.m ]);
-      this.delale();
-  }
+  // matchesinprocess(ca){ 
+  //     this.router.navigate(["ditals" , this.listmatchesinprocess ]);
+  //   this.listmatchesinprocess.push(new MatchPosibility(man,woman));
+  //     this.delale();
+  // }
 }

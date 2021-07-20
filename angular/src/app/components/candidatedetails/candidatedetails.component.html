@@ -1,33 +1,46 @@
     <div class="detaillscandideta">
     <div class="wi">
-        <h6>{{c?.Candidate.FNameCandidates}}</h6>
-        <h6>{{c?.Candidate.LNameCandidates}}</h6>
-        <h6>{{c?.Candidate.dateOFbirth| date: 'dd/MM/yyyy'}}</h6>
-        <h6>{{c?.Candidate.heightCandidates}}</h6>
-        <h6 height="400" width="400" >{{c?.Candidate.photoLink}}</h6>
-        <h6>{{c?.Candidate.address}}</h6>
-        <h6>{{c?.Candidate.nameFather}}</h6>
-        <h6>{{c?.Candidate.nameMother}}</h6>
-        <h6>{{c?.Candidate.occupationFather}}</h6>
-        <h6>{{c?.Candidate.occupationMother}}</h6>
-        <h6>{{c?.Candidate.familyStatus}}</h6>
-        <h6>{{c?.Candidate.AdaNameFather}}</h6>
-        <h6>{{c?.Candidate.AdaNameMother}}</h6>
-        <h6>{{c?.Candidate.phone}}</h6>
-        <h6>{{c?.Candidate.StatusName}}</h6>
-        <h6>{{c?.wigORhandkerchief}}</h6>
-        <h6>{{c?.OccupationAfterName}}</h6>
-        <h6>{{c?.currentOccupationName}}</h6>
-        <h1><p *ngFor="let x of c?.Candidate.Siblings">{{x|json}}</p></h1>
-        <h1><p *ngFor="let x of c?.Candidate.Contacts">{{x|json}}</p></h1>
-        <h1><p *ngFor="let x of c?.Candidate.Mosdot">{{x|json}}</p></h1>
-        <h6>{{c?.Candidate.MaxAge| date: 'dd/MM/yyyy'}}</h6>
-        <h6>{{c?.Candidate.MinAge| date: 'dd/MM/yyyy'}}</h6>
-        <h6>{{c?.Candidate.MaxHeight}}</h6>
-        <h6>{{c?.Candidate.MinHeight}}</h6>
-        <h6>{{c?.Candidate.description}}</h6>
-        <h1><p *ngFor="let x of c?.Candidate.Comunities">{{x|json}}</p></h1>
-        <h1><p *ngFor="let x of c?.Candidate.status1">{{x|json}}</p></h1>
+        <h5>{{c?.Candidate.FNameCandidates}}</h5>
+        <h5>{{c?.Candidate.LNameCandidates}}</h5>
+        <h5>{{c?.Candidate.dateOFbirth| date: 'dd/MM/yyyy'}}</h5>
+        <h5>{{c?.Candidate.heightCandidates}}</h5>
+        <h5 height="400" width="400" >{{c?.Candidate.photoLink}}</h5>
+        <h5>{{c?.Candidate.address}}</h5>
+        <h5>{{c?.Candidate.nameFather}}</h5>
+        <h5>{{c?.Candidate.nameMother}}</h5>
+        <h5>{{c?.Candidate.occupationFather}}</h5>
+        <h5>{{c?.Candidate.occupationMother}}</h5>
+        <h5>{{c?.Candidate.familyStatus}}</h5>
+        <h5>{{c?.Candidate.AdaNameFather}}</h5>
+        <h5>{{c?.Candidate.AdaNameMother}}</h5>
+        <h5>{{c?.Candidate.phone}}</h5>
+        <h5>{{c?.Candidate.StatusName}}</h5>
+        <h5>{{this.coui}}</h5>
+        <h5>{{c?.OccupationAfterName}}</h5>
+        <h5>{{c?.currentOccupationName}}</h5>
+        <h5> משפחה</h5>
+        <h5><p *ngFor="let x of c?.Candidate.Siblings">
+            שם: {{x.name}}{{""}}
+            בת: {{x.datebir| date: 'dd/MM/yyyy'}}{{""}}
+            נשואי/ה: {{x.isMarried}}{{""}}
+            תאור: {{x.description}}</p></h5>
+        <h5> ליצירת קשר </h5>
+        <h5><p *ngFor="let x of c?.Candidate.Contacts">שם: {{x.ContactName}}{{""}}
+            פון: {{x.PhoneNumber}}{{""}}
+            תאור: {{x.description}}</p></h5>
+        <h5>מוסדות לימוד</h5>
+        <h5><p *ngFor="let x of c?.Candidate.Mosdot">שם מוסד: {{x.MosadName}}{{""}}
+            תאריך סיום הלימודים : {{x.yearOfFinish| date: 'dd/MM/yyyy'}}</p></h5>
+            <h5>מה אני מחפש?</h5>
+        <h5>גיל מקסימלי : {{c?.WhatLooking.MaxAge| date: 'dd/MM/yyyy'}}</h5>
+        <h5>גיל מינימלי : {{c?.WhatLooking.MinAge| date: 'dd/MM/yyyy'}}</h5>
+        <h5>גובה מקסימלי: {{c?.WhatLooking.MaxHeight}}</h5>
+        <h5>גובה מינימלי: {{c?.WhatLooking.MinHeight}}</h5>
+        <h5>תאור: {{c?.WhatLooking.description}}</h5>
+        <h5> עדות </h5>
+        <h5><p *ngFor="let x of c?.WhatLooking.Comunities">{{x.ComunityName}}</p></h5>
+        <h5>סטטוס/ים</h5>
+        <h5><p *ngFor="let x of c?.WhatLooking.status1">{{x.statusName}}</p></h5>
     </div>
 </div>
 

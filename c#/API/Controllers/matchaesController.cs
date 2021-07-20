@@ -31,6 +31,14 @@ namespace matchaes.Controllers
                 return Ok(candidetList);
             return BadRequest();
         }
-
+        [HttpPost]
+        [Route("Findcandidatebyfilterparm")]// סינון לפי מועמדי 
+        public IHttpActionResult findcandidatebyfilterparm(MachestoOunCDto cc)
+        {
+           FullCandidateDto findc = new BL.MatchingBL().findcandidatebyfilterparm(cc);
+            if (findc!=null)
+                return Ok(findc);
+            return BadRequest();
+        }
     }
 }

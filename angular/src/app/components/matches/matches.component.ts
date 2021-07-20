@@ -34,7 +34,7 @@ export class MatchesComponent implements OnInit {
   shows=false;
   showocc=false;
   usernow: string;
-  view: boolean=true;
+  view: boolean=false;
   flag:boolean;
   mORs: boolean;
   constructor(public ser: ServicMatchesService, public router: Router) { }
@@ -46,7 +46,7 @@ export class MatchesComponent implements OnInit {
       this.view=false;
     }
    
-    // this.matches();
+    this.matches();
     
   }
 
@@ -54,9 +54,8 @@ export class MatchesComponent implements OnInit {
 
 matches()
  {
-//   this.ser.matches().subscribe(suc => {this.macheslist=suc; console.log(this.macheslist),  this.mORs=true}
-//   ,err=>{ this.mORs=true, console.log("err"),alert("אין תוצאות")});
-  // this.router.navigate(['short',this.mORs]);
+  this.ser.matches().subscribe(suc => {this.macheslist=suc; console.log(this.macheslist),  this.mORs=true});
+  // ,err=>{ this.mORs=true, console.log("err")}
 
 }
 

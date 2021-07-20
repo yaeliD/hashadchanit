@@ -13,6 +13,7 @@ import { WhatImLookingFor } from 'class/WhatImLookingFor';
 export class CandidatedetailsComponent implements OnInit {
   c: FullCandidate = new FullCandidate();
   cmw:Candidates[]=[];
+  coui:string;
   @Input() cm:number;
   constructor(public ser: ServicMatchesService , public router: Router, public active: ActivatedRoute,  public route:ActivatedRoute) { }
 
@@ -25,7 +26,15 @@ export class CandidatedetailsComponent implements OnInit {
     //   this.c.Candidate.codeCandidates=p.idc
 
     //   })
-    this.ser.getallcandidet(this.cm).subscribe(suc => { this.c = suc; console.log(this.c);});
+    this.ser.getallcandidet(this.cm).subscribe(suc => { this.c = suc;
+      if(this.c.wigORhandkerchief==true)
+this.coui="פאה";
+if(this.c.wigORhandkerchief==false)
+this.coui="מטפחת";
+if(this.c.wigORhandkerchief==null)
+this.coui="לא משנה"; console.log(this.c);});
+
+
 
   }
 

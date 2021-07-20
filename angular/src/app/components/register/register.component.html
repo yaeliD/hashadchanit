@@ -39,8 +39,13 @@
           </mat-form-field></td><br>
         <td><mat-form-field class="example-full-width" class="e" appearance="fill">
           <mat-label>תמונה </mat-label>
-          <input matInput name="photoLink"  [(ngModel)]="c.photoLink">
+          <input matInput name="photoLink1"  [(ngModel)]="c.photoLink">
         </mat-form-field></td><br>
+        <!-- <mat-form-field>
+          <ngx-mat-file-input [formControl]="fileControl" [multiple]="multiple"
+          [(ngModel)]="c.photoLink" name="photoLink" [accept]="accept" [color]="color">
+          </ngx-mat-file-input>
+       </mat-form-field> -->
         <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="next()">הבא</button>
       </div>
     
@@ -100,6 +105,10 @@
         <td><mat-form-field class="example-full-width" class="e" appearance="fill">
           <mat-label> עיסוק אב </mat-label>
           <input matInput name="occupationFather"  [(ngModel)]="c.occupationFather">
+        </mat-form-field></td><br>
+        <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+          <mat-label> עיסוק אם </mat-label>
+          <input matInput name="occupationMother"  [(ngModel)]="c.occupationMother">
         </mat-form-field></td><br>
         <td><mat-form-field class="example-full-width" class="e" appearance="fill">
           <mat-label> סטטוס משפחה</mat-label>

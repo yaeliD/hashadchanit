@@ -5,16 +5,18 @@
         <h3>פרטי מוסדות הלימוד </h3>
         <mat-form-field appearance="fill" class="e" >
           <mat-label>שם מוסד</mat-label>
-          <mat-select [name]=" i+1"  [(ngModel)]="mc[i].codeMC">
+          <mat-select [name]=" i+1"  [(ngModel)]="mc[i].codeMosad">
             <mat-option  *ngFor="let ml of mosdList" [value]="ml.codeM">
               {{ml.nameM}}
             </mat-option>
           </mat-select>
         </mat-form-field><br>
-        <td><mat-form-field class="example-full-width" class="e" appearance="fill">
-          <mat-label> תאריך סיום </mat-label>
-          <input matInput [name]="i+1" [(ngModel)]="mc[i].yearOfFinish">
-        </mat-form-field></td><br>
+        <mat-form-field appearance="fill" class="e" >
+          <mat-label>תאריך סיום</mat-label>
+          <input matInput [matDatepicker]="picker"  [name]="i+1"  [(ngModel)]="mc[i].yearOfFinish">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
       </div>      
     </div>
     

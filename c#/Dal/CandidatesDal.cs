@@ -79,7 +79,7 @@ namespace Dal
                 {
 
                     return db.Candidates
-                      .Include(c => c.community)
+                          .Include(c => c.community)
                           .Include(c => c.Contacts)
                           .Include(c => c.ManCandidate)
                           .Include(c => c.WomenCandidate)
@@ -94,11 +94,9 @@ namespace Dal
                           .Include(c => c.WhatImLookingFor)
                           .Include(c => c.CandidateWantedComunities)
                           .Include("CandidateWantedComunities.community")
-                           .Include("CandidateStatuses.Status")
-
+                          .Include("CandidateStatuses.Status")
                           .Include(c => c.ProposalInProcess)
-
-                      .Select(c => c).ToList();
+                          .Select(c => c).ToList();
                 }
             }
             catch (Exception e)

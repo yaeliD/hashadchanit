@@ -22,3 +22,5 @@ export class MatchPosibility{
 
 
 
+// didateDto Man { get; set; }
+//      Woman { get; set; }

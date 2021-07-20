@@ -47,8 +47,8 @@ namespace BL
                 if ((c.wigORhandkerchief == null || c.wigORhandkerchief == candidate.wigORhandkerchief) &&
                     c.occupationAfter == candidate.occupationAfter &&
                     c.currentOccupation == candidate.currentOccupation &&
-                    (candidate.WhatImLookingFor.Candidates.community.CandidateWantedComunities.Any(mm => mm.ComunityId == c.AdaFather) ||
-                     candidate.WhatImLookingFor.Candidates.community1.CandidateWantedComunities.Any(mm => mm.ComunityId == c.AdaMother)) &&
+                    (candidate.CandidateWantedComunities.Any(mm => mm.ComunityId == c.AdaFather) ||
+                     candidate.CandidateWantedComunities.Any(mm => mm.ComunityId == c.AdaMother)) &&
                     c.status == candidate.status &&
                     c.dateOFbirth > candidate.WhatImLookingFor.MinAge ||
                     c.dateOFbirth < candidate.WhatImLookingFor.MaxAge &&
@@ -68,6 +68,14 @@ namespace BL
 
 
 
+        }
+
+        public FullCandidateDto findcandidatebyfilterparm(MachestoOunCDto cc)
+        {
+            List<Candidates> candidetaListDal = Dal.MatchingDal.Mathescandidat();
+            FullCandidateDto candidete = new FullCandidateDto( candidetaListDal.FirstOrDefault
+                (c => (c.FNameCandidates.Contains(cc.FirstName) || c.LNameCandidates.Contains(cc.LastName)) && c.phone == cc.phone));
+            return candidete;
         }
 
         public  List<FullCandidateDto>[] findMaches(MachestoOunCDto cc)

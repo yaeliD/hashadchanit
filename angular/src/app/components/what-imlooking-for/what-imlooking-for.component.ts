@@ -69,19 +69,17 @@ debugger
     {
       this.manw.WhatLooking=this.wIl;
       console.log(this.manw);
-       this.ser.AddManw(this.manw).subscribe(suc =>{this.w=suc;console.log(suc);})
-       if(this.w)
-         alert("mannn")
-      //  this.router.navigate(['HistoryOfMatches']);
+       this.ser.AddManw(this.manw).subscribe(suc =>{this.w=suc;console.log(suc); })
+       alert("mannn");
+       this.router.navigate(['HistoryOfMatches']);
 
     }
        else
       {
        this.womanw.WhatLooking=this.wIl;
-       this.ser.AddWomanw(this.womanw).subscribe(suc =>{this.w=suc;console.log(suc);});
-       if(this.w)
-         alert("womannn")
-      //  this.router.navigate(['HistoryOfMatches']);
+       this.ser.AddWomanw(this.womanw).subscribe(suc =>{this.w=suc;console.log(suc);});   
+       alert("womannn");  
+       this.router.navigate(['HistoryOfMatches']);
        }
 
     }

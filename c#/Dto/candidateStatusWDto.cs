@@ -13,6 +13,8 @@ namespace Dto
             public int CandidateId { get; set; }
             public int StatusId { get; set; }
             public bool Wanted { get; set; }
+            public string statusName { get; set; }
+
 
         public candidateStatusWDto()
         {
@@ -24,6 +26,7 @@ namespace Dto
             CandidateId = c.CandidateId;
             StatusId = c.StatusId;
             Wanted = c.Wanted;
+            statusName = c.Status.statusName;
         }
 
         public static CandidateStatuses Todal(candidateStatusWDto c)
