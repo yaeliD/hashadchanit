@@ -14,7 +14,7 @@ import { MatchPosibility } from 'class/MatchPosibility';
 export class CandidatedetmatchesComponent implements OnInit {
   link;
   @Input() c: Candidates = new Candidates();
-  listmatchesinprocess:MatchPosibility=new MatchPosibility();
+  @Input() m:MatchPosibility=new MatchPosibility();
   Man:FullCandidate=new FullCandidate();
   arrcandidate: Candidates[] = [];
   show: boolean=false;
