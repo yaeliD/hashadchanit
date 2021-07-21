@@ -1,6 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="The_MatchmakerModelStoreContainer" CdmEntityContainer="The_MatchmakerEntities">
+    <EntitySetMapping Name="Candidates">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.Candidates">
+        <MappingFragment StoreEntitySet="Candidates">
+          <ScalarProperty Name="occupationAfter" ColumnName="occupationAfter" />
+          <ScalarProperty Name="wigORhandkerchief" ColumnName="wigORhandkerchief" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="familyStatus" ColumnName="familyStatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="occupationMother" ColumnName="occupationMother" />
+          <ScalarProperty Name="occupationFather" ColumnName="occupationFather" />
+          <ScalarProperty Name="AdaMother" ColumnName="AdaMother" />
+          <ScalarProperty Name="AdaFather" ColumnName="AdaFather" />
+          <ScalarProperty Name="nameMother" ColumnName="nameMother" />
+          <ScalarProperty Name="nameFather" ColumnName="nameFather" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="currentOccupation" ColumnName="currentOccupation" />
+          <ScalarProperty Name="photoLink" ColumnName="photoLink" />
+          <ScalarProperty Name="heightCandidates" ColumnName="heightCandidates" />
+          <ScalarProperty Name="dateOFbirth" ColumnName="dateOFbirth" />
+          <ScalarProperty Name="LNameCandidates" ColumnName="LNameCandidates" />
+          <ScalarProperty Name="FNameCandidates" ColumnName="FNameCandidates" />
+          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CandidateStatuses">
       <EntityTypeMapping TypeName="The_MatchmakerModel.CandidateStatuses">
         <MappingFragment StoreEntitySet="CandidateStatuses">
@@ -35,6 +60,22 @@
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="ContactName" ColumnName="ContactName" />
           <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListOfMosdot">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.ListOfMosdot">
+        <MappingFragment StoreEntitySet="ListOfMosdot">
+          <ScalarProperty Name="sORy" ColumnName="sORy" />
+          <ScalarProperty Name="nameM" ColumnName="nameM" />
+          <ScalarProperty Name="codeM" ColumnName="codeM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManCandidate">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.ManCandidate">
+        <MappingFragment StoreEntitySet="ManCandidate">
+          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -75,6 +116,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Siblings">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.Siblings">
+        <MappingFragment StoreEntitySet="Siblings">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="isMarried" ColumnName="isMarried" />
+          <ScalarProperty Name="datebir" ColumnName="datebir" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="candidateId" ColumnName="candidateId" />
+          <ScalarProperty Name="siblingId" ColumnName="siblingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Status">
       <EntityTypeMapping TypeName="The_MatchmakerModel.Status">
         <MappingFragment StoreEntitySet="Status">
@@ -94,71 +147,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TypesOfSteps">
       <EntityTypeMapping TypeName="The_MatchmakerModel.TypesOfSteps">
         <MappingFragment StoreEntitySet="TypesOfSteps">
           <ScalarProperty Name="nameStep" ColumnName="nameStep" />
           <ScalarProperty Name="codeTypeStep" ColumnName="codeTypeStep" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Siblings">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.Siblings">
-        <MappingFragment StoreEntitySet="Siblings">
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="isMarried" ColumnName="isMarried" />
-          <ScalarProperty Name="datebir" ColumnName="datebir" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="candidateId" ColumnName="candidateId" />
-          <ScalarProperty Name="siblingId" ColumnName="siblingId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ListOfMosdot">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.ListOfMosdot">
-        <MappingFragment StoreEntitySet="ListOfMosdot">
-          <ScalarProperty Name="sORy" ColumnName="sORy" />
-          <ScalarProperty Name="nameM" ColumnName="nameM" />
-          <ScalarProperty Name="codeM" ColumnName="codeM" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ManCandidate">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.ManCandidate">
-        <MappingFragment StoreEntitySet="ManCandidate">
-          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="WomenCandidate">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.WomenCandidate">
-        <MappingFragment StoreEntitySet="WomenCandidate">
-          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Candidates">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.Candidates">
-        <MappingFragment StoreEntitySet="Candidates">
-          <ScalarProperty Name="occupationAfter" ColumnName="occupationAfter" />
-          <ScalarProperty Name="wigORhandkerchief" ColumnName="wigORhandkerchief" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="familyStatus" ColumnName="familyStatus" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="occupationMother" ColumnName="occupationMother" />
-          <ScalarProperty Name="occupationFather" ColumnName="occupationFather" />
-          <ScalarProperty Name="AdaMother" ColumnName="AdaMother" />
-          <ScalarProperty Name="AdaFather" ColumnName="AdaFather" />
-          <ScalarProperty Name="nameMother" ColumnName="nameMother" />
-          <ScalarProperty Name="nameFather" ColumnName="nameFather" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="currentOccupation" ColumnName="currentOccupation" />
-          <ScalarProperty Name="photoLink" ColumnName="photoLink" />
-          <ScalarProperty Name="heightCandidates" ColumnName="heightCandidates" />
-          <ScalarProperty Name="dateOFbirth" ColumnName="dateOFbirth" />
-          <ScalarProperty Name="LNameCandidates" ColumnName="LNameCandidates" />
-          <ScalarProperty Name="FNameCandidates" ColumnName="FNameCandidates" />
-          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -171,6 +175,13 @@
           <ScalarProperty Name="MaxHeight" ColumnName="MaxHeight" />
           <ScalarProperty Name="MinAge" ColumnName="MinAge" />
           <ScalarProperty Name="MaxAge" ColumnName="MaxAge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WomenCandidate">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.WomenCandidate">
+        <MappingFragment StoreEntitySet="WomenCandidate">
+          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

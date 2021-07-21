@@ -53,6 +53,7 @@ namespace Dal
         public virtual ICollection<ProposalInProcess> ProposalInProcess { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProposalInProcess> ProposalInProcess1 { get; set; }
+        public virtual WhatImLookingFor WhatImLookingFor { get; set; }
         public virtual WomenCandidate WomenCandidate { get; set; }
         public virtual community community { get; set; }
         public virtual community community1 { get; set; }
@@ -67,6 +68,5 @@ namespace Dal
         public virtual ICollection<Contacts> Contacts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Siblings> Siblings { get; set; }
-        public virtual WhatImLookingFor WhatImLookingFor { get; set; }
     }
 }

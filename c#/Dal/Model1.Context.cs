@@ -18,30 +18,30 @@ namespace Dal
         public The_MatchmakerEntities()
             : base("name=The_MatchmakerEntities")
         {
-
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Candidates> Candidates { get; set; }
         public virtual DbSet<CandidateStatuses> CandidateStatuses { get; set; }
         public virtual DbSet<CandidateWantedComunities> CandidateWantedComunities { get; set; }
         public virtual DbSet<community> community { get; set; }
         public virtual DbSet<Contacts> Contacts { get; set; }
+        public virtual DbSet<ListOfMosdot> ListOfMosdot { get; set; }
+        public virtual DbSet<ManCandidate> ManCandidate { get; set; }
         public virtual DbSet<MosdotToCandidate> MosdotToCandidate { get; set; }
         public virtual DbSet<OccupationTypes> OccupationTypes { get; set; }
         public virtual DbSet<ProposalInProcess> ProposalInProcess { get; set; }
         public virtual DbSet<Shadchnit> Shadchnit { get; set; }
+        public virtual DbSet<Siblings> Siblings { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<StepsOfProposal> StepsOfProposal { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TypesOfSteps> TypesOfSteps { get; set; }
-        public virtual DbSet<Siblings> Siblings { get; set; }
-        public virtual DbSet<ListOfMosdot> ListOfMosdot { get; set; }
-        public virtual DbSet<ManCandidate> ManCandidate { get; set; }
-        public virtual DbSet<WomenCandidate> WomenCandidate { get; set; }
-        public virtual DbSet<Candidates> Candidates { get; set; }
         public virtual DbSet<WhatImLookingFor> WhatImLookingFor { get; set; }
+        public virtual DbSet<WomenCandidate> WomenCandidate { get; set; }
     }
 }

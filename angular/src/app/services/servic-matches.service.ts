@@ -63,7 +63,7 @@ getoccupationlist()
  }
  
  findmaches(cc:MachestoOunCDto){
-  return this.http.post<FullCandidate[]>("https://localhost:44390//api/matchaes/Findmaches",cc)
+  return this.http.post<FullCandidate[][]>("https://localhost:44390//api/matchaes/Findmaches",cc)
  }
  
  FindCandidatebyfilterparm(cc:MachestoOunCDto){

@@ -39,7 +39,7 @@ export class ShiducimComponent implements OnInit {
   macheslist:MatchPosibility [] = []
   arrAda:community[]=[];
   serchlist:Candidates[]=[];
-  thiscandideta:FullCandidate[]=[];
+  thiscandideta:FullCandidate[][]=[];
   showEda=false;
   shows=false;
   showocc=false;
@@ -166,21 +166,25 @@ onclickB2(){
 }
 findmaches(){
 
-  this.ser.findmaches(this.cc).subscribe(suc => {this.thiscandideta=suc; console.log(this.thiscandideta)},err=>{console.log("err")});
+  this.ser.findmaches(this.cc).subscribe(suc => {this.thiscandideta=suc; console.log(this.thiscandideta)
   this.mORw=true;
   //למעלה הגדרה של מערך מסוג התאמותbool:MatchPosibility[]=[];  matches:
   //ץיש את הבחור
   //לולאה על הבחורות ומכניסה לכל בחורה גם את הבחור
-//  for( let i of this.thiscandideta)
-// {
-//   for( let item of i)
-//   {
-//       if(i==0)
-//      this.bool.push(new MatchPosibility(this.findcandideta,i[item]));
-//      else
-//      this.matches.push(new MatchPosibility(this.findcandideta,i[item]));
-//   }
-// }
+ for( let i=0 ;i<2; i++)
+{
+  // console.log( this.thiscandideta[i].length)
+  console.log( this.thiscandideta[i][1])
+
+  for( let item of this.thiscandideta[i])
+  {
+      if(i==0)
+     this.bool.push(new MatchPosibility(this.findcandideta,item));
+     else
+     this.matches.push(new MatchPosibility(this.findcandideta,item));
+  }
+}
+},err=>{console.log("err")});
 
 
 }

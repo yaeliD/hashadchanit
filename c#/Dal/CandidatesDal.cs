@@ -77,6 +77,7 @@ namespace Dal
             {
                 using (The_MatchmakerEntities db = new The_MatchmakerEntities())
                 {
+                    db.Database.CommandTimeout = 60;
 
                     return db.Candidates
                           .Include(c => c.community)
@@ -101,8 +102,8 @@ namespace Dal
             }
             catch (Exception e)
             {
-                throw;
-                Console.WriteLine(e);
+                throw e;
+                Console.WriteLine(e.InnerException);
                 return null;
             }
         }

@@ -20,8 +20,8 @@ namespace Dal
         public Nullable<System.DateTime> dateP { get; set; }
         public Nullable<int> stepMeeting { get; set; }
     
-        public virtual StepsOfProposal StepsOfProposal { get; set; }
         public virtual Candidates Candidates { get; set; }
         public virtual Candidates Candidates1 { get; set; }
+        public virtual StepsOfProposal StepsOfProposal { get; set; }
     }
 }

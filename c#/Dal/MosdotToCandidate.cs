@@ -19,7 +19,7 @@ namespace Dal
         public int codeCandidate { get; set; }
         public Nullable<System.DateTime> yearOfFinish { get; set; }
     
-        public virtual ListOfMosdot ListOfMosdot { get; set; }
         public virtual Candidates Candidates { get; set; }
+        public virtual ListOfMosdot ListOfMosdot { get; set; }
     }
 }

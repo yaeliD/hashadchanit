@@ -18,7 +18,7 @@ namespace Dal
         public int StatusId { get; set; }
         public bool Wanted { get; set; }
     
-        public virtual Status Status { get; set; }
         public virtual Candidates Candidates { get; set; }
+        public virtual Status Status { get; set; }
     }
 }
