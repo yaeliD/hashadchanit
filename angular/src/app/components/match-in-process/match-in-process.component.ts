@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServicMatchInProcessService } from 'app/services/servic-match-in-process.service';
 import { MatchPosibility } from 'class/MatchPosibility';
+import { ProposalInProcess } from 'class/ProposalInProcess';
 
 @Component({
   selector: 'app-match-in-process',
@@ -10,9 +13,9 @@ export class MatchInProcessComponent implements OnInit {
   view: boolean = true;
   usernow: string;
   display = "none";
- @Input() m:MatchPosibility=new MatchPosibility();
-
-  constructor() { }
+ ProposalInProceslist:MatchPosibility []=[];
+  mORs: boolean=false;
+  constructor(public ser:ServicMatchInProcessService , public router: Router) { }
 
   ngOnInit() {
   this.openModal();
@@ -20,7 +23,7 @@ export class MatchInProcessComponent implements OnInit {
     if (this.usernow != "y") {
       this.view = false;
     } 
-  
+   this.ProposalInProces();
   }
   openModal() {
     this.display = "block";
@@ -28,10 +31,20 @@ export class MatchInProcessComponent implements OnInit {
   onCloseHandled() {
     this.display = "none";
   }
-  delale()
-  {
-      
-  }
+
+
+
+
+  ProposalInProces()
+ {
+  console.log("ממתין");
+  
+  this.ser.ProposalInProces().subscribe(suc => {this.ProposalInProceslist=suc; console.log(this.ProposalInProceslist);
+    this.mORs=true; });
+  // ,err=>{ this.mORs=true, console.log("err")}
+
+}
+ 
 }
 
 

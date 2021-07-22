@@ -24,6 +24,6 @@
   <h1>שידוכים בתהליכים מתקדמים</h1>
   <div *ngIf="!mORs"><h2>כרגע במערכת לא רשומים שידוכים בתהליך </h2></div>
   <form  class="needs-validation" novalidate> 
-    <div *ngIf="mORs"><app-candidatedetmatches  class="a" [m]="item"></app-candidatedetmatches></div>
+    <div *ngIf="mORs"><app-candidatedetmatches   *ngFor="let item of ProposalInProceslist" class="a" [m]="item"></app-candidatedetmatches></div>
   </form>
 </div>

@@ -42,5 +42,27 @@ namespace Dto
         };
 
         }
+        public static ProposalInProcessDto Todto(ProposalInProcess sdto)
+        {
+            return new ProposalInProcessDto()
+            {
+                codeP = sdto.codeP,
+                codeBT = sdto.codeBT,
+                codeBN = sdto.codeBN,
+                stepMeeting = sdto.stepMeeting
+         
+            };
+        }
+        public static List<ProposalInProcessDto> Todto1(List<ProposalInProcess> cc)
+        {
+            List<ProposalInProcessDto> dto = new List<ProposalInProcessDto>();
+            foreach (var item in cc)
+            {
+                dto.Add(Todto(item));
+            }
+            return dto;
+
+
+        }
     }
 }

@@ -120,6 +120,7 @@
     <Compile Include="ProposalInProcess.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProposalInProcessDal.cs" />
     <Compile Include="ShadchanitDal.cs" />
     <Compile Include="Shadchnit.cs">
       <DependentUpon>Model1.tt</DependentUpon>

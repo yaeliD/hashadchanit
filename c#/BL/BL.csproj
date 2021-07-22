@@ -79,6 +79,7 @@
     <Compile Include="MatchingBL.cs" />
     <Compile Include="occupationTypeBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProposalInProcessBL.cs" />
     <Compile Include="shadchanitBL.cs" />
     <Compile Include="statusBL.cs" />
     <Compile Include="WhatLookingBL.cs" />

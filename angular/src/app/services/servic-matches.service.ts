@@ -18,11 +18,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicMatchesService {
   constructor(public http:HttpClient) { }
-  matchesinprocess(candidets:ProposalInProcess){
-    return this.http.post<ProposalInProcess>("https://localhost:44390//api/ProposalInProcess/Matchesinprocess",candidets)
 
-  } 
-  
   showsortcandidate()
   {
     return this.http.get<Candidates[]>("https://localhost:44390//api/candidets/mathescandidat")

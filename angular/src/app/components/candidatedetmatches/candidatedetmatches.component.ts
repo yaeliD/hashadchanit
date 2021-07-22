@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ServicMatchInProcessService } from 'app/services/servic-match-in-process.service';
 import { ServicMatchesService } from 'app/services/servic-matches.service';
 import { Candidates } from 'class/Candidates';
 import { FullCandidate } from 'class/FullCandidate';
@@ -25,7 +26,7 @@ export class CandidatedetmatchesComponent implements OnInit {
   man:boolean=false;
   woman:boolean=false;
   ProposalInProces:ProposalInProcess=new ProposalInProcess();
-  constructor(public router: Router, public ser: ServicMatchesService,  public route:ActivatedRoute) { }
+  constructor(public router: Router, public ser: ServicMatchesService,public ser1:ServicMatchInProcessService , public route:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -41,8 +42,9 @@ export class CandidatedetmatchesComponent implements OnInit {
     this.ProposalInProces.codeBN=m;
     this.ProposalInProces.codeBT=w;
     this.ProposalInProces.stepMeeting=1;
-    this.ser.matchesinprocess(this.ProposalInProces).subscribe()
-    this.router.navigate(["ProposalInProcess"]);
+    this.ser1.matchesinprocess(this.ProposalInProces).subscribe(suc =>{console.log(suc);
+      this.router.navigate(["ProposalInProcess"]);})
+    
    // פה אני שולחת את הקודים של הזוג ושומרת הבדטה בהצעות בתהליך 
    // שולחת לדף הצעות 
      // matchesinprocess(ca){ 

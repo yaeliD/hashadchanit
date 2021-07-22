@@ -17,13 +17,22 @@ namespace API.Controllers
 
             [HttpPost]
             [Route("Matchesinprocess")]
-            public IHttpActionResult AddManCandidates(Dto.ManCandidateDto c)
+            public IHttpActionResult AddMatchesinprocess(Dto.ProposalInProcessDto cc)
             {
-                int id = BL.CandidatesBL.AddManCandidates(c);
-
-                //if (ca != null)
-                //    return Ok(ca);
-                return Ok(id);
-            }
+            bool success = BL.ProposalInProcessBL.AddMatchesinprocess(cc);
+            return Ok(success);
         }
+     
+        
+        [HttpGet] 
+        [Route("ProposalInProceslist")]
+        public IHttpActionResult getProposalInProceslist()
+        {//MatchPosibility
+            List<ProposalInProcessDto>  ProposalInProceslist = BL.ProposalInProcessBL.getProposalInProceslist();
+            if (ProposalInProceslist.Count() > 0)
+                return Ok(ProposalInProceslist);
+            return BadRequest();
+        }
+
+    }
 }

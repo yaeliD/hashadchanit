@@ -25,6 +25,8 @@ namespace BL
 
         }
 
+     
+
         public static FullCandidateDto GetAlcandidets(int id)
         {
             List<Candidates> candidetListDal = Dal.CandidatesDal.GetAlcandidets();
