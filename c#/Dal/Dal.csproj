@@ -134,9 +134,6 @@
     <Compile Include="StepsOfProposal.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="TypesOfSteps.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

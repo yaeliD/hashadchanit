@@ -97,6 +97,7 @@ namespace Dal
                           .Include("CandidateWantedComunities.community")
                           .Include("CandidateStatuses.Status")
                           .Include(c => c.ProposalInProcess)
+                          .Include(c => c.ProposalInProcess1)
                           .Select(c => c).ToList();
                 }
             }

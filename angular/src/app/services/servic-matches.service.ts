@@ -7,6 +7,7 @@ import { ListOfMosdot } from 'class/ListOfMosdot';
 import { MachestoOunCDto } from 'class/MachestoOunCDto';
 import { MatchPosibility } from 'class/MatchPosibility';
 import { OccupationTyes } from 'class/OccupationTyes';
+import { ProposalInProcess } from 'class/ProposalInProcess';
 import { Serch } from 'class/Serch';
 import { Status } from 'class/Status';
 import { WhatImLookingFor } from 'class/WhatImLookingFor';
@@ -17,7 +18,10 @@ import { Observable } from 'rxjs';
 })
 export class ServicMatchesService {
   constructor(public http:HttpClient) { }
-  
+  matchesinprocess(candidets:ProposalInProcess){
+    return this.http.post<ProposalInProcess>("https://localhost:44390//api/ProposalInProcess/Matchesinprocess",candidets)
+
+  } 
   
   showsortcandidate()
   {

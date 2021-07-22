@@ -28,6 +28,7 @@ import { CandidatedetailsComponent } from './components/candidatedetails/candida
 import { CandidatedetmatchesComponent } from './components/candidatedetmatches/candidatedetmatches.component';
 import { ShiducimComponent } from './components/shiducim/shiducim.component';
 import { MaterialModule } from './material/material.module';
+import { AbbreviatedfilteringComponent } from './components/abbreviatedfiltering/abbreviatedfiltering.component';
 
 
 
@@ -51,7 +52,8 @@ import { MaterialModule } from './material/material.module';
    ContactComponent,
    CandidatedetailsComponent,
    CandidatedetmatchesComponent,
-   ShiducimComponent
+   ShiducimComponent,
+   AbbreviatedfilteringComponent
   ],
   imports: [
     

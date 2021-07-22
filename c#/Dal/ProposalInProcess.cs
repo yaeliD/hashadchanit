@@ -14,14 +14,20 @@ namespace Dal
     
     public partial class ProposalInProcess
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ProposalInProcess()
+        {
+            this.StepsOfProposal = new HashSet<StepsOfProposal>();
+        }
+    
         public int codeP { get; set; }
         public int codeBT { get; set; }
         public int codeBN { get; set; }
-        public Nullable<System.DateTime> dateP { get; set; }
         public Nullable<int> stepMeeting { get; set; }
     
         public virtual Candidates Candidates { get; set; }
         public virtual Candidates Candidates1 { get; set; }
-        public virtual StepsOfProposal StepsOfProposal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StepsOfProposal> StepsOfProposal { get; set; }
     }
 }

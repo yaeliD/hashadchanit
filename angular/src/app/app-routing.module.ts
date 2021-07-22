@@ -29,6 +29,7 @@ const routes: Routes = [
   {path:"ditals/:idc",component:CandidatedetailsComponent},
   {path:"short",component:CandidatedetmatchesComponent},
   {path:"shiduchim",component:ShiducimComponent},
+  {path:"ProposalInProcess",component:MatchInProcessComponent},
   {path:"",redirectTo:"/Hashadchanit",pathMatch:"full"}
 ];
 

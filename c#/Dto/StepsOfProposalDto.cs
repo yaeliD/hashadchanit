@@ -15,6 +15,16 @@ namespace Dto
         public string comments { get; set; }
         public bool results { get; set; }
 
+
+        //public int ProposalInProcessCode { get; set; }
+        //public int stepPcode { get; set; }
+        //public int codeStep { get; set; }
+        //public Nullable<System.DateTime> dateStep { get; set; }
+        //public string comments { get; set; }
+        //public bool results { get; set; }
+
+
+
         public StepsOfProposalDto()
         {
 

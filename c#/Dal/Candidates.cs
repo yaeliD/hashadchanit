@@ -18,12 +18,12 @@ namespace Dal
         public Candidates()
         {
             this.MosdotToCandidate = new HashSet<MosdotToCandidate>();
-            this.ProposalInProcess = new HashSet<ProposalInProcess>();
-            this.ProposalInProcess1 = new HashSet<ProposalInProcess>();
             this.CandidateStatuses = new HashSet<CandidateStatuses>();
             this.CandidateWantedComunities = new HashSet<CandidateWantedComunities>();
             this.Contacts = new HashSet<Contacts>();
             this.Siblings = new HashSet<Siblings>();
+            this.ProposalInProcess = new HashSet<ProposalInProcess>();
+            this.ProposalInProcess1 = new HashSet<ProposalInProcess>();
         }
     
         public int codeCandidates { get; set; }
@@ -49,10 +49,6 @@ namespace Dal
         public virtual ManCandidate ManCandidate { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MosdotToCandidate> MosdotToCandidate { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProposalInProcess> ProposalInProcess { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProposalInProcess> ProposalInProcess1 { get; set; }
         public virtual WhatImLookingFor WhatImLookingFor { get; set; }
         public virtual WomenCandidate WomenCandidate { get; set; }
         public virtual community community { get; set; }
@@ -68,5 +64,9 @@ namespace Dal
         public virtual ICollection<Contacts> Contacts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Siblings> Siblings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProposalInProcess> ProposalInProcess { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProposalInProcess> ProposalInProcess1 { get; set; }
     }
 }

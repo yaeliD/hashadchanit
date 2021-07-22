@@ -97,17 +97,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ProposalInProcess">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.ProposalInProcess">
-        <MappingFragment StoreEntitySet="ProposalInProcess">
-          <ScalarProperty Name="stepMeeting" ColumnName="stepMeeting" />
-          <ScalarProperty Name="dateP" ColumnName="dateP" />
-          <ScalarProperty Name="codeBN" ColumnName="codeBN" />
-          <ScalarProperty Name="codeBT" ColumnName="codeBT" />
-          <ScalarProperty Name="codeP" ColumnName="codeP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Shadchnit">
       <EntityTypeMapping TypeName="The_MatchmakerModel.Shadchnit">
         <MappingFragment StoreEntitySet="Shadchnit">
@@ -136,28 +125,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="StepsOfProposal">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.StepsOfProposal">
-        <MappingFragment StoreEntitySet="StepsOfProposal">
-          <ScalarProperty Name="results" ColumnName="results" />
-          <ScalarProperty Name="comments" ColumnName="comments" />
-          <ScalarProperty Name="dateStep" ColumnName="dateStep" />
-          <ScalarProperty Name="codeStep" ColumnName="codeStep" />
-          <ScalarProperty Name="stepPcode" ColumnName="stepPcode" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TypesOfSteps">
       <EntityTypeMapping TypeName="The_MatchmakerModel.TypesOfSteps">
         <MappingFragment StoreEntitySet="TypesOfSteps">
@@ -182,6 +149,28 @@
       <EntityTypeMapping TypeName="The_MatchmakerModel.WomenCandidate">
         <MappingFragment StoreEntitySet="WomenCandidate">
           <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StepsOfProposal">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.StepsOfProposal">
+        <MappingFragment StoreEntitySet="StepsOfProposal">
+          <ScalarProperty Name="results" ColumnName="results" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="dateStep" ColumnName="dateStep" />
+          <ScalarProperty Name="codeStep" ColumnName="codeStep" />
+          <ScalarProperty Name="stepPcode" ColumnName="stepPcode" />
+          <ScalarProperty Name="ProposalInProcessCode" ColumnName="ProposalInProcessCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProposalInProcess">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.ProposalInProcess">
+        <MappingFragment StoreEntitySet="ProposalInProcess">
+          <ScalarProperty Name="stepMeeting" ColumnName="stepMeeting" />
+          <ScalarProperty Name="codeBN" ColumnName="codeBN" />
+          <ScalarProperty Name="codeBT" ColumnName="codeBT" />
+          <ScalarProperty Name="codeP" ColumnName="codeP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

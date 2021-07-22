@@ -96,7 +96,6 @@
     <Property Name="codeP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="codeBT" Type="int" Nullable="false" />
     <Property Name="codeBN" Type="int" Nullable="false" />
-    <Property Name="dateP" Type="date" />
     <Property Name="stepMeeting" Type="int" />
   </EntityType>
   <EntityType Name="Shadchnit">
@@ -128,21 +127,12 @@
     <Key>
       <PropertyRef Name="stepPcode" />
     </Key>
+    <Property Name="ProposalInProcessCode" Type="int" Nullable="false" />
     <Property Name="stepPcode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="codeStep" Type="int" Nullable="false" />
     <Property Name="dateStep" Type="date" />
     <Property Name="comments" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="results" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TypesOfSteps">
     <Key>
@@ -372,18 +362,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProposalInProcess_StepsOfProposal">
-    <End Role="StepsOfProposal" Type="Self.StepsOfProposal" Multiplicity="0..1" />
-    <End Role="ProposalInProcess" Type="Self.ProposalInProcess" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StepsOfProposal">
-        <PropertyRef Name="stepPcode" />
-      </Principal>
-      <Dependent Role="ProposalInProcess">
-        <PropertyRef Name="stepMeeting" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Siblings_Candidates">
     <End Role="Candidates" Type="Self.Candidates" Multiplicity="1" />
     <End Role="Siblings" Type="Self.Siblings" Multiplicity="*" />
@@ -393,6 +371,18 @@
       </Principal>
       <Dependent Role="Siblings">
         <PropertyRef Name="candidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StepsOfProposal_ProposalInProcess">
+    <End Role="ProposalInProcess" Type="Self.ProposalInProcess" Multiplicity="1" />
+    <End Role="StepsOfProposal" Type="Self.StepsOfProposal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProposalInProcess">
+        <PropertyRef Name="codeP" />
+      </Principal>
+      <Dependent Role="StepsOfProposal">
+        <PropertyRef Name="ProposalInProcessCode" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -423,7 +413,6 @@
     <EntitySet Name="Siblings" EntityType="Self.Siblings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StepsOfProposal" EntityType="Self.StepsOfProposal" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypesOfSteps" EntityType="Self.TypesOfSteps" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WhatImLookingFor" EntityType="Self.WhatImLookingFor" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WomenCandidate" EntityType="Self.WomenCandidate" Schema="dbo" store:Type="Tables" />
@@ -495,13 +484,13 @@
       <End Role="ListOfMosdot" EntitySet="ListOfMosdot" />
       <End Role="MosdotToCandidate" EntitySet="MosdotToCandidate" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProposalInProcess_StepsOfProposal" Association="Self.FK_ProposalInProcess_StepsOfProposal">
-      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
-      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
-    </AssociationSet>
     <AssociationSet Name="FK_Siblings_Candidates" Association="Self.FK_Siblings_Candidates">
       <End Role="Candidates" EntitySet="Candidates" />
       <End Role="Siblings" EntitySet="Siblings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StepsOfProposal_ProposalInProcess" Association="Self.FK_StepsOfProposal_ProposalInProcess">
+      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
+      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
     </AssociationSet>
     <AssociationSet Name="FK_StepsOfProposal_TypesOfSteps" Association="Self.FK_StepsOfProposal_TypesOfSteps">
       <End Role="TypesOfSteps" EntitySet="TypesOfSteps" />

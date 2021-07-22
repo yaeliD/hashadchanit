@@ -3,25 +3,30 @@
       <div class="card-header" id="headingTwo" >
         <h5 class="mb-0" >
           <button class="btn btn-link collapsed" data-toggle="collapse" 
+           (click)="n()" (click)="ditails(m.Man.Candidate.codeCandidates)"
           data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"  value="{{m.Man.Candidate.codeCandidates}}"> 
            {{m.Man.Candidate.FNameCandidates}} {{m.Man.Candidate.LNameCandidates}} 
           </button>
           <button class="btn btn-link collapsed" data-toggle="collapse" 
+          (click)="w()"  (click)="ditails(m.Woman.Candidate.codeCandidates)"
            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" value="{{m.Woman.Candidate.codeCandidates}}" >
           {{m.Woman.Candidate.FNameCandidates}} {{m.Woman.Candidate.LNameCandidates}}
            </button>
-           <input type="button" value="הוצעה" (click)="matchesinprocess()" >
-        </h5>
+           <input type="button" value="הוצעה" (click)="matchesinprocess(m.Man.Candidate.codeCandidates,m.Woman.Candidate.codeCandidates)" >
+          </h5>
       </div>
   
       <div *ngIf="entermamad" id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <app-candidatedetails class="a"  [cm]="value"></app-candidatedetails>
+        <div class="card-body" *ngIf="man">
+          <app-candidatedetails class="a"  [cm]="m.Man.Candidate.codeCandidates"></app-candidatedetails>
+        </div>
+        <div class="card-body" *ngIf="woman">
+          <app-candidatedetails class="a"  [cm]="m.Woman.Candidate.codeCandidates"></app-candidatedetails>
         </div>
       </div>
     </div>
   </div>
-
+<!-- 
 
   <div id="accordion" *ngIf="!hide" >
     <div class="card">
@@ -49,7 +54,7 @@
       </div>
     </div>
     </div>
-  </div>
+  </div> -->
 
 
   

@@ -12,7 +12,6 @@ namespace Dto
         public int codeP { get; set; }
         public int codeBT { get; set; }
         public int codeBN { get; set; }
-        public Nullable<System.DateTime> dateP { get; set; }
         public Nullable<int> stepMeeting { get; set; }
     
 
@@ -26,7 +25,6 @@ namespace Dto
             codeP = p.codeP;
             codeBT = p.codeBT;
             codeBN = p.codeBN;
-            dateP = p.dateP;
             stepMeeting = p.stepMeeting;
 
 
@@ -39,7 +37,6 @@ namespace Dto
             codeP = p.codeP,
             codeBT = p.codeBT,
             codeBN = p.codeBN,
-            dateP = p.dateP,
             stepMeeting = p.stepMeeting
 
         };
