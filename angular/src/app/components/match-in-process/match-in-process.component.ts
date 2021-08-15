@@ -13,7 +13,7 @@ export class MatchInProcessComponent implements OnInit {
   view: boolean = true;
   usernow: string;
   display = "none";
- ProposalInProceslist:MatchPosibility []=[];
+ ProposalInProceslist:ProposalInProcess []=[];
   mORs: boolean=false;
   constructor(public ser:ServicMatchInProcessService , public router: Router) { }
 

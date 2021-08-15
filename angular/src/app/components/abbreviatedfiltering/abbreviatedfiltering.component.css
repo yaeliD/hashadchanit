@@ -62,4 +62,12 @@ section {
     justify-content: center;
     width: 120px;
   }
-  
+  .btn-link {
+    font-weight: 400;
+    color: #a72828;
+    text-decoration: none;
+}
+.btn-link:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}

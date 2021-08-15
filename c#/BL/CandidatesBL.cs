@@ -29,14 +29,14 @@ namespace BL
 
         public static FullCandidateDto GetAlcandidets(int id)
         {
-            List<Candidates> candidetListDal = Dal.CandidatesDal.GetAlcandidets();
+            List<Candidates> candidetListDal = Dal.CandidatesDal.GetAlAvailablecandidets();
 
            FullCandidateDto candidetDTOs =new FullCandidateDto(candidetListDal.FirstOrDefault(c=>c.codeCandidates==id));
             return candidetDTOs;
         }
         public static List<candidatesDto> Filteriing(SearchDto s)
         {
-            List<Candidates> candidates = Dal.CandidatesDal.GetAlcandidets();
+            List<Candidates> candidates = Dal.CandidatesDal.GetAlAvailablecandidets();
             List<candidatesDto> matchingCandidates = new List<candidatesDto>();
 
             foreach (var item in candidates)
@@ -45,7 +45,7 @@ namespace BL
                     && (string.IsNullOrEmpty(s.LastName) || item.LNameCandidates.Contains(s.LastName))
                     && (string.IsNullOrEmpty(s.phone) || item.phone.Contains(s.phone))
                     && (s.MinAge == null || s.MinAge > item.dateOFbirth)
-                    && (s.MaxAge == null || s.MaxAge > item.dateOFbirth)
+                    && (s.MaxAge == null || s.MaxAge < item.dateOFbirth)
                     && (s.statusid==null ||s.statusid==item.status)
                     && (s.IdEda == null || s.IdEda == item.AdaFather || s.IdEda == item.AdaMother)
                     && (s.wigORhandkerchief == null || s.wigORhandkerchief == item.wigORhandkerchief)

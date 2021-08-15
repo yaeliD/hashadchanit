@@ -15,16 +15,18 @@
             <mat-label>שם משפחה </mat-label>
             <input matInput name="LNameCandidates"  [(ngModel)]="c.LNameCandidates">
           </mat-form-field></td><br>
+          <div class="born">
           <mat-form-field appearance="fill" class="e" >
             <mat-label>תאריך לידה</mat-label>
             <input matInput [matDatepicker]="picker" name="dateOFbirth"  [(ngModel)]="c.dateOFbirth">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+          </mat-form-field><br></div>
           <!-- <td><mat-form-field class="example-full-width" class="e" appearance="fill">
             <mat-label>תאריך לידה </mat-label>
             <input matInput name="dateOFbirth"  [(ngModel)]="c.dateOFbirth" >
           </mat-form-field></td><br> -->
+          <div class="status">
           <mat-form-field appearance="fill" class="e" >
             <mat-label>סטטוס</mat-label>
             <mat-select name="status" [(ngModel)]="c.status">
@@ -32,15 +34,15 @@
                 {{s.statusName}}
               </mat-option>
             </mat-select>
-          </mat-form-field><br>
+          </mat-form-field><br></div>
           <td><mat-form-field class="example-full-width" class="e" appearance="fill">
             <mat-label>גובה </mat-label>
             <input matInput name="heightCandidates"  [(ngModel)]="c.heightCandidates">
           </mat-form-field></td><br>
-        <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+        <!-- <td><mat-form-field class="example-full-width" class="e" appearance="fill">
           <mat-label>תמונה </mat-label>
           <input matInput name="photoLink1"  [(ngModel)]="c.photoLink">
-        </mat-form-field></td><br>
+       </mat-form-field></td><br> -->
         <!-- <mat-form-field>
           <ngx-mat-file-input [formControl]="fileControl" [multiple]="multiple"
           [(ngModel)]="c.photoLink" name="photoLink" [accept]="accept" [color]="color">
@@ -68,14 +70,14 @@
                   🤵
                 </label>
                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="זכר"
-                  (click)="man=true;woman=false">
+                  (click)="man=true;min =true;woman=false">
               </div>
               <div class="form-check">
                 <label class="form-check-label" for="gridRadios2">
                   👰
                 </label>
                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="נקבה"
-                  (click)="woman=true;man=false;">
+                  (click)="woman=true;man=false;min =false;">
               </div>
             </div>
           </div>
@@ -86,6 +88,7 @@
         </div>
         <app-register-man *ngIf="man" (saveMan)="saveMan($event)"></app-register-man>
         <app-register-woman *ngIf="woman" (savewomen)="saveWoman($event)"></app-register-woman>
+
         <button mat-raised-button disabled [disabled]="!form.valid" (click)="return()">חזור</button>
         <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="next()">הבא</button>
 
@@ -114,7 +117,7 @@
           <mat-label> סטטוס משפחה</mat-label>
           <input matInput name="familyStatus"  [(ngModel)]="c.familyStatus">
         </mat-form-field></td><br>
-        <div *ngIf="showEda">
+        <div *ngIf="showEda" class="status">
           <mat-form-field appearance="fill" class="e" >
             <mat-label>עדה אב</mat-label>
             <mat-select name="AdaFather" [(ngModel)]="c.AdaFather">
@@ -144,7 +147,7 @@
 
       </div>
       <div *ngIf="step==5" class="y">
-        <app-mosdot-to-candidate (sendMosdotToCandidate)="savemosdot($event)"></app-mosdot-to-candidate>
+        <app-mosdot-to-candidate (sendMosdotToCandidate)="savemosdot($event)" [min]="min"></app-mosdot-to-candidate>
         <button mat-raised-button disabled [disabled]="!form.valid" (click)="return()">חזור</button>
 
       </div>

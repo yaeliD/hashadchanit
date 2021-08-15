@@ -55,7 +55,7 @@ namespace Dal
         {
             using (The_MatchmakerEntities db = new The_MatchmakerEntities())
             {
-               return GetAlcandidets()
+               return GetAlAvailablecandidets()
                     .FirstOrDefault(c=>c.codeCandidates==id);
                
             }
@@ -71,7 +71,7 @@ namespace Dal
         //    }
         //}
 
-        public static List<Candidates> GetAlcandidets()
+        public static List<Candidates> GetAlAvailablecandidets()
         {
             try
             {
@@ -98,7 +98,7 @@ namespace Dal
                           .Include("CandidateStatuses.Status")
                           .Include(c => c.ProposalInProcess)
                           .Include(c => c.ProposalInProcess1)
-                          .Select(c => c).ToList();
+                          .Where(c => c.inprocess!=false).ToList();
                 }
             }
             catch (Exception e)

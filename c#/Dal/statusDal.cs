@@ -8,7 +8,7 @@ namespace Dal
 {
     public class statusDal
     {
-        public static List<Status> GetAllEda()
+        public static List<Status> GetAllstatus()
         {
             try
             {

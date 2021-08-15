@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="BlClass1.cs" />
     <Compile Include="CandidatesBL.cs" />
+    <Compile Include="StepsOfProposaBl.cs" />
     <Compile Include="communityBl.cs" />
     <Compile Include="listofmosdotBL.cs" />
     <Compile Include="MatchingBL.cs" />

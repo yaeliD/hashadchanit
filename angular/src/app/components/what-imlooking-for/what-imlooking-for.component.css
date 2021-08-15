@@ -22,9 +22,15 @@ div.re{
     text-align:right;
 }
 .e{
-    text-align:right;
-    direction: rtl;
- }
+  text-align:right;
+  direction: initial;
+ 
+}
+.m{
+  text-align:right;
+  direction: rtl;
+  margin-left: 300px;
+}
 h1{
     text-align: center;
     color: rgb(240, 83, 83);

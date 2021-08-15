@@ -141,6 +141,8 @@
     <Compile Include="Controllers\ProposalInProcessController.cs" />
     <Compile Include="Controllers\ShadchanitController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\StepsOfProposalController.cs" />
+    <Compile Include="Controllers\typsofstepsController.cs" />
     <Compile Include="Controllers\WhatLookingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +169,8 @@
     <Folder Include="Views\matchaes\" />
     <Folder Include="Views\matches\" />
     <Folder Include="Views\ProposalInProcess\" />
+    <Folder Include="Views\StepsOfProposal\" />
+    <Folder Include="Views\typsofsteps\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BL\BL.csproj">

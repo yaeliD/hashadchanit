@@ -1,5 +1,5 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServicMatchInProcessService } from 'app/services/servic-match-in-process.service';
 import { ServicMatchesService } from 'app/services/servic-matches.service';
@@ -16,13 +16,15 @@ import { ProposalInProcess } from 'class/ProposalInProcess';
 export class CandidatedetmatchesComponent implements OnInit {
   link;
   @Input() m?:MatchPosibility=new MatchPosibility();
+  @Input() isMan:boolean;
+  @Input() identity?:number;
   Man:FullCandidate=new FullCandidate();
   arrcandidate: Candidates[] = [];
   show: boolean=false;
   entermamad=false;
   mORs:boolean;
   hide:boolean=false;
-  codcan :Candidates;
+  codcan :number=0;
   man:boolean=false;
   woman:boolean=false;
   ProposalInProces:ProposalInProcess=new ProposalInProcess();
@@ -30,6 +32,12 @@ export class CandidatedetmatchesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  public ngOnChanges(changes: SimpleChanges) {
+    console.log("isMan: "+this.isMan)
+
+}       
+
   entermamad1()
   {
     if(this.entermamad==false)
@@ -44,7 +52,7 @@ export class CandidatedetmatchesComponent implements OnInit {
     this.ProposalInProces.stepMeeting=1;
     this.ser1.matchesinprocess(this.ProposalInProces).subscribe(suc =>{console.log(suc);
       this.router.navigate(["ProposalInProcess"]);})
-    
+      this.delale();
    // פה אני שולחת את הקודים של הזוג ושומרת הבדטה בהצעות בתהליך 
    // שולחת לדף הצעות 
      // matchesinprocess(ca){ 
@@ -53,6 +61,7 @@ export class CandidatedetmatchesComponent implements OnInit {
   //     this.delale();
   // }
   }
+
   n()
   {
     this.man=true;
@@ -63,11 +72,16 @@ this.woman=true;
   }
   ditails(id)
   {
+    if(id==this.codcan)
+     this.codcan=0;
+     else
    this.codcan=id;
   }
 
   delale()
   {this.hide=true;
+    
+
   }
 
 }

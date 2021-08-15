@@ -22,6 +22,7 @@ namespace Dto
             Man = new ManCandidateDto(man);
             Woman = new WomanCandidateDto(woman);
         }
+    
     }
 
 }

@@ -31,15 +31,16 @@ namespace Dto
         public string StatusName { get; set; }
         public string familyStatus { get; set; }
         public string phone { get; set; }
-
-
+        
+        public Nullable<bool> inprocess { get; set; }
 
         public List<SiblingDto> Siblings { get; set; }
         public List<ContactDto> Contacts { get; set; }
 
         public List<MosdotToCandidateDto> Mosdot { get; set; }
 
-      
+
+
 
         public candidatesDto(Candidates c)
         {
@@ -61,7 +62,8 @@ namespace Dto
             phone = c.phone;
             AdaNameFather = c.community.nameC;
             AdaNameMother = c.community1.nameC;
-          //  StatusName = c.status.statusName;
+            //  StatusName = c.status.statusName;
+            inprocess = c.inprocess;
             if (c.Contacts != null && c.Contacts.Count() > 0)
                 Contacts = c.Contacts.Select(c1 => new ContactDto(c1)).ToList();
             if (c.Siblings != null && c.Siblings.Count() > 0)
@@ -97,7 +99,7 @@ namespace Dto
                 occupationMother = c.occupationMother,
                 phone=c.phone,
                 familyStatus = c.familyStatus,
-
+                inprocess=c.inprocess,
                 Contacts = c.Contacts.Select(c1 => ContactDto.Todal(c1)).ToList(),
                 Siblings = c.Siblings.Select(s1 => SiblingDto.Todal(s1)).ToList(),
                 MosdotToCandidate = c.Mosdot.Select(m => new MosdotToCandidate { codeMosad = m.codeMosad, yearOfFinish = m.yearOfFinish }).ToList()
@@ -126,6 +128,7 @@ namespace Dto
                 occupationMother = c.occupationMother,
                 phone = c.phone,
                 familyStatus = c.familyStatus,
+                inprocess=c.inprocess,
                 Contacts = c.Contacts.Select(c1 => new ContactDto(c1)).ToList(),
                 Siblings = c.Siblings.Select(s1 => new SiblingDto(s1)).ToList(),
                 Mosdot = c.MosdotToCandidate.Select(m => new MosdotToCandidateDto(m)).ToList()

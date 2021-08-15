@@ -18,7 +18,7 @@ namespace shadchanut.Controllers
 
         public IHttpActionResult GetStatusList()
         {
-            List<StatusDto> statusList = BL.statusBL.GetAllEda();
+            List<StatusDto> statusList = BL.statusBL.GetAllstatus();
             if (statusList.Count() > 0)
                 return Ok(statusList);
             return BadRequest();
@@ -29,7 +29,7 @@ namespace shadchanut.Controllers
 
         public IHttpActionResult Post(StatusDto s)
         {
-            List<StatusDto> statusList = BL.statusBL.GetAllEda();
+            List<StatusDto> statusList = BL.statusBL.GetAllstatus();
             if (statusList.Count() > 0)
                 return Ok(true);
             return BadRequest();

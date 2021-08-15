@@ -7,7 +7,7 @@ export class Candidates{
         public dateOFbirth?:Date,public heightCandidates?:number,public photoLink?:string,public address?:string,
         public nameFather?:string,public nameMother?:string,public AdaFather?:number,public AdaMother?:number,
         public occupationFather?:string,public occupationMother?:string,  public familyStatus?:string,public AdaNameFather?:string,
-        public AdaNameMother?:string, public phone?:string, public  StatusName?:string,public Siblings?:Sibling[],public Contacts?:Contact[],public Mosdot?:MosdotToCandidate[]
+        public AdaNameMother?:string, public phone?:string,public inprocess?:boolean, public  StatusName?:string,public Siblings?:Sibling[],public Contacts?:Contact[],public Mosdot?:MosdotToCandidate[]
        ){
          
           this.codeCandidates=0;

@@ -3,15 +3,25 @@
     <div *ngFor="let s of mc ;let i=index">
       <div *ngIf="showEda">
         <h3>פרטי מוסדות הלימוד </h3>
-        <mat-form-field appearance="fill" class="e" >
+        <div >
+        <mat-form-field appearance="fill" class="born"  >
           <mat-label>שם מוסד</mat-label>
           <mat-select [name]=" i+1"  [(ngModel)]="mc[i].codeMosad">
             <mat-option  *ngFor="let ml of mosdList" [value]="ml.codeM">
               {{ml.nameM}}
             </mat-option>
           </mat-select>
-        </mat-form-field><br>
-        <mat-form-field appearance="fill" class="e" >
+        </mat-form-field><br></div>
+        <!-- <div >*ngIf="!min"*ngIf="min"
+          <mat-form-field appearance="fill" class="e" >
+            <mat-label>שם מוסד</mat-label>
+            <mat-select [name]=" i+1"  [(ngModel)]="mc[i].codeMosad">
+              <mat-option  *ngFor="let ml of mosdListwomen" [value]="ml.codeM">
+                {{ml.nameM}}
+              </mat-option>
+            </mat-select> 
+          </mat-form-field><br></div>-->
+        <mat-form-field appearance="fill" class="status" >
           <mat-label>תאריך סיום</mat-label>
           <input matInput [matDatepicker]="picker"  [name]="i+1"  [(ngModel)]="mc[i].yearOfFinish">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

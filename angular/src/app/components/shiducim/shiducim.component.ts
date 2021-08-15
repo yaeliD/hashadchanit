@@ -47,7 +47,7 @@ export class ShiducimComponent implements OnInit {
   view: boolean=true;
   flag:boolean;
   mORs: boolean;
-  mORw:boolean=false;
+  mORw:number=0;
   item:number=0;
   ln:boolean=false;
   fn:boolean=false;
@@ -59,6 +59,8 @@ export class ShiducimComponent implements OnInit {
   mo:boolean=false;
   enow:boolean=false;
   after:boolean=false;
+  minAge:number;
+  maxAge:number;
   constructor(public ser: ServicMatchesService, public router: Router) { }
 
   ngOnInit(){
@@ -132,16 +134,21 @@ getoccupationlist() { this.ser.getoccupationlist().subscribe(suc => { this.occup
 findmosdot() { this.ser.findmosdot().subscribe(suc => { this.mosdList = suc; console.log(suc); this.showEda = true; }); }// פו המציגה את רשימת מוסדות
   onclick()
 {
+  this.c.MinAge=new Date();
+  this.c.MinAge.setFullYear(this.c.MinAge.getFullYear() - this.minAge);
+
+  this.c.MaxAge=new Date();
+  this.c.MaxAge.setFullYear(this.c.MaxAge.getFullYear() - this.maxAge);
 this.ser.filtering(this.c).subscribe(suc => {this.serchlist=suc; console.log(this.serchlist)},err=>{this.serchlist=null; alert("אין תוצאות");
 console.log(err)});
 this.mORs=false;
- this. onclickB2();
+//  this. onclickB2();
 }
 onclickB2(){
   this.c.FirstName=null;
   this.c.LastName=null;
-  this.c.MaxAge=null;
-  this.c.MinAge=null;
+  this.maxAge=null;
+  this.minAge=null;
   this.c.IdEda=null;
   this.c.currentOccupation=null;
   this.c.mosdid=null;
@@ -154,8 +161,8 @@ onclickB2(){
 {
   this.c.FirstName=null;
   this.c.LastName=null;
-  this.c.MaxAge=null;
-  this.c.MinAge=null;
+  this.maxAge=null;
+  this.minAge=null;
   this.c.IdEda=null;
   this.c.currentOccupation=null;
   this.c.mosdid=null;
@@ -167,7 +174,7 @@ onclickB2(){
 findmaches(){
 
   this.ser.findmaches(this.cc).subscribe(suc => {this.thiscandideta=suc; console.log(this.thiscandideta)
-  this.mORw=true;
+  this.mORw++;
   //למעלה הגדרה של מערך מסוג התאמותbool:MatchPosibility[]=[];  matches:
   //ץיש את הבחור
   //לולאה על הבחורות ומכניסה לכל בחורה גם את הבחור
@@ -190,6 +197,11 @@ findmaches(){
 }
 FindCandidatebyfilterparm(){
   this.ser.FindCandidatebyfilterparm(this.cc).subscribe(suc => {this.findcandideta=suc;
+    this.cc.IsMan=this.findcandideta.IsMan;
+    this.findmaches();
+
+    this.mORw++;
+    console.log(this.cc)
      console.log(this.thiscandideta)},err=>{console.log("err")});
 }
 

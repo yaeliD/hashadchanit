@@ -18,7 +18,7 @@ namespace Dal
         public int ComunityId { get; set; }
         public bool Interested { get; set; }
     
-        public virtual Candidates Candidates { get; set; }
         public virtual community community { get; set; }
+        public virtual Candidates Candidates { get; set; }
     }
 }

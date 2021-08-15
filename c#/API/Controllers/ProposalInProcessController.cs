@@ -8,7 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Dto;
 
-namespace API.Controllers
+namespace shadchanut.Controllers
 {
     [EnableCors(methods: "*", headers: "*", origins: "*")]
     [RoutePrefix("api/ProposalInProcess")]
@@ -27,8 +27,8 @@ namespace API.Controllers
         [HttpGet] 
         [Route("ProposalInProceslist")]
         public IHttpActionResult getProposalInProceslist()
-        {//MatchPosibility
-            List<ProposalInProcessDto>  ProposalInProceslist = BL.ProposalInProcessBL.getProposalInProceslist();
+        {
+            List<ProposalInProcessDto> ProposalInProceslist = BL.ProposalInProcessBL.getProposalInProceslist();
             if (ProposalInProceslist.Count() > 0)
                 return Ok(ProposalInProceslist);
             return BadRequest();

@@ -4,65 +4,42 @@
     <h1>מה אני מחפש</h1>
           <form #form="ngForm">
              <div class="m">
+
             <div class="my"  class="card-header" >
-  
-            <div class="form-group row">  
-              <div class="col-sm-10">
-                <label for="inputEmail3"  > גיל מינימלי</label>
-                <input name="AgeRange" type="date" class="form-control" id="inputEmail3" 
-                [(ngModel)]="wIl.MaxAge"   >
-              </div>
-            </div>
-            <div class="form-group row">  
-                <div class="col-sm-10">
-                  <label for="inputEmail3"  > גיל מקסימלי</label>
-                  <input name="MinAge" type="date"  class="form-control" id="inputEmail3" 
-                  [(ngModel)]="wIl.MinAge" >
-                </div>
-              </div>
-              <!-- <div class="form-group row">  
-                <div class="col-sm-10">
-                  <label for="inputEmail3"  > תווח הגובה שתרצה</label>
-                  <input name="MaxHeight" type="range"  min="1.50" max="2.50" class="form-control" id="inputEmail3" 
-                  [(ngModel)]="wIl.MaxHeight"   >
-                </div>
-              </div>
-              <div class="form-group row">  
-                  <div class="col-sm-10">
-                    <label for="inputEmail3"  > </label>
-                    <input name="MinHeight" type="range"   min="1.50" max="2.50" class="form-control" id="inputEmail3" 
-                    [(ngModel)]="wIl.MinHeight" >
-                  </div>
-                </div> -->
-                <div class="form-group row">
-                  <div class="col-sm-10">
-                    <label for="inputEmail3"  > גובה מקסימלי:</label>
-                    <input name="MaxHeight" type="text" class="form-control" id="inputEmail3" placeholder="  הקש גובהm"
-                    [(ngModel)]="wIl.MaxHeight">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-10">
-                    <label for="inputEmail3"  >גובה מינימלי:</label>
-                    <input name="MinHeight" type="text" class="form-control" id="inputEmail3" placeholder="nהקש גובה"
-                    [(ngModel)]="wIl.MinHeight">
-                  </div>
-                </div>
-                 <div class="form-group row">
-              <div class="col-sm-10">
-                <label for="inputEmail3"  >הערות נוספות :</label>
-                <input name="description" type="text" class="form-control" id="inputEmail3" placeholder="כתוב הערות"
-                 [(ngModel)]="wIl.description">
-              </div>
-            </div>  
+              <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+                <mat-label>גיל מקסימלי</mat-label>
+                <input matInput name="AgeRange"  type="number" [(ngModel)]="maxAge">
+              </mat-form-field></td><br>
+
+              <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+                <mat-label>גיל מינימלי</mat-label>
+                <input matInput name="minAge"  type="number" [(ngModel)]="minAge">
+              </mat-form-field></td><br>
+       
+                <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+                  <mat-label>גובה מקסימלי</mat-label>
+                  <input matInput name="MaxHeight"  type="number" [(ngModel)]="wIl.MaxHeight">
+                </mat-form-field></td><br>
+
+                <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+                  <mat-label>גובה מינימלי</mat-label>
+                  <input matInput name="MinHeight"  type="number" [(ngModel)]="wIl.MinHeight">
+                </mat-form-field></td><br>
+
+              
+                <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+                  <mat-label>הערות נוספות</mat-label>
+                  <input matInput name="description"  [(ngModel)]="wIl.description">
+                </mat-form-field></td><br>
+            
             <div  *ngIf="showEda">
-            <mat-form-field appearance="fill">
-              <mat-label>Toppings</mat-label>
+            <mat-form-field appearance="fill" class="m">
+              <mat-label>עדה</mat-label>
               <mat-select  multiple>
                 <mat-option *ngFor="let item of Comunitieslist; let i=index"
                 [id]="'eda'+i" (click)="selectComunity(Comunitieslist[i].codeC)">{{item.nameC}}</mat-option>
               </mat-select>
-            </mat-form-field>
+            </mat-form-field><br>
 <!--         
             <div class="form-group row">
               <div class="col-sm-10">
@@ -73,13 +50,13 @@
                 </div>
               </div>
             </div>   -->
-            <mat-form-field appearance="fill">
-              <mat-label>Toppings</mat-label>
+            <mat-form-field appearance="fill" class="m">
+              <mat-label>סטטוס</mat-label>
               <mat-select  multiple>
                 <mat-option *ngFor="let s of statusList ; let i=index"
                 [id]="'sta'+i" (click)="selectstayus(statusList[i].statusCode)">{{s.statusName}}</mat-option>
               </mat-select>
-            </mat-form-field>
+            </mat-form-field><br>
             <!-- <div class="form-group row">
               <div class="col-sm-10">
                 <label for="inputEmail3"  >סטטוס:</label>
@@ -92,6 +69,7 @@
             </div>   -->
           </div>
             <app-what-imlooking-for-man *ngIf="isMan" (savemen)="savemen($event)" ></app-what-imlooking-for-man>
+
             <app-what-imlooking-forwomen *ngIf="!isMan" (savewoman)="savewoman($event)"></app-what-imlooking-forwomen> 
          
             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="addCandidates()">שמור את הפרטים  </button> 

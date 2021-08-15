@@ -23,6 +23,7 @@
     <Property Name="phone" Type="nvarchar" MaxLength="12" />
     <Property Name="wigORhandkerchief" Type="bit" />
     <Property Name="occupationAfter" Type="int" />
+    <Property Name="inprocess" Type="bit" />
   </EntityType>
   <EntityType Name="CandidateStatuses">
     <Key>

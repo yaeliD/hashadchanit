@@ -29,6 +29,9 @@ import { CandidatedetmatchesComponent } from './components/candidatedetmatches/c
 import { ShiducimComponent } from './components/shiducim/shiducim.component';
 import { MaterialModule } from './material/material.module';
 import { AbbreviatedfilteringComponent } from './components/abbreviatedfiltering/abbreviatedfiltering.component';
+import { StepsOfProposalComponent } from './components/steps-of-proposal/steps-of-proposal.component';
+import { MatchinprocesssortComponent } from './components/matchinprocesssort/matchinprocesssort.component';
+import { MatchDetailsComponent } from './components/match-details/match-details.component';
 
 
 
@@ -53,7 +56,10 @@ import { AbbreviatedfilteringComponent } from './components/abbreviatedfiltering
    CandidatedetailsComponent,
    CandidatedetmatchesComponent,
    ShiducimComponent,
-   AbbreviatedfilteringComponent
+   AbbreviatedfilteringComponent,
+   StepsOfProposalComponent,
+   MatchinprocesssortComponent,
+   MatchDetailsComponent
   ],
   imports: [
     

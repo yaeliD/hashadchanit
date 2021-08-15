@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServicMatchesService } from 'app/services/servic-matches.service';
 import { Candidates } from 'class/Candidates';
@@ -18,14 +18,17 @@ export class CandidatedetailsComponent implements OnInit {
   constructor(public ser: ServicMatchesService , public router: Router, public active: ActivatedRoute,  public route:ActivatedRoute) { }
 
   ngOnInit():void {
-    //this.ser.getallcandidet().subscribe(suc => { this.arrcandidtes = suc; console.log(suc);});
+this.getCandidateDetailes(); 
+    
 
-    // this.route.params.subscribe(
-    //   p=>
-    //   {
-    //   this.c.Candidate.codeCandidates=p.idc
+  }
 
-    //   })
+  ngOnChanges(changes: SimpleChanges) {
+    this.getCandidateDetailes();
+  }
+
+  getCandidateDetailes()
+  {
     this.ser.getallcandidet(this.cm).subscribe(suc => { this.c = suc;
       if(this.c.wigORhandkerchief==true)
 this.coui="פאה";
@@ -33,7 +36,6 @@ if(this.c.wigORhandkerchief==false)
 this.coui="מטפחת";
 if(this.c.wigORhandkerchief==null)
 this.coui="לא משנה"; console.log(this.c);});
-
 
 
   }

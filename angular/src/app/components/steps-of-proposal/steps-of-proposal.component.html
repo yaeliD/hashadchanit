@@ -1,0 +1,48 @@
+<form #form="ngForm">
+      <div *ngIf="showEda">
+        <mat-form-field appearance="fill" class="e" >
+          <mat-label>מס פגישה</mat-label>
+          <mat-select name="nameStep "  [(ngModel)]="m.codeStep">
+            <mat-option  *ngFor="let ml of TypesOfStepsList; let i=index"  [value]="ml.codeTypeStep">
+              {{ml.nameStep}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill" class="e" >
+            <mat-label> תאריך פגישה </mat-label>
+            <input matInput [matDatepicker]="picker"  name="dateStep"  [(ngModel)]="m.dateStep">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <!-- public results?:boolean) -->
+        <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+            <mat-label> תאור </mat-label>
+            <input matInput name="comments" [(ngModel)]="m.comments">
+          </mat-form-field></td><br>  
+      </div>      
+
+  
+    <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="finish()">שמור</button>
+
+    
+    </form>
+           
+    <!-- <ol>
+      <li>
+        <mat-form-field appearance="fill">
+          <mat-label>What's your name?</mat-label>
+          <input matInput [(ngModel)]="name">
+        </mat-form-field>
+      </li>
+      <li>
+        <button mat-raised-button (click)="openDialog()">Pick one</button>
+      </li>
+      <li *ngIf="animal">
+        You chose: <i>{{animal}}</i>
+      </li>
+    </ol>
+      -->
+
+
+
+<!-- public codeMC ?: number,public codeCandidate?:Candidates,public yearOfFinish ?:Date  -->

@@ -17,4 +17,6 @@ body,h1,a,h2, img,h3,p,h4,form{ margin: 0;  font-family: myFont; }
     background-attachment:fixed;
     background-size: cover;
     }
-    
+    .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+      background-color: #b53f3f;
+  }

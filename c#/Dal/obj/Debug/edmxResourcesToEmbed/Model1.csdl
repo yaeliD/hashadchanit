@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="The_MatchmakerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="The_MatchmakerEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Candidates" EntityType="The_MatchmakerModel.Candidates" />
     <EntitySet Name="CandidateStatuses" EntityType="The_MatchmakerModel.CandidateStatuses" />
     <EntitySet Name="CandidateWantedComunities" EntityType="The_MatchmakerModel.CandidateWantedComunities" />
     <EntitySet Name="community" EntityType="The_MatchmakerModel.community" />
@@ -16,6 +15,29 @@
     <EntitySet Name="TypesOfSteps" EntityType="The_MatchmakerModel.TypesOfSteps" />
     <EntitySet Name="WhatImLookingFor" EntityType="The_MatchmakerModel.WhatImLookingFor" />
     <EntitySet Name="WomenCandidate" EntityType="The_MatchmakerModel.WomenCandidate" />
+    <AssociationSet Name="FK_CandidateStatuses_Status" Association="The_MatchmakerModel.FK_CandidateStatuses_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="CandidateStatuses" EntitySet="CandidateStatuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CandidateWantedComunities_community" Association="The_MatchmakerModel.FK_CandidateWantedComunities_community">
+      <End Role="community" EntitySet="community" />
+      <End Role="CandidateWantedComunities" EntitySet="CandidateWantedComunities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MosdotToCandidate_ListOfMosdot" Association="The_MatchmakerModel.FK_MosdotToCandidate_ListOfMosdot">
+      <End Role="ListOfMosdot" EntitySet="ListOfMosdot" />
+      <End Role="MosdotToCandidate" EntitySet="MosdotToCandidate" />
+    </AssociationSet>
+    <EntitySet Name="StepsOfProposal" EntityType="The_MatchmakerModel.StepsOfProposal" />
+    <AssociationSet Name="FK_StepsOfProposal_TypesOfSteps" Association="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps">
+      <End Role="TypesOfSteps" EntitySet="TypesOfSteps" />
+      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
+    </AssociationSet>
+    <EntitySet Name="ProposalInProcess" EntityType="The_MatchmakerModel.ProposalInProcess" />
+    <AssociationSet Name="FK_StepsOfProposal_ProposalInProcess" Association="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess">
+      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
+      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
+    </AssociationSet>
+    <EntitySet Name="Candidates" EntityType="The_MatchmakerModel.Candidates" />
     <AssociationSet Name="FK__ManCandid__codeC__0697FACD" Association="The_MatchmakerModel.FK__ManCandid__codeC__0697FACD">
       <End Role="Candidates" EntitySet="Candidates" />
       <End Role="ManCandidate" EntitySet="ManCandidate" />
@@ -23,6 +45,14 @@
     <AssociationSet Name="FK__MosdotToC__codeC__3A81B327" Association="The_MatchmakerModel.FK__MosdotToC__codeC__3A81B327">
       <End Role="Candidates" EntitySet="Candidates" />
       <End Role="MosdotToCandidate" EntitySet="MosdotToCandidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProposalI__codeB__3D5E1FD2" Association="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2">
+      <End Role="Candidates" EntitySet="Candidates" />
+      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProposalI__codeB__3E52440B" Association="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B">
+      <End Role="Candidates" EntitySet="Candidates" />
+      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
     </AssociationSet>
     <AssociationSet Name="FK__WhatImLoo__CodeC__0880433F" Association="The_MatchmakerModel.FK__WhatImLoo__CodeC__0880433F">
       <End Role="Candidates" EntitySet="Candidates" />
@@ -68,76 +98,7 @@
       <End Role="Candidates" EntitySet="Candidates" />
       <End Role="Siblings" EntitySet="Siblings" />
     </AssociationSet>
-    <AssociationSet Name="FK_CandidateStatuses_Status" Association="The_MatchmakerModel.FK_CandidateStatuses_Status">
-      <End Role="Status" EntitySet="Status" />
-      <End Role="CandidateStatuses" EntitySet="CandidateStatuses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CandidateWantedComunities_community" Association="The_MatchmakerModel.FK_CandidateWantedComunities_community">
-      <End Role="community" EntitySet="community" />
-      <End Role="CandidateWantedComunities" EntitySet="CandidateWantedComunities" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MosdotToCandidate_ListOfMosdot" Association="The_MatchmakerModel.FK_MosdotToCandidate_ListOfMosdot">
-      <End Role="ListOfMosdot" EntitySet="ListOfMosdot" />
-      <End Role="MosdotToCandidate" EntitySet="MosdotToCandidate" />
-    </AssociationSet>
-    <EntitySet Name="StepsOfProposal" EntityType="The_MatchmakerModel.StepsOfProposal" />
-    <AssociationSet Name="FK_StepsOfProposal_TypesOfSteps" Association="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps">
-      <End Role="TypesOfSteps" EntitySet="TypesOfSteps" />
-      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
-    </AssociationSet>
-    <EntitySet Name="ProposalInProcess" EntityType="The_MatchmakerModel.ProposalInProcess" />
-    <AssociationSet Name="FK__ProposalI__codeB__3D5E1FD2" Association="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2">
-      <End Role="Candidates" EntitySet="Candidates" />
-      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ProposalI__codeB__3E52440B" Association="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B">
-      <End Role="Candidates" EntitySet="Candidates" />
-      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StepsOfProposal_ProposalInProcess" Association="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess">
-      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
-      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Candidates">
-    <Key>
-      <PropertyRef Name="codeCandidates" />
-    </Key>
-    <Property Name="codeCandidates" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FNameCandidates" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="LNameCandidates" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="dateOFbirth" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="heightCandidates" Type="Double" Nullable="false" />
-    <Property Name="photoLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="currentOccupation" Type="Int32" />
-    <Property Name="address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-    <Property Name="nameFather" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="nameMother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="AdaFather" Type="Int32" Nullable="false" />
-    <Property Name="AdaMother" Type="Int32" Nullable="false" />
-    <Property Name="occupationFather" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="occupationMother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="Int32" />
-    <Property Name="familyStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
-    <Property Name="wigORhandkerchief" Type="Boolean" />
-    <Property Name="occupationAfter" Type="Int32" />
-    <NavigationProperty Name="ManCandidate" Relationship="The_MatchmakerModel.FK__ManCandid__codeC__0697FACD" FromRole="Candidates" ToRole="ManCandidate" />
-    <NavigationProperty Name="MosdotToCandidate" Relationship="The_MatchmakerModel.FK__MosdotToC__codeC__3A81B327" FromRole="Candidates" ToRole="MosdotToCandidate" />
-    <NavigationProperty Name="WhatImLookingFor" Relationship="The_MatchmakerModel.FK__WhatImLoo__CodeC__0880433F" FromRole="Candidates" ToRole="WhatImLookingFor" />
-    <NavigationProperty Name="WomenCandidate" Relationship="The_MatchmakerModel.FK__WomenCand__codeC__078C1F06" FromRole="Candidates" ToRole="WomenCandidate" />
-    <NavigationProperty Name="community" Relationship="The_MatchmakerModel.FK_Candidates_community" FromRole="Candidates" ToRole="community" />
-    <NavigationProperty Name="community1" Relationship="The_MatchmakerModel.FK_Candidates_community1" FromRole="Candidates" ToRole="community" />
-    <NavigationProperty Name="OccupationTypes" Relationship="The_MatchmakerModel.FK_Candidates_OccupationTypes" FromRole="Candidates" ToRole="OccupationTypes" />
-    <NavigationProperty Name="OccupationTypes1" Relationship="The_MatchmakerModel.FK_Candidates_OccupationTypes1" FromRole="Candidates" ToRole="OccupationTypes" />
-    <NavigationProperty Name="Status1" Relationship="The_MatchmakerModel.FK_Candidates_Status" FromRole="Candidates" ToRole="Status" />
-    <NavigationProperty Name="CandidateStatuses" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Candidates" FromRole="Candidates" ToRole="CandidateStatuses" />
-    <NavigationProperty Name="CandidateWantedComunities" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_Candidates" FromRole="Candidates" ToRole="CandidateWantedComunities" />
-    <NavigationProperty Name="Contacts" Relationship="The_MatchmakerModel.FK_Contacts_Candidates" FromRole="Candidates" ToRole="Contacts" />
-    <NavigationProperty Name="Siblings" Relationship="The_MatchmakerModel.FK_Siblings_Candidates" FromRole="Candidates" ToRole="Siblings" />
-    <NavigationProperty Name="ProposalInProcess" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2" FromRole="Candidates" ToRole="ProposalInProcess" />
-    <NavigationProperty Name="ProposalInProcess1" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B" FromRole="Candidates" ToRole="ProposalInProcess" />
-  </EntityType>
   <EntityType Name="CandidateStatuses">
     <Key>
       <PropertyRef Name="CandidateId" />
@@ -146,8 +107,8 @@
     <Property Name="CandidateId" Type="Int32" Nullable="false" />
     <Property Name="StatusId" Type="Int32" Nullable="false" />
     <Property Name="Wanted" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Candidates" FromRole="CandidateStatuses" ToRole="Candidates" />
     <NavigationProperty Name="Status" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Status" FromRole="CandidateStatuses" ToRole="Status" />
+    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Candidates" FromRole="CandidateStatuses" ToRole="Candidates" />
   </EntityType>
   <EntityType Name="CandidateWantedComunities">
     <Key>
@@ -157,8 +118,8 @@
     <Property Name="CandidateId" Type="Int32" Nullable="false" />
     <Property Name="ComunityId" Type="Int32" Nullable="false" />
     <Property Name="Interested" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_Candidates" FromRole="CandidateWantedComunities" ToRole="Candidates" />
     <NavigationProperty Name="community" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_community" FromRole="CandidateWantedComunities" ToRole="community" />
+    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_Candidates" FromRole="CandidateWantedComunities" ToRole="Candidates" />
   </EntityType>
   <EntityType Name="community">
     <Key>
@@ -166,9 +127,9 @@
     </Key>
     <Property Name="codeC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nameC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CandidateWantedComunities" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_community" FromRole="community" ToRole="CandidateWantedComunities" />
     <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_Candidates_community" FromRole="community" ToRole="Candidates" />
     <NavigationProperty Name="Candidates1" Relationship="The_MatchmakerModel.FK_Candidates_community1" FromRole="community" ToRole="Candidates" />
-    <NavigationProperty Name="CandidateWantedComunities" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_community" FromRole="community" ToRole="CandidateWantedComunities" />
   </EntityType>
   <EntityType Name="Contacts">
     <Key>
@@ -205,8 +166,8 @@
     <Property Name="codeMosad" Type="Int32" />
     <Property Name="codeCandidate" Type="Int32" Nullable="false" />
     <Property Name="yearOfFinish" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK__MosdotToC__codeC__3A81B327" FromRole="MosdotToCandidate" ToRole="Candidates" />
     <NavigationProperty Name="ListOfMosdot" Relationship="The_MatchmakerModel.FK_MosdotToCandidate_ListOfMosdot" FromRole="MosdotToCandidate" ToRole="ListOfMosdot" />
+    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK__MosdotToC__codeC__3A81B327" FromRole="MosdotToCandidate" ToRole="Candidates" />
   </EntityType>
   <EntityType Name="OccupationTypes">
     <Key>
@@ -242,8 +203,8 @@
     </Key>
     <Property Name="statusCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="statusName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_Candidates_Status" FromRole="Status" ToRole="Candidates" />
     <NavigationProperty Name="CandidateStatuses" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Status" FromRole="Status" ToRole="CandidateStatuses" />
+    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_Candidates_Status" FromRole="Status" ToRole="Candidates" />
   </EntityType>
   <EntityType Name="TypesOfSteps">
     <Key>
@@ -272,6 +233,131 @@
     <Property Name="codeCandidates" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK__WomenCand__codeC__078C1F06" FromRole="WomenCandidate" ToRole="Candidates" />
   </EntityType>
+  <Association Name="FK_CandidateStatuses_Status">
+    <End Type="The_MatchmakerModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.CandidateStatuses" Role="CandidateStatuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="statusCode" />
+      </Principal>
+      <Dependent Role="CandidateStatuses">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CandidateWantedComunities_community">
+    <End Type="The_MatchmakerModel.community" Role="community" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.CandidateWantedComunities" Role="CandidateWantedComunities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="community">
+        <PropertyRef Name="codeC" />
+      </Principal>
+      <Dependent Role="CandidateWantedComunities">
+        <PropertyRef Name="ComunityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MosdotToCandidate_ListOfMosdot">
+    <End Type="The_MatchmakerModel.ListOfMosdot" Role="ListOfMosdot" Multiplicity="0..1" />
+    <End Type="The_MatchmakerModel.MosdotToCandidate" Role="MosdotToCandidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListOfMosdot">
+        <PropertyRef Name="codeM" />
+      </Principal>
+      <Dependent Role="MosdotToCandidate">
+        <PropertyRef Name="codeMosad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="StepsOfProposal">
+    <Key>
+      <PropertyRef Name="stepPcode" />
+    </Key>
+    <Property Name="ProposalInProcessCode" Type="Int32" Nullable="false" />
+    <Property Name="stepPcode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeStep" Type="Int32" Nullable="false" />
+    <Property Name="dateStep" Type="DateTime" Precision="0" />
+    <Property Name="comments" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="results" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TypesOfSteps" Relationship="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" FromRole="StepsOfProposal" ToRole="TypesOfSteps" />
+    <NavigationProperty Name="ProposalInProcess" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="StepsOfProposal" ToRole="ProposalInProcess" />
+  </EntityType>
+  <Association Name="FK_StepsOfProposal_TypesOfSteps">
+    <End Type="The_MatchmakerModel.TypesOfSteps" Role="TypesOfSteps" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesOfSteps">
+        <PropertyRef Name="codeTypeStep" />
+      </Principal>
+      <Dependent Role="StepsOfProposal">
+        <PropertyRef Name="codeStep" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProposalInProcess">
+    <Key>
+      <PropertyRef Name="codeP" />
+    </Key>
+    <Property Name="codeP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeBT" Type="Int32" Nullable="false" />
+    <Property Name="codeBN" Type="Int32" Nullable="false" />
+    <Property Name="stepMeeting" Type="Int32" />
+    <NavigationProperty Name="StepsOfProposal" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="ProposalInProcess" ToRole="StepsOfProposal" />
+    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2" FromRole="ProposalInProcess" ToRole="Candidates" />
+    <NavigationProperty Name="Candidates1" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B" FromRole="ProposalInProcess" ToRole="Candidates" />
+  </EntityType>
+  <Association Name="FK_StepsOfProposal_ProposalInProcess">
+    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProposalInProcess">
+        <PropertyRef Name="codeP" />
+      </Principal>
+      <Dependent Role="StepsOfProposal">
+        <PropertyRef Name="ProposalInProcessCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Candidates">
+    <Key>
+      <PropertyRef Name="codeCandidates" />
+    </Key>
+    <Property Name="codeCandidates" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FNameCandidates" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LNameCandidates" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateOFbirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="heightCandidates" Type="Double" Nullable="false" />
+    <Property Name="photoLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="currentOccupation" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="nameFather" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nameMother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdaFather" Type="Int32" Nullable="false" />
+    <Property Name="AdaMother" Type="Int32" Nullable="false" />
+    <Property Name="occupationFather" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="occupationMother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="familyStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="wigORhandkerchief" Type="Boolean" />
+    <Property Name="occupationAfter" Type="Int32" />
+    <Property Name="inprocess" Type="Boolean" />
+    <NavigationProperty Name="ManCandidate" Relationship="The_MatchmakerModel.FK__ManCandid__codeC__0697FACD" FromRole="Candidates" ToRole="ManCandidate" />
+    <NavigationProperty Name="MosdotToCandidate" Relationship="The_MatchmakerModel.FK__MosdotToC__codeC__3A81B327" FromRole="Candidates" ToRole="MosdotToCandidate" />
+    <NavigationProperty Name="ProposalInProcess" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2" FromRole="Candidates" ToRole="ProposalInProcess" />
+    <NavigationProperty Name="ProposalInProcess1" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B" FromRole="Candidates" ToRole="ProposalInProcess" />
+    <NavigationProperty Name="WhatImLookingFor" Relationship="The_MatchmakerModel.FK__WhatImLoo__CodeC__0880433F" FromRole="Candidates" ToRole="WhatImLookingFor" />
+    <NavigationProperty Name="WomenCandidate" Relationship="The_MatchmakerModel.FK__WomenCand__codeC__078C1F06" FromRole="Candidates" ToRole="WomenCandidate" />
+    <NavigationProperty Name="community" Relationship="The_MatchmakerModel.FK_Candidates_community" FromRole="Candidates" ToRole="community" />
+    <NavigationProperty Name="community1" Relationship="The_MatchmakerModel.FK_Candidates_community1" FromRole="Candidates" ToRole="community" />
+    <NavigationProperty Name="OccupationTypes" Relationship="The_MatchmakerModel.FK_Candidates_OccupationTypes" FromRole="Candidates" ToRole="OccupationTypes" />
+    <NavigationProperty Name="OccupationTypes1" Relationship="The_MatchmakerModel.FK_Candidates_OccupationTypes1" FromRole="Candidates" ToRole="OccupationTypes" />
+    <NavigationProperty Name="Status1" Relationship="The_MatchmakerModel.FK_Candidates_Status" FromRole="Candidates" ToRole="Status" />
+    <NavigationProperty Name="CandidateStatuses" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Candidates" FromRole="Candidates" ToRole="CandidateStatuses" />
+    <NavigationProperty Name="CandidateWantedComunities" Relationship="The_MatchmakerModel.FK_CandidateWantedComunities_Candidates" FromRole="Candidates" ToRole="CandidateWantedComunities" />
+    <NavigationProperty Name="Contacts" Relationship="The_MatchmakerModel.FK_Contacts_Candidates" FromRole="Candidates" ToRole="Contacts" />
+    <NavigationProperty Name="Siblings" Relationship="The_MatchmakerModel.FK_Siblings_Candidates" FromRole="Candidates" ToRole="Siblings" />
+  </EntityType>
   <Association Name="FK__ManCandid__codeC__0697FACD">
     <End Type="The_MatchmakerModel.Candidates" Role="Candidates" Multiplicity="1" />
     <End Type="The_MatchmakerModel.ManCandidate" Role="ManCandidate" Multiplicity="0..1" />
@@ -293,6 +379,30 @@
       </Principal>
       <Dependent Role="MosdotToCandidate">
         <PropertyRef Name="codeCandidate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProposalI__codeB__3D5E1FD2">
+    <End Type="The_MatchmakerModel.Candidates" Role="Candidates" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidates">
+        <PropertyRef Name="codeCandidates" />
+      </Principal>
+      <Dependent Role="ProposalInProcess">
+        <PropertyRef Name="codeBT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProposalI__codeB__3E52440B">
+    <End Type="The_MatchmakerModel.Candidates" Role="Candidates" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidates">
+        <PropertyRef Name="codeCandidates" />
+      </Principal>
+      <Dependent Role="ProposalInProcess">
+        <PropertyRef Name="codeBN" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -425,115 +535,6 @@
       </Principal>
       <Dependent Role="Siblings">
         <PropertyRef Name="candidateId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CandidateStatuses_Status">
-    <End Type="The_MatchmakerModel.Status" Role="Status" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.CandidateStatuses" Role="CandidateStatuses" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Status">
-        <PropertyRef Name="statusCode" />
-      </Principal>
-      <Dependent Role="CandidateStatuses">
-        <PropertyRef Name="StatusId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CandidateWantedComunities_community">
-    <End Type="The_MatchmakerModel.community" Role="community" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.CandidateWantedComunities" Role="CandidateWantedComunities" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="community">
-        <PropertyRef Name="codeC" />
-      </Principal>
-      <Dependent Role="CandidateWantedComunities">
-        <PropertyRef Name="ComunityId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MosdotToCandidate_ListOfMosdot">
-    <End Type="The_MatchmakerModel.ListOfMosdot" Role="ListOfMosdot" Multiplicity="0..1" />
-    <End Type="The_MatchmakerModel.MosdotToCandidate" Role="MosdotToCandidate" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ListOfMosdot">
-        <PropertyRef Name="codeM" />
-      </Principal>
-      <Dependent Role="MosdotToCandidate">
-        <PropertyRef Name="codeMosad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="StepsOfProposal">
-    <Key>
-      <PropertyRef Name="stepPcode" />
-    </Key>
-    <Property Name="ProposalInProcessCode" Type="Int32" Nullable="false" />
-    <Property Name="stepPcode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="codeStep" Type="Int32" Nullable="false" />
-    <Property Name="dateStep" Type="DateTime" Precision="0" />
-    <Property Name="comments" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="results" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="TypesOfSteps" Relationship="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" FromRole="StepsOfProposal" ToRole="TypesOfSteps" />
-    <NavigationProperty Name="ProposalInProcess" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="StepsOfProposal" ToRole="ProposalInProcess" />
-  </EntityType>
-  <Association Name="FK_StepsOfProposal_TypesOfSteps">
-    <End Type="The_MatchmakerModel.TypesOfSteps" Role="TypesOfSteps" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TypesOfSteps">
-        <PropertyRef Name="codeTypeStep" />
-      </Principal>
-      <Dependent Role="StepsOfProposal">
-        <PropertyRef Name="codeStep" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="ProposalInProcess">
-    <Key>
-      <PropertyRef Name="codeP" />
-    </Key>
-    <Property Name="codeP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="codeBT" Type="Int32" Nullable="false" />
-    <Property Name="codeBN" Type="Int32" Nullable="false" />
-    <Property Name="stepMeeting" Type="Int32" />
-    <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2" FromRole="ProposalInProcess" ToRole="Candidates" />
-    <NavigationProperty Name="Candidates1" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B" FromRole="ProposalInProcess" ToRole="Candidates" />
-    <NavigationProperty Name="StepsOfProposal" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="ProposalInProcess" ToRole="StepsOfProposal" />
-  </EntityType>
-  <Association Name="FK__ProposalI__codeB__3D5E1FD2">
-    <End Type="The_MatchmakerModel.Candidates" Role="Candidates" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Candidates">
-        <PropertyRef Name="codeCandidates" />
-      </Principal>
-      <Dependent Role="ProposalInProcess">
-        <PropertyRef Name="codeBT" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__ProposalI__codeB__3E52440B">
-    <End Type="The_MatchmakerModel.Candidates" Role="Candidates" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Candidates">
-        <PropertyRef Name="codeCandidates" />
-      </Principal>
-      <Dependent Role="ProposalInProcess">
-        <PropertyRef Name="codeBN" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StepsOfProposal_ProposalInProcess">
-    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProposalInProcess">
-        <PropertyRef Name="codeP" />
-      </Principal>
-      <Dependent Role="StepsOfProposal">
-        <PropertyRef Name="ProposalInProcessCode" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

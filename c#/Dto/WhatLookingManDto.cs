@@ -28,9 +28,10 @@ namespace Dto
             WhatImLookingFor wDal = WhatLookingDto.Todal(w.WhatLooking);
             wDal.Candidates.wigORhandkerchief = w.wigORhandkerchief;
 
-            wDal = WhatLookingDal.AddWhatLooking(wDal);
+            //wDal = WhatLookingDal.AddWhatLooking(wDal);
             return wDal;
 
         }
+
     }
 }

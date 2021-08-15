@@ -34,7 +34,7 @@ namespace Dal
             using (The_MatchmakerEntities db = new The_MatchmakerEntities())
             {
 
-                return CandidatesDal.GetAlcandidets();
+                return CandidatesDal.GetAlAvailablecandidets();
             }
         }
     }

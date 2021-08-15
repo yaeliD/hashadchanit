@@ -10,7 +10,10 @@ namespace Dto
     public class ProposalInProcessDto
     {
         public int codeP { get; set; }
+        public string womanFullName { get; set; }
+
         public int codeBT { get; set; }
+        public string manFullName { get; set; }
         public int codeBN { get; set; }
         public Nullable<int> stepMeeting { get; set; }
     
@@ -20,15 +23,7 @@ namespace Dto
 
         }
 
-        public ProposalInProcessDto(ProposalInProcess p)
-        {
-            codeP = p.codeP;
-            codeBT = p.codeBT;
-            codeBN = p.codeBN;
-            stepMeeting = p.stepMeeting;
-
-
-        }
+     
 
         public static ProposalInProcess Todal(ProposalInProcessDto p)
         {
@@ -49,9 +44,12 @@ namespace Dto
                 codeP = sdto.codeP,
                 codeBT = sdto.codeBT,
                 codeBN = sdto.codeBN,
-                stepMeeting = sdto.stepMeeting
-         
-            };
+                stepMeeting = sdto.stepMeeting,
+                manFullName = sdto.Candidates1.FNameCandidates + " " + sdto.Candidates1.LNameCandidates,
+              womanFullName = sdto.Candidates.FNameCandidates + " " + sdto.Candidates.LNameCandidates
+
+
+        };
         }
         public static List<ProposalInProcessDto> Todto1(List<ProposalInProcess> cc)
         {

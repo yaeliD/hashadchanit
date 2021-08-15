@@ -1,0 +1,10 @@
+<div class="detaillscandideta" *ngFor="let c of stepList">
+    <div class="wi">
+        <h5>{{c?.mynamestep}}</h5>
+        <h5>תאריך הפגישה :  {{c?.dateStep| date: 'dd/MM/yyyy'}}</h5>
+        <h5>  תיאור פגישה:  {{c?.comments}}</h5>
+        
+        <!-- <h5 *ngIf="c.results==true">השידוך ממשיך</h5> -->
+
+    </div>
+</div>

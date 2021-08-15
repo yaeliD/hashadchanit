@@ -20,3 +20,12 @@ h3{
     background-color: #e82b49;
     border-color: #fbfcfd;
 }
+.born{
+    margin-left: 250px;
+    text-align: right;
+}
+.status{
+    margin-left: 300px;
+    text-align: right;
+
+}

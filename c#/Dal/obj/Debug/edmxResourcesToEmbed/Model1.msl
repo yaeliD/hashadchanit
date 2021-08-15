@@ -1,31 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="The_MatchmakerModelStoreContainer" CdmEntityContainer="The_MatchmakerEntities">
-    <EntitySetMapping Name="Candidates">
-      <EntityTypeMapping TypeName="The_MatchmakerModel.Candidates">
-        <MappingFragment StoreEntitySet="Candidates">
-          <ScalarProperty Name="occupationAfter" ColumnName="occupationAfter" />
-          <ScalarProperty Name="wigORhandkerchief" ColumnName="wigORhandkerchief" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="familyStatus" ColumnName="familyStatus" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="occupationMother" ColumnName="occupationMother" />
-          <ScalarProperty Name="occupationFather" ColumnName="occupationFather" />
-          <ScalarProperty Name="AdaMother" ColumnName="AdaMother" />
-          <ScalarProperty Name="AdaFather" ColumnName="AdaFather" />
-          <ScalarProperty Name="nameMother" ColumnName="nameMother" />
-          <ScalarProperty Name="nameFather" ColumnName="nameFather" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="currentOccupation" ColumnName="currentOccupation" />
-          <ScalarProperty Name="photoLink" ColumnName="photoLink" />
-          <ScalarProperty Name="heightCandidates" ColumnName="heightCandidates" />
-          <ScalarProperty Name="dateOFbirth" ColumnName="dateOFbirth" />
-          <ScalarProperty Name="LNameCandidates" ColumnName="LNameCandidates" />
-          <ScalarProperty Name="FNameCandidates" ColumnName="FNameCandidates" />
-          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CandidateStatuses">
       <EntityTypeMapping TypeName="The_MatchmakerModel.CandidateStatuses">
         <MappingFragment StoreEntitySet="CandidateStatuses">
@@ -171,6 +146,32 @@
           <ScalarProperty Name="codeBN" ColumnName="codeBN" />
           <ScalarProperty Name="codeBT" ColumnName="codeBT" />
           <ScalarProperty Name="codeP" ColumnName="codeP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Candidates">
+      <EntityTypeMapping TypeName="The_MatchmakerModel.Candidates">
+        <MappingFragment StoreEntitySet="Candidates">
+          <ScalarProperty Name="inprocess" ColumnName="inprocess" />
+          <ScalarProperty Name="occupationAfter" ColumnName="occupationAfter" />
+          <ScalarProperty Name="wigORhandkerchief" ColumnName="wigORhandkerchief" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="familyStatus" ColumnName="familyStatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="occupationMother" ColumnName="occupationMother" />
+          <ScalarProperty Name="occupationFather" ColumnName="occupationFather" />
+          <ScalarProperty Name="AdaMother" ColumnName="AdaMother" />
+          <ScalarProperty Name="AdaFather" ColumnName="AdaFather" />
+          <ScalarProperty Name="nameMother" ColumnName="nameMother" />
+          <ScalarProperty Name="nameFather" ColumnName="nameFather" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="currentOccupation" ColumnName="currentOccupation" />
+          <ScalarProperty Name="photoLink" ColumnName="photoLink" />
+          <ScalarProperty Name="heightCandidates" ColumnName="heightCandidates" />
+          <ScalarProperty Name="dateOFbirth" ColumnName="dateOFbirth" />
+          <ScalarProperty Name="LNameCandidates" ColumnName="LNameCandidates" />
+          <ScalarProperty Name="FNameCandidates" ColumnName="FNameCandidates" />
+          <ScalarProperty Name="codeCandidates" ColumnName="codeCandidates" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

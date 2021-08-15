@@ -46,7 +46,7 @@ namespace shadchanut.Controllers
             return BadRequest();
         }
         [HttpPost]
-        [Route("fiiltering")]//לפי סינון הצגת  המועמדים 
+        [Route("fiiltering")]// כללי לפי סינון הצגת  המועמדים 
         public IHttpActionResult Filteriing(SearchDto s)
         {
             List<candidatesDto> candidetList = BL.CandidatesBL.Filteriing(s);

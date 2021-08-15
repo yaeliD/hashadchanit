@@ -1,0 +1,60 @@
+
+
+<div id="accordion"  *ngIf="!hide">
+    <div class="card">
+      <div class="card-header" id="headingTwo" >
+        <h5 class="mb-0" >
+          <!-- <div class="mp">
+          <button class="btn btn-link collapsed" data-toggle="collapse" 
+          (click)="showm()"
+          [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo"  >
+          מעקב פגישות 
+          </button>
+          <div *ngIf="SHOW">
+           <app-match-details  class="a"  [cm]="m.codeP"></app-match-details>
+
+           <button class="btn btn-link collapsed" data-toggle="collapse" 
+           (click)="addff()"
+           [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo"  >
+           הוספת פגישה  </button>
+           <app-steps-of-proposal *ngIf="addf" [mp]="m.codeP" (sendtyps)="savetyps($event)"></app-steps-of-proposal>
+         
+          </div></div> -->
+          <button class="btn btn-link collapsed" data-toggle="collapse" 
+            (click)="ditails(m.codeBN)"
+            [attr.data-target]="'#a'+identity" aria-expanded="true" aria-controls="collapseTwo" > 
+           {{m.manFullName}}
+          </button>
+          <button class="btn btn-link collapsed" data-toggle="collapse" 
+           (click)="ditails(m.codeBT)"
+           [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo"  >
+           {{m.womanFullName}}
+           </button>
+           <div class="mp">
+            <button class="btn btn-link collapsed" data-toggle="collapse" 
+            (click)="showm()"
+            [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo"  >
+            מעקב פגישות 
+            </button>
+            <div *ngIf="SHOW">
+             <app-match-details  class="a"  [cm]="m.codeP"></app-match-details>
+  
+             <button class="btn btn-link collapsed" data-toggle="collapse" 
+             (click)="addff()"
+             [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo"  >
+             הוספת פגישה  </button>
+             <app-steps-of-proposal *ngIf="addf" [mp]="m.codeP" (sendtyps)="savetyps($event)"></app-steps-of-proposal>
+           
+            </div></div>
+            </h5>
+      </div>
+  
+      <div *ngIf="codcan!=0" [id]="'a'+identity" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+       
+        <div class="card-body" *ngIf="codcan!=0">
+
+          <app-candidatedetails  class="a"  [cm]="codcan"></app-candidatedetails>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -10,9 +10,9 @@ namespace BL
 {
     public class statusBL
     {
-        public static List<StatusDto> GetAllEda()
+        public static List<StatusDto> GetAllstatus()
         {
-            List<Status> statusListDal = Dal.statusDal.GetAllEda();
+            List<Status> statusListDal = Dal.statusDal.GetAllstatus();
             List<StatusDto> statusDTOs = StatusDto.Todto1(statusListDal);
             return statusDTOs;
         }

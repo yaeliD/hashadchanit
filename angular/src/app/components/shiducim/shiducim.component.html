@@ -16,173 +16,205 @@
         </div>
       </div>
     </div>
-   </div>
+  </div>
 </div>
 <!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
 
 <div *ngIf="view">
-    <form  class="needs-validation" novalidate> 
-      <div class="all">
-        <mat-form-field appearance="fill">
-            <mat-label>סינון לפי בחירה</mat-label>
-            <mat-select  multiple>
-              <mat-option (click)="selectthis(1)" [value]="1" >שם פרטי</mat-option>
-              <mat-option (click)="selectthis(2)" [value]="2" >שם משפחה</mat-option>
-              <mat-option (click)="selectthis(3)" [value]="3" >גיל מינימלי</mat-option>
-              <mat-option (click)="selectthis(4)" [value]="4" >גיל מקסימלי</mat-option>
-              <mat-option (click)="selectthis(5)" [value]="5" >סטטוס</mat-option>
-              <mat-option (click)="selectthis(6)" [value]="6" >עדה </mat-option>
-              <mat-option (click)="selectthis(7)" [value]="7" >כיסוי ראש</mat-option>
-              <mat-option (click)="selectthis(8)" [value]="8" >מוסד</mat-option>
-              <mat-option (click)="selectthis(9)" [value]="9" >עיסוק נוכחי</mat-option>
-              <mat-option (click)="selectthis(10)" [value]="10" >עיסוק עתידי</mat-option>
+  <form class="needs-validation" novalidate>
+    <div class="all">
+      <div class="footer">
+      <mat-form-field appearance="fill">
+        <mat-label style="text-align: right; direction: rtl;">סינון לפי בחירה</mat-label>
+        <mat-select multiple>
+          <mat-option (click)="selectthis(1)" [value]="1">שם פרטי</mat-option>
+          <mat-option (click)="selectthis(2)" [value]="2">שם משפחה</mat-option>
+          <mat-option (click)="selectthis(3)" [value]="3">גיל מינימלי</mat-option>
+          <mat-option (click)="selectthis(4)" [value]="4">גיל מקסימלי</mat-option>
+          <mat-option (click)="selectthis(5)" [value]="5">סטטוס</mat-option>
+          <mat-option (click)="selectthis(6)" [value]="6">עדה </mat-option>
+          <mat-option (click)="selectthis(7)" [value]="7">כיסוי ראש</mat-option>
+          <mat-option (click)="selectthis(8)" [value]="8">מוסד</mat-option>
+          <mat-option (click)="selectthis(9)" [value]="9">עיסוק נוכחי</mat-option>
+          <mat-option (click)="selectthis(10)" [value]="10">עיסוק עתידי</mat-option>
+        </mat-select>
+      </mat-form-field></div>
+
+
+      <div class="form-row">
+
+        <mat-form-field *ngIf="fn" class="example-full-width" class="el" appearance="fill">
+          <mat-label> שם פרטי </mat-label>
+          <input matInput name="FirstName" [(ngModel)]="c.FirstName">
+        </mat-form-field>
+
+        <mat-form-field *ngIf="ln" class="example-full-width" class="el" appearance="fill">
+          <mat-label> שם משפחה </mat-label>
+          <input matInput name="LastName" [(ngModel)]="c.LastName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="e" *ngIf="st ">
+          <mat-label>סטטוס</mat-label>
+          <mat-select name="status" [(ngModel)]="c.statusid">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let s of statusList" [value]="s.statusCode">
+              {{s.statusName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="fo" *ngIf="showEda">
+          <mat-form-field appearance="fill" class="e" *ngIf="eda ">
+            <mat-label>עדה </mat-label>
+            <mat-select name="AdaMother" [(ngModel)]="c.IdEda">
+              <mat-option [value]="null"></mat-option>
+              <mat-option *ngFor="let item of arrAda" [value]="item.codeC">
+                {{item.nameC}}
+              </mat-option>
             </mat-select>
           </mat-form-field>
-                <td><mat-form-field *ngIf="fn" class="example-full-width" class="e" appearance="fill">
-                    <mat-label> שם פרטי  </mat-label>
-                    <input matInput name="FirstName"[(ngModel)]="c.FirstName">
-                  </mat-form-field></td>
-                  <td><mat-form-field *ngIf="ln"  class="example-full-width" class="e" appearance="fill">
-                    <mat-label> שם משפחה  </mat-label>
-                    <input matInput name="LastName"[(ngModel)]="c.LastName">
-                  </mat-form-field></td>
-                  <mat-form-field appearance="fill" class="e"  *ngIf="gmin" >
-                    <mat-label>גיל מינימלי</mat-label>
-                    <input matInput [matDatepicker]="picker" name="MinAge"  [(ngModel)]="c.MinAge">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
-                  <mat-form-field appearance="fill" class="e"  *ngIf="gmax " >
-                    <mat-label>גיל מקסימלי</mat-label>
-                    <input matInput [matDatepicker]="picker" name="MaxAge"  [(ngModel)]="c.MaxAge">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
-                 
-               </div>
-               <br>
-        <div class="form-row">
-                    <mat-form-field appearance="fill" class="e"  *ngIf="st "  >
-                        <mat-label>סטטוס</mat-label>
-                        <mat-select name="status" [(ngModel)]="c.statusid">
-                            <mat-option [value]="null"></mat-option>
-                          <mat-option  *ngFor="let s of statusList" [value]="s.statusCode">
-                            {{s.statusName}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field><br>
-              
-                  <div class="fo" *ngIf="showEda">
-                    <mat-form-field appearance="fill" class="e"  *ngIf="eda " >
-                        <mat-label>עדה </mat-label>
-                        <mat-select name="AdaMother" [(ngModel)]="c.IdEda">
-                            <mat-option [value]="null"></mat-option>
-                          <mat-option  *ngFor="let item of arrAda" [value]="item.codeC">
-                            {{item.nameC}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field><br>
-                  </div>
-                  <mat-form-field appearance="fill" class="e"  *ngIf="r "  >
-                    <mat-label>כיסוי ראש</mat-label>
-                    <mat-select  name="wigORhandkerchief" [(ngModel)]="c.wigORhandkerchief">
-                        <mat-option [value]="null"></mat-option>
-                      <mat-option [value]="true">פאה</mat-option>
-                      <mat-option [value]="false">מטפחת</mat-option>
-                      <mat-option [value]="null">לא משנה</mat-option>
-                    </mat-select>
-                  </mat-form-field><br> 
-            
-                <div *ngIf="showEda">
-                    <mat-form-field appearance="fill" class="e"  *ngIf="mo " >
-                      <mat-label>שם מוסד</mat-label>
-                      <mat-select  name="codeMC"  [(ngModel)]="c.mosdid">
-                        <mat-option [value]="null"></mat-option>
-                        <mat-option  *ngFor="let ml of mosdList" [value]="ml.codeM">
-                          {{ml.nameM}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field><br> 
-                </div>
-                  <div class="f" *ngIf="showocc">
-                    <mat-form-field appearance="fill" class="e"  *ngIf="enow " >
-                        <mat-label>עיסוק נוכחי</mat-label>
-                        <mat-select  name="currentOccupation" [(ngModel)]="c.currentOccupation" >
-                            <mat-option [value]="null"></mat-option>
-                          <mat-option  *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">
-                            {{o.OccupationTypeName}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field><br>
-                      <div class="f" *ngIf="showocc">
-                      <mat-form-field appearance="fill" class="e"  *ngIf="after" >
-                        <mat-label>עיסוק אחרי החתונה</mat-label>
-                        <mat-select  name="occupationAfter" [(ngModel)]="c.occupationAfter" >
-                            <mat-option [value]="null"></mat-option>
-                          <mat-option  *ngFor="let o of occupationlist" [value]="o.OccupationTypeId" >
-                            {{o.OccupationTypeName}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field><br>
-          
-                </div>
-           </div>
-           </div>
-              <br>
-              <div class="form-row">
-              <input type="button" class="save" value="סינון" (click)="onclick()">  
-              <input type="button"  class="save"value="ביטול הסינון" (click)="onclickB()">
-            </div>
-              <br><br>
-            <div class="oun">
-            <div class="form-row"> 
-                <div class="col-md-2 mb-2">
-                  <legend class="col-form-label col-sm-2 pt-0">מין :</legend> 
-                  <div class="form-check"> 
-                  <label class="form-check-label" for="gridRadios1">
-                    🤵
-                  </label>
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="זכר"  (click)="minM()">
-                  </div>
-                  <div class="form-check">
-                    <label class="form-check-label" for="gridRadios2">
-                      👰
-                    </label>
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="נקבה" (click)="minW()">
-                  </div>
-                </div>
-                <td><mat-form-field class="example-full-width" class="e" appearance="fill">
-                    <mat-label> שם פרטי  </mat-label>
-                    <input matInput name="FNameCandidates"[(ngModel)]="cc.FNameCandidates">
-                  </mat-form-field></td>
-                  <td><mat-form-field class="example-full-width" class="e" appearance="fill">
-                    <mat-label> שם משפחה  </mat-label>
-                    <input matInput name="LNameCandidates"[(ngModel)]="cc.LNameCandidates">
-                  </mat-form-field></td>
-                  <td><mat-form-field class="example-full-width" class="e" appearance="fill">
-                    <mat-label>פון  </mat-label>
-                    <input matInput name="phone"[(ngModel)]="cc.phone" type="tel">
-                  </mat-form-field></td>
-           
-            </div>
-              <br>
-              <div class="form-row">
-                <input type="button" class="save" value="סינון"  (click)="findmaches()" (click)="FindCandidatebyfilterparm()">  
-                <input type="button"  class="save"value="ביטול הסינון"(click)="sinun()" >
-            </div>
         </div>
-            <br><br>
-            <div  *ngIf="mORw" >
-        
-            
-                <app-candidatedetmatches  *ngFor="let item of bool" [m]="item"></app-candidatedetmatches>
-            
-                <app-candidatedetmatches  *ngFor="let item of matches" [m]="item"></app-candidatedetmatches>
+        <mat-form-field appearance="fill" class="e" *ngIf="r ">
+          <mat-label>כיסוי ראש</mat-label>
+          <mat-select name="wigORhandkerchief" [(ngModel)]="c.wigORhandkerchief">
+            <mat-option [value]="null"></mat-option>
+            <mat-option [value]="true">פאה</mat-option>
+            <mat-option [value]="false">מטפחת</mat-option>
+            <mat-option [value]="null">לא משנה</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
 
- 
-      
-           </div>         
-             <div *ngIf="!mORs" ><app-abbreviatedfiltering  class="a" *ngFor="let item of serchlist" [c]="item"></app-abbreviatedfiltering></div>           
-    </form>
-  </div>
-  
+        <div *ngIf="showEda">
+          <mat-form-field appearance="fill" class="e" *ngIf="mo ">
+            <mat-label>שם מוסד</mat-label>
+            <mat-select name="codeMC" [(ngModel)]="c.mosdid">
+              <mat-option [value]="null"></mat-option>
+              <mat-option *ngFor="let ml of mosdList" [value]="ml.codeM">
+                {{ml.nameM}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="f" *ngIf="showocc">
+          <mat-form-field appearance="fill" class="e" *ngIf="enow ">
+            <mat-label>עיסוק נוכחי</mat-label>
+            <mat-select name="currentOccupation" [(ngModel)]="c.currentOccupation">
+              <mat-option [value]="null"></mat-option>
+              <mat-option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">
+                {{o.OccupationTypeName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="f" *ngIf="showocc">
+          <mat-form-field appearance="fill" class="e" *ngIf="after">
+            <mat-label>עיסוק אחרי החתונה</mat-label>
+            <mat-select name="occupationAfter" [(ngModel)]="c.occupationAfter">
+              <mat-option [value]="null"></mat-option>
+              <mat-option *ngFor="let o of occupationlist" [value]="o.OccupationTypeId">
+                {{o.OccupationTypeName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+
+     
+              <td><mat-form-field class="example-full-width" class="ea" *ngIf="gmax " appearance="fill">
+                <mat-label>גיל מקסימלי</mat-label>
+                <input matInput name="AgeRange"  type="number" [(ngModel)]="maxAge">
+              </mat-form-field></td><br>
+
+              <td><mat-form-field class="example-full-width" class="ea" *ngIf="gmin" appearance="fill">
+                <mat-label>גיל מינימלי</mat-label>
+                <input matInput name="minAge"  type="number" [(ngModel)]="minAge">
+              </mat-form-field></td><br>
+
+        <!-- <mat-form-field appearance="fill" class="ea" *ngIf="gmin">
+          <mat-label>גיל מינימלי</mat-label>
+          <input matInput [matDatepicker]="picker" name="MinAge" [(ngModel)]="minAge">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="ea" *ngIf="gmax ">
+          <mat-label>גיל מקסימלי</mat-label>
+          <input matInput [matDatepicker]="picker" name="MaxAge" [(ngModel)]="c.MaxAge">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+      </div>
+      <br>
+      <div class="form-row">
+        <input type="button" class="save" value="סינון" (click)="onclick()">
+        <input type="button" class="save" value="ביטול הסינון" (click)="onclickB()">
+      </div>
+    </div>
+    <br><br>
+    <div class="oun">
+      <div class="h"> הצגת התאמות למועמד/ת לפי פלאפון </div>
+      <div class="form-row">
+        <br>
+        <div class="h">
+          <mat-form-field class="example-full-width" appearance="fill" class>
+           <mat-label style="text-align: center;">פון </mat-label>
+            <input matInput name="phone" [(ngModel)]="cc.phone" type="tel">
+          </mat-form-field>
+        </div>
+
+
+
+      </div>
+      <!-- <div class="col-md-2 mb-2">
+            <legend class="col-form-label col-sm-2 pt-0">מין :</legend>
+            <div class="form-check">
+              <label class="form-check-label" for="gridRadios1">
+                🤵
+              </label>
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="זכר"
+                (click)="minM()">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="gridRadios2">
+                👰
+              </label>
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="נקבה"
+                (click)="minW()">
+            </div>
+          </div>
+          <td>
+            <mat-form-field class="example-full-width" class="e" appearance="fill">
+              <mat-label> שם פרטי </mat-label>
+              <input matInput name="FNameCandidates" [(ngModel)]="cc.FNameCandidates">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" class="e" appearance="fill">
+              <mat-label> שם משפחה </mat-label>
+              <input matInput name="LNameCandidates" [(ngModel)]="cc.LNameCandidates">
+            </mat-form-field>
+          </td> -->
+
+
+
+      <br>
+      <div class="form-row">
+        <input type="button" class="save" value="סינון" (click)="FindCandidatebyfilterparm()">
+        <input type="button" class="save" value="ביטול הסינון" (click)="sinun()">
+      </div>
+    </div>
+    <br><br>
+    <div class="group" *ngIf="mORw==2">
+
+
+      <app-candidatedetmatches *ngFor="let item of bool" [isMan]="cc.IsMan" [m]="item"></app-candidatedetmatches>
+      <br><br>
+      <app-candidatedetmatches *ngFor="let item of matches" [isMan]="cc.IsMan" [m]="item"></app-candidatedetmatches>
+
+
+
+    </div>
+    <div class="order" *ngIf="!mORs">
+      <app-abbreviatedfiltering class="a" *ngFor="let item of serchlist" [c]="item"></app-abbreviatedfiltering>
+    </div>
+  </form>
+</div>

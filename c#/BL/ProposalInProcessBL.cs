@@ -11,6 +11,7 @@ namespace BL
 {
     public class ProposalInProcessBL
     {
+
         public static bool AddMatchesinprocess(ProposalInProcessDto cc)
         {
             try
@@ -24,6 +25,15 @@ namespace BL
                 Console.WriteLine(e);
                 return false;
             }
+        }
+
+        public static List<TypesOfStepDto> Typsofstepsto(int mp)
+        {
+                List<TypesOfSteps> TypesOfStepsDal = Dal.ProposalInProcessDal.GetTypeOfStepsForProcess(mp);
+                List<TypesOfStepDto> TypesOfStepsDTOs = TypesOfStepDto.Todto1(TypesOfStepsDal);
+                return TypesOfStepsDTOs;
+          
+
         }
 
         public static List<ProposalInProcessDto> getProposalInProceslist()

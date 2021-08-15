@@ -13,6 +13,7 @@ import { AddSiblingComponent } from './components/add-sibling/add-sibling.compon
 import { CandidatedetmatchesComponent } from './components/candidatedetmatches/candidatedetmatches.component';
 import { ShiducimComponent } from './components/shiducim/shiducim.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatchDetailsComponent } from './components/match-details/match-details.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,8 @@ const routes: Routes = [
   {path:"short",component:CandidatedetmatchesComponent},
   {path:"shiduchim",component:ShiducimComponent},
   {path:"ProposalInProcess",component:MatchInProcessComponent},
+  {path:"Machditails",component:MatchDetailsComponent},
+
   {path:"",redirectTo:"/Hashadchanit",pathMatch:"full"}
 ];
 

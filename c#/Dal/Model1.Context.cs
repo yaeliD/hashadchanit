@@ -25,7 +25,6 @@ namespace Dal
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Candidates> Candidates { get; set; }
         public virtual DbSet<CandidateStatuses> CandidateStatuses { get; set; }
         public virtual DbSet<CandidateWantedComunities> CandidateWantedComunities { get; set; }
         public virtual DbSet<community> community { get; set; }
@@ -42,5 +41,6 @@ namespace Dal
         public virtual DbSet<WomenCandidate> WomenCandidate { get; set; }
         public virtual DbSet<StepsOfProposal> StepsOfProposal { get; set; }
         public virtual DbSet<ProposalInProcess> ProposalInProcess { get; set; }
+        public virtual DbSet<Candidates> Candidates { get; set; }
     }
 }

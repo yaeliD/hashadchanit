@@ -3,7 +3,7 @@ div.re{
 }
 
 .save{
-        background-color:rgb(216, 25, 25);
+        background-color:rgb(155, 140, 140);
         width:100px;
        height:30px ;
        text-align: right;
@@ -19,10 +19,11 @@ div.re{
 
 .form-row {
     direction: rtl;
-    text-align: center;
+    text-align: right;
     
 }
 .all{
+    /* border: 5px rgb(87, 87, 87) solid; */
     direction: rtl;
     text-align: center;
     
@@ -63,6 +64,30 @@ select{
 .e{
     text-align:right;
     direction: rtl;
+    flex-direction: column;
+    float: left;
+ }
+ .footer{
+    text-align: right;
+    direction:rtl;
+ }
+.h{
+text-align: right;
+direction:rtl;
+/* margin-right: 43%; */
+ }
+ .el{
+     margin-right: 0%;
+    text-align:right;
+    direction: rtl;
+    flex-direction: column;
+    /* float: left; */
+ }
+ .ea{
+    text-align:right;
+    direction: rtl;
+    /* flex-direction: column; */
+    float: right;
  }
 /* .all{
     border-left:0.5px solid rgb(231, 78, 78);
@@ -72,3 +97,13 @@ select{
 .example-form-field {
     width: 200px;
   }
+  .order{
+      /* border: solid rgb(43, 40, 40) 1px; */
+      text-align: right;
+      margin-left: 72%;
+  }
+  .group{    
+        /* border: solid rgb(43, 40, 40) 1px; */
+    text-align: right;
+    margin-left: 72%;
+    float: right;}

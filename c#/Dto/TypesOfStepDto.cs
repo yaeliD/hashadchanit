@@ -31,5 +31,25 @@ namespace Dto
         };
 
         }
+        public static TypesOfStepDto Todto(TypesOfSteps sdto)
+        {
+            return new TypesOfStepDto()
+            {
+                codeTypeStep = sdto.codeTypeStep,
+                nameStep = sdto.nameStep,
+
+            };
+        }
+        public static List<TypesOfStepDto> Todto1(List<TypesOfSteps> cc)
+        {
+            List<TypesOfStepDto> dto = new List<TypesOfStepDto>();
+            foreach (var item in cc)
+            {
+                dto.Add(Todto(item));
+            }
+            return dto;
+
+
+        }
     }
 }

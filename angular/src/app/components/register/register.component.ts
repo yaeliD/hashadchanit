@@ -47,6 +47,7 @@ export class RegisterComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   isEditable = false;
+  min:boolean;
   constructor(public router: Router, public ser: ServicRegisterService,private _formBuilder: FormBuilder) { }
 
   ngOnInit() {

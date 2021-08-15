@@ -37,6 +37,7 @@ export class MatchesComponent implements OnInit {
   view: boolean=true;
   flag:boolean;
   mORs: boolean;
+  IsMan:boolean;
   constructor(public ser: ServicMatchesService, public router: Router) { }
 
   ngOnInit() {

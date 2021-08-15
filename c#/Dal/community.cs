@@ -17,19 +17,19 @@ namespace Dal
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public community()
         {
+            this.CandidateWantedComunities = new HashSet<CandidateWantedComunities>();
             this.Candidates = new HashSet<Candidates>();
             this.Candidates1 = new HashSet<Candidates>();
-            this.CandidateWantedComunities = new HashSet<CandidateWantedComunities>();
         }
     
         public int codeC { get; set; }
         public string nameC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CandidateWantedComunities> CandidateWantedComunities { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Candidates> Candidates { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Candidates> Candidates1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CandidateWantedComunities> CandidateWantedComunities { get; set; }
     }
 }
