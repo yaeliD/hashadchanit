@@ -14,6 +14,7 @@ import { CandidatedetmatchesComponent } from './components/candidatedetmatches/c
 import { ShiducimComponent } from './components/shiducim/shiducim.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatchDetailsComponent } from './components/match-details/match-details.component';
+import { MatchThatClosedSuccessfullyComponent } from './components/match-that-closed-successfully/match-that-closed-successfully.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:"shiduchim",component:ShiducimComponent},
   {path:"ProposalInProcess",component:MatchInProcessComponent},
   {path:"Machditails",component:MatchDetailsComponent},
+  {path:"MatchThatClosedSuccessfully",component:  MatchThatClosedSuccessfullyComponent},
 
   {path:"",redirectTo:"/Hashadchanit",pathMatch:"full"}
 ];

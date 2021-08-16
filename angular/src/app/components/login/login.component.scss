@@ -1,122 +1,32 @@
-// div.login{
-//     text-align: center;
-// }
-// .example-container .mat-form-field + .mat-form-field {
-//     margin-left: 8px;
-//   }
-  
-//   .example-right-align {
-//     text-align: right;
-//   }
-  
-//   input.example-right-align::-webkit-outer-spin-button,
-//   input.example-right-align::-webkit-inner-spin-button {
-//     display: none;
-//   }
-  
-//   input.example-right-align {
-//     -moz-appearance: textfield;
-//   }
-//   .mat-form-field-infix {
-//     display: block;
-//     position: relative;
-//     flex: auto;
-//     min-width: 0;
-//     width: 120;
-// }
-// .mat-form-field-appearance-fill .mat-form-field-flex {
-//     border-radius: 4px 4px 0 0;
-//     padding: 0.1em 0.2em 0 0.1em;
-// }
-// .mat-form-field-appearance-fill .mat-form-field-flex {
-//      background-color: rgba(0,0,0,.04); 
-//      width: 30px;
-// }
-// input{
-//     width: 100px;
-// }
-// h1{
-//     color: rgb(240, 83, 83);
-//     margin-top:100px ;
-// }
-// .example-container{
-//     text-align: center;
+.h{
+    text-align: center;
+    font-size:30px ; 
+    color: rgb(199, 66, 66);
+    margin-top: 40px;
+}
 
-// }
-// .save{
-//         background-color:rgb(207, 173, 121);
-//         width:100px;
-//        height:30px ;
-//       }       
-// a {
-//     text-align: center;
-// }
-// body{
-//     font-family: "MyFont";
-// }
-// form {
+.e{
+    text-align: right;
+    direction: inherit;
+    margin-left: 750px;
+
+}
+.born{
+    text-align: right;
+    direction: inherit;
+    margin-left:750px;
+}
+.btn-log {
+    text-align: right;
+    direction: inherit;
+    margin-left:820px;
+
+}
+.btn-info {
+    color: #fff;
+    background-color: rgb(199, 66, 66);
+    border-color: rgb(199, 66, 66);
     
-//     padding-top: 8%;
-//     width: 30%;
-//     text-align: center;
-//     margin: auto;
-//     margin-right: 30%;
-// }
-// .modal-body{
-//     width: 25%;
-//     height: 220px;
-//     direction: rtl;
-//     // margin-left: 45%;
-//     padding-top: 3%;
-// }
-// .form-group {
-//     text-align: right;
-// }
-// input {
-//     direction: rtl;
-// }
-// .form-control {
-//     border: 2px dotted goldenrod;
-//     border-radius: 17px;
-// }
+}
 
-// .form-control:focus {
-//     outline: medium;
-//     border-color: #ffffff;
-//     box-shadow: 0 0 25px #000000;
-// }
-// .btn {
-//     background-color: #be626e;
-//     /* border: 2px dotted goldenrod; */
-//     border-radius: 17px;
-//     color: #ffffff;
-//     border: none;
-// margin-left: 10px;
-//     font-size: 20px;
-//     padding-top: 5px;
-//     margin-top: 18px;
-
-// }
-// .btn:focus {
-//     outline: medium;
-//     border-color: #ffffff;
-//     box-shadow: 0 0 50px #000000;
-// }
-
-// mat-form-field{
-//  text-align: right;
-//  font-size: 25px;
-
-// }
-// mat-label{
-//     font-size: 20px;
-// }
-// .mat-form-field-infix {
-//     display: block;
-//     position: relative;
-//     flex: auto;
-//     min-width: 0;
-//     width: 180px;
-//     height: 20px;
-// }
 

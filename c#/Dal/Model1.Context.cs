@@ -36,11 +36,11 @@ namespace Dal
         public virtual DbSet<Shadchnit> Shadchnit { get; set; }
         public virtual DbSet<Siblings> Siblings { get; set; }
         public virtual DbSet<Status> Status { get; set; }
-        public virtual DbSet<TypesOfSteps> TypesOfSteps { get; set; }
         public virtual DbSet<WhatImLookingFor> WhatImLookingFor { get; set; }
         public virtual DbSet<WomenCandidate> WomenCandidate { get; set; }
-        public virtual DbSet<StepsOfProposal> StepsOfProposal { get; set; }
         public virtual DbSet<ProposalInProcess> ProposalInProcess { get; set; }
         public virtual DbSet<Candidates> Candidates { get; set; }
+        public virtual DbSet<TypesOfSteps> TypesOfSteps { get; set; }
+        public virtual DbSet<StepsOfProposal> StepsOfProposal { get; set; }
     }
 }

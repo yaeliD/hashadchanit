@@ -65,8 +65,7 @@ export class RegisterComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   
-    // this.siblings();
-    // this.code=this.c.codeCandidates;
+
 
 this.getStatusList();
     this.findAda();
@@ -76,14 +75,7 @@ this.getStatusList();
 
   addCandidates()// פו הוספת מועמד חדש למערכת 
   {
-    // for (let x of this.candidateArr) {
-    //   //לשנות כי אין כבר פון ליצירת קשר *********
-    //    if (this.c.dateOFbirth == x.dateOFbirth&&this.c.phone==x.phone) {
-    //      alert("הנך קיים במערכת");
-        
-    //    }
-    //    else {
-    
+   
     console.log(this.manC+" "+this.womanC)
     if(this.c.photoLink)
     {this.c.photoLink =this.c.photoLink.slice(12);}  
@@ -103,7 +95,7 @@ this.getStatusList();
              }
          // this.ser.AddCandidates(this.c)
 
-          alert("נרשמת בהצלחה!");
+
      //  }
     // }
   }
@@ -135,11 +127,7 @@ this.getStatusList();
      console.log(this.c)
      this.next()
   }
-  // siblings()
-  // {
-  //   this.router.navigate([this.code])
 
-  // }
   savemosdot(mc)
   {
     this.next()
@@ -153,8 +141,7 @@ this.getStatusList();
   }
 
   findAda() { this.ser.findAda().subscribe(suc => { this.arrAda = suc; console.log(suc); this.showEda = true; });}// פו המציגה את רשימת העדות
- // findcity() { this.ser.findcity().subscribe(suc => { this.arrcity = suc; console.log(suc); this.showcity = true; }); }// פו המציגה את רשימת העדות
-
+ 
 
 }
 

@@ -1,21 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServicMatchInProcessService } from 'app/services/servic-match-in-process.service';
-import { ServicMatchesService } from 'app/services/servic-matches.service';
 import { Candidates } from 'class/Candidates';
 import { FullCandidate } from 'class/FullCandidate';
-import { MatchPosibility } from 'class/MatchPosibility';
 import { ProposalInProcess } from 'class/ProposalInProcess';
 
 @Component({
-  selector: 'app-matchinprocesssort',
-  templateUrl: './matchinprocesssort.component.html',
-  styleUrls: ['./matchinprocesssort.component.css']
+  selector: 'app-match-that-closed-successfullydi',
+  templateUrl: './match-that-closed-successfullydi.component.html',
+  styleUrls: ['./match-that-closed-successfullydi.component.css']
 })
-export class MatchinprocesssortComponent implements OnInit {
+export class MatchThatClosedSuccessfullydiComponent implements OnInit {
   link;
   @Input() m?:ProposalInProcess=new ProposalInProcess();
-  @Input() identity?:number;
+
   Man:FullCandidate=new FullCandidate();
   arrcandidate: Candidates[] = [];
   show: boolean=false;
@@ -31,7 +30,6 @@ export class MatchinprocesssortComponent implements OnInit {
   constructor(public router: Router,public ser:ServicMatchInProcessService , public route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log("proccess "+this.m)
   }
   showm()
   {
@@ -74,12 +72,4 @@ export class MatchinprocesssortComponent implements OnInit {
   {this.hide=true;
     //לעדכן סטטוס
   }
-  
-  savetyps(close:boolean)
-  {debugger
-    this.addf=false;
-    this.refresh++;
-  }
-  refresh:number=0;
- 
 }

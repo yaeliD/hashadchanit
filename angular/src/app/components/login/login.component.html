@@ -1,35 +1,23 @@
 <form >
 
     <div class="example-container">
-        <h1>התחברות למערכת</h1>
-        <!-- <mat-form-field appearance="fill">
-            <mat-label>שם משתמש</mat-label>
-            <input matInput  [(ngModel)]="s.username" name="nam">
-          </mat-form-field> -->
-
+   
+        <div class="h"> התחברות למערכת </div>
+<br><br>
           <td><mat-form-field class="example-full-width" class="e" appearance="fill">
             <mat-label>שם משתמש</mat-label>
             <input matInput name="username"  [(ngModel)]="s.username">
           </mat-form-field></td><br>
 
-          <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+          <td><mat-form-field class="example-full-width" class="born" appearance="fill">
             <mat-label> הקש סיסמה</mat-label>
             <input matInput  [(ngModel)]="s.password_shadchanit" name="pass" [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
           </mat-form-field></td><br>
-
-            <!-- <mat-form-field appearance="fill">
-              <mat-label> הקש סיסמה</mat-label>
-              <input matInput  [(ngModel)]="s.password_shadchanit" name="pass" [type]="hide ? 'password' : 'text'">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-            <br>    <br> -->
+          <button mat-raised-button color="primary" class="btn-log" (click)="loginShadchanit()">התחבר</button>
 
 
-            <button type="button" class="btn-log btn-ok btn btn-info btn-lg"  (click)="loginShadchanit()">התחבר</button>
 
           </div>

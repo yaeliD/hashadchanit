@@ -19,10 +19,25 @@
             <mat-label> תאור </mat-label>
             <input matInput name="comments" [(ngModel)]="m.comments">
           </mat-form-field></td><br>  
+          <td><mat-form-field class="example-full-width" class="e" appearance="fill">
+            <mat-label> סטטוס המשך </mat-label>
+            <mat-select name="results "  [(ngModel)]="m.results">
+              <mat-option  [value]="true">
+                ממשיך
+              </mat-option>
+              <mat-option  [value]="null">
+              יורד 
+            </mat-option>
+            </mat-select>      
+              </mat-form-field></td><br>  
       </div>      
 
+
   
-    <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="finish()">שמור</button>
+    <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="finish()">שמור
+
+      
+    </button>
 
     
     </form>

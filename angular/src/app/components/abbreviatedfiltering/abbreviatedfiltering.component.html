@@ -6,15 +6,11 @@
         <h5 class="mb-0" >
           <button class="btn btn-link " data-toggle="collapse" (click)="entermamad1()"
           value="{{c.codeCandidates}}">
-           {{c.FNameCandidates}} {{c.LNameCandidates}}</button>
-         
-            <div class="example-flex-container">
-           <div class="example-button-container">
+           {{c.FNameCandidates}} {{c.LNameCandidates}}</button>           
             <button mat-fab color="primary" aria-label="Example icon button with a delete icon" value="מחיקה" (click)="delale()">
               <mat-icon>delete</mat-icon>
             </button>
-          </div>
-            </div>       
+                 
         </h5>
       </div>
       <div *ngIf="entermamad" >

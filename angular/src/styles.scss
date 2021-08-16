@@ -20,3 +20,27 @@ body,h1,a,h2, img,h3,p,h4,form{ margin: 0;  font-family: myFont; }
     .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
       background-color: #b53f3f;
   }
+  .mat-form-field-label,.mat-option,.mat-option-text{
+    direction: rtl;
+    text-align: right;
+  }
+  .mat-option-text
+  {
+    margin-right: 3px;
+  }
+
+  
+    .mat-form-field-wrapper
+    {
+      max-width: 220px !important;
+    }
+.mat-form-field-infix
+{
+  width: 220px !important;
+}
+
+
+app-shiducim{
+  display: flex;
+justify-content: center;
+}

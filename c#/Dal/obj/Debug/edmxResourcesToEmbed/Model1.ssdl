@@ -133,14 +133,14 @@
     <Property Name="codeStep" Type="int" Nullable="false" />
     <Property Name="dateStep" Type="date" />
     <Property Name="comments" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="results" Type="bit" Nullable="false" />
+    <Property Name="results" Type="bit" />
   </EntityType>
   <EntityType Name="TypesOfSteps">
     <Key>
       <PropertyRef Name="codeTypeStep" />
     </Key>
     <Property Name="codeTypeStep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nameStep" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nameStep" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
   <EntityType Name="WhatImLookingFor">
     <Key>

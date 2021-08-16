@@ -42,8 +42,8 @@ namespace Dto
                 codeStep = s.codeStep,
                 dateStep = s.dateStep,
                 comments = s.comments,
-                results = s.results,
-                //mynamestep=s.TypesOfSteps.nameStep,
+                results = (bool)s.results,
+                mynamestep = s.TypesOfSteps.nameStep,
                 //mynamestep=  s.codeStep==s.TypesOfSteps.codeTypeStep ? s.TypesOfSteps.nameStep: null,        
 
 

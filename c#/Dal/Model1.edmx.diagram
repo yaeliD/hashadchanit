@@ -16,16 +16,12 @@
         <EntityTypeShape EntityType="The_MatchmakerModel.Shadchnit" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="The_MatchmakerModel.Siblings" Width="1.5" PointX="5.25" PointY="7.875" />
         <EntityTypeShape EntityType="The_MatchmakerModel.Status" Width="1.5" PointX="0.75" PointY="10.125" />
-        <EntityTypeShape EntityType="The_MatchmakerModel.TypesOfSteps" Width="1.5" PointX="3" PointY="1.75" />
         <EntityTypeShape EntityType="The_MatchmakerModel.WhatImLookingFor" Width="1.5" PointX="5.25" PointY="29.875" />
         <EntityTypeShape EntityType="The_MatchmakerModel.WomenCandidate" Width="1.5" PointX="5.25" PointY="27.75" />
         <AssociationConnector Association="The_MatchmakerModel.FK_CandidateStatuses_Status" />
         <AssociationConnector Association="The_MatchmakerModel.FK_CandidateWantedComunities_community" />
         <AssociationConnector Association="The_MatchmakerModel.FK_MosdotToCandidate_ListOfMosdot" />
-        <EntityTypeShape EntityType="The_MatchmakerModel.StepsOfProposal" Width="1.5" PointX="7.875" PointY="1.5" />
-        <AssociationConnector Association="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" />
         <EntityTypeShape EntityType="The_MatchmakerModel.ProposalInProcess" Width="1.5" PointX="5.25" PointY="1.125" />
-        <AssociationConnector Association="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" />
         <EntityTypeShape EntityType="The_MatchmakerModel.Candidates" Width="1.5" PointX="3" PointY="10.375" />
         <AssociationConnector Association="The_MatchmakerModel.FK__ManCandid__codeC__0697FACD" />
         <AssociationConnector Association="The_MatchmakerModel.FK__MosdotToC__codeC__3A81B327" />
@@ -42,6 +38,10 @@
         <AssociationConnector Association="The_MatchmakerModel.FK_CandidateWantedComunities_Candidates" />
         <AssociationConnector Association="The_MatchmakerModel.FK_Contacts_Candidates" />
         <AssociationConnector Association="The_MatchmakerModel.FK_Siblings_Candidates" />
+        <EntityTypeShape EntityType="The_MatchmakerModel.TypesOfSteps" Width="1.5" PointX="1.25" PointY="2.625" />
+        <EntityTypeShape EntityType="The_MatchmakerModel.StepsOfProposal" Width="1.5" PointX="7.5" PointY="1.375" />
+        <AssociationConnector Association="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" />
+        <AssociationConnector Association="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

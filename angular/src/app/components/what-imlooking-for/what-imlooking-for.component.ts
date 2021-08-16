@@ -79,7 +79,7 @@ debugger
       this.manw.WhatLooking=this.wIl;
       console.log(this.manw);
        this.ser.AddManw(this.manw).subscribe(suc =>{this.w=suc;console.log(suc); })
-       alert("mannn");
+       alert("נרשמתה בהצלחה ניצור איתך קשר בהמשך");
        this.router.navigate(['HistoryOfMatches']);
 
     }
@@ -87,7 +87,7 @@ debugger
       {
        this.womanw.WhatLooking=this.wIl;
        this.ser.AddWomanw(this.womanw).subscribe(suc =>{this.w=suc;console.log(suc);});   
-       alert("womannn");  
+       alert("נרשמתה בהצלחה ניצור איתך קשר בהמשך");  
        this.router.navigate(['HistoryOfMatches']);
        }
 
@@ -102,4 +102,6 @@ debugger
     this.manw=wcm;
   }
 
+
+  
 }

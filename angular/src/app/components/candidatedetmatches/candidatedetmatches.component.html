@@ -1,21 +1,26 @@
-  <div id="accordion"  *ngIf="!hide">
+
+<div id="accordion"  *ngIf="!hide">
     <div class="card">
       <div class="card-header" id="headingTwo" >
         <h5 class="mb-0" >
-          <button [disabled]="isMan==true" class="btn btn-link collapsed" data-toggle="collapse" 
+          <button [disabled]="isMan!=null" class="btn btn-link collapsed" data-toggle="collapse" 
           [ngStyle]="{'color': (m.Man.Candidate.inprocess==true) ? 'red' : 'black'}"
           (click)="ditails(m.Man.Candidate.codeCandidates)"
 
           [attr.data-target]="'#a'+identity" aria-expanded="true" aria-controls="collapseTwo"  > 
            {{m.Man.Candidate.FNameCandidates}} {{m.Man.Candidate.LNameCandidates}} 
           </button>
-          <button [disabled]="isMan==false" class="btn btn-link collapsed" data-toggle="collapse"  [ngStyle]="{'color': (m.Woman.Candidate.inprocess==true) ? 'red' : 'black'}"
+          <button [disabled]="isMan!=null" class="btn btn-link collapsed" data-toggle="collapse"  [ngStyle]="{'color': (m.Woman.Candidate.inprocess==true) ? 'red' : 'black'}"
         
             (click)="ditails(m.Woman.Candidate.codeCandidates)"
             [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo" >
           {{m.Woman.Candidate.FNameCandidates}} {{m.Woman.Candidate.LNameCandidates}}
            </button>
-           <input type="button" value="הוצעה" (click)="matchesinprocess(m.Man.Candidate.codeCandidates,m.Woman.Candidate.codeCandidates)" >
+           <button mat-icon-button color="warn" value="להצעה"  aria-label="Example icon button with a heart icon"
+           (click)="matchesinprocess(m.Man.Candidate.codeCandidates,m.Woman.Candidate.codeCandidates)" >
+            <mat-icon>favorite</mat-icon>
+          </button>
+           <!-- <input type="button" > -->
           </h5>
       </div>
       <div *ngIf="codcan!=0" [id]="'a'+identity" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">

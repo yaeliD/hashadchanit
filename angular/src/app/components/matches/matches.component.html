@@ -10,6 +10,8 @@
         <div class="modal-body">
           <p>עליך להירשם למערכת</p>
           <a class="nav-link" routerLink="/Register" routerLinkActive="active">הרשמה</a>
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">אני השדכנית</a>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" (click)="onCloseHandled()">סגור</button>
@@ -21,9 +23,19 @@
 <!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
 
 <div *ngIf="view">
-  <h1>התאמות אוטומטיות ע"י המערכת</h1>
-  <div *ngIf="!mORs"><h2>אין תוצאות מערכת </h2></div>
+  <div class="h">התאמות מערכת  אוטומטיות</div>
+  <div *ngIf="!mORs"><div class="h">אין תוצאות מערכת </div></div>
   <form  class="needs-validation" novalidate> 
-    <div *ngIf="mORs"><app-candidatedetmatches  class="a" *ngFor="let item of macheslist;let i=index" [identity]="i" [isMan]="null" [m]="item"></app-candidatedetmatches></div>
+    <div *ngIf="mORs">
+      <div class="i">
+   <p>❤️-להצעה לחצי על ה</p>
+   </div>
+     
+      <div style="margin-left: 40%; margin-top: 1.5%;"   *ngFor="let item of macheslist;let i=index">
+      <app-candidatedetmatches  class="a"  [identity]="i" [isMan]="null" [m]="item">
+
+      </app-candidatedetmatches>
+    </div>
+    </div>
   </form>
 </div>

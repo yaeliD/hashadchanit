@@ -10,7 +10,6 @@ export class StepsOfProposal{
          public results?:boolean)
          {
         this.stepPcode=0;
-        this.results=true;
         this.mynamestep="";
     }
 }

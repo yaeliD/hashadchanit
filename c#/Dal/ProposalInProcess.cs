@@ -25,9 +25,9 @@ namespace Dal
         public int codeBN { get; set; }
         public Nullable<int> stepMeeting { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StepsOfProposal> StepsOfProposal { get; set; }
         public virtual Candidates Candidates { get; set; }
         public virtual Candidates Candidates1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StepsOfProposal> StepsOfProposal { get; set; }
     }
 }

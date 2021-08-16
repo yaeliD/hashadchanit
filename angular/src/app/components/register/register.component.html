@@ -1,12 +1,12 @@
 <body>
   <div class="re">
-    <!-- <h1>הרשמה</h1> -->
- 
+    <!-- <div class="h">הרשמה</div > -->
+    <!-- <mat-card class="example-card"> -->
     <form #form="ngForm">
        <div  class="m">
       <div class="my"  *ngIf="step==1" >
         
-        <h1>פרטים אישיים </h1>
+        <div class="h">פרטים אישיים </div >
           <td><mat-form-field class="example-full-width" class="e" appearance="fill">
             <mat-label>שם פרטי </mat-label>
             <input matInput name="FNameCandidates" [(ngModel)]="c.FNameCandidates">
@@ -16,7 +16,7 @@
             <input matInput name="LNameCandidates"  [(ngModel)]="c.LNameCandidates">
           </mat-form-field></td><br>
           <div class="born">
-          <mat-form-field appearance="fill" class="e" >
+          <mat-form-field appearance="fill" class="ei" >
             <mat-label>תאריך לידה</mat-label>
             <input matInput [matDatepicker]="picker" name="dateOFbirth"  [(ngModel)]="c.dateOFbirth">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -48,11 +48,11 @@
           [(ngModel)]="c.photoLink" name="photoLink" [accept]="accept" [color]="color">
           </ngx-mat-file-input>
        </mat-form-field> -->
-        <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="next()">הבא</button>
+        <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="next()">הבא</button>
       </div>
     
       <div class="y" *ngIf="step==2">
-        <h1>פרטים אישיים</h1>
+        <div class="h">פרטים אישיים</div >
         <td><mat-form-field class="example-full-width" class="e" appearance="fill">
           <mat-label>כתובת </mat-label>
           <input matInput name="address"  [(ngModel)]="c.address">
@@ -90,13 +90,13 @@
         <app-register-woman *ngIf="woman" (savewomen)="saveWoman($event)"></app-register-woman>
 
         <button mat-raised-button disabled [disabled]="!form.valid" (click)="return()">חזור</button>
-        <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="next()">הבא</button>
+        <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="next()">הבא</button>
 
 
 
       </div>
       <div class="y" *ngIf="step==3">
-        <h1>פרטי ההורים </h1>
+        <div class="h">פרטי ההורים </div >
         <td><mat-form-field class="example-full-width" class="e" appearance="fill">
           <mat-label>שם אב </mat-label>
           <input matInput name="nameFather"  [(ngModel)]="c.nameFather">
@@ -127,7 +127,7 @@
             </mat-select>
           </mat-form-field><br>
           <mat-form-field appearance="fill" class="e" >
-            <mat-label>עדה אב</mat-label>
+            <mat-label>עדה אם</mat-label>
             <mat-select name="AdaMother" [(ngModel)]="c.AdaMother">
               <mat-option  *ngFor="let item of arrAda" [value]="item.codeC">
                 {{item.nameC}}
@@ -137,7 +137,7 @@
 
           </div>
         <button mat-raised-button disabled [disabled]="!form.valid" (click)="return()">חזור</button>
-        <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="next()">הבא</button>
+        <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="next()">הבא</button>
 
       </div>
       <div *ngIf="step==4" class="y">
@@ -158,7 +158,7 @@
       </div>
       </div>
     </form>
-
+<!-- </mat-card> -->
 
   </div>
 </body>

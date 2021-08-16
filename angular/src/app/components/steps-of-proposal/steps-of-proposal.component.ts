@@ -17,7 +17,7 @@ export class StepsOfProposalComponent implements OnInit {
   @Input() mp:number;
   mc:StepsOfProposal[]=[];
   m:StepsOfProposal=new StepsOfProposal();
-  @Output() sendtyps:EventEmitter<StepsOfProposal[]> = new EventEmitter<StepsOfProposal[]>();
+  @Output() sendtyps:EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor(public router: Router,public ser : ServicMatchInProcessService) { }
 
   ngOnInit(): void {
@@ -27,8 +27,17 @@ export class StepsOfProposalComponent implements OnInit {
 
   finish()
    {
+    if(this.m.codeStep==11)
+      this.m.results=false;
+      else
+     if(this.m.results==null)
+        this.m.results=null;
+    
+    
+    
      this.m.ProposalInProcessCode=this.mp;
-     this.ser.addStepsOfProposal(this.m).subscribe(suc => { console.log(suc);});
+     this.ser.addStepsOfProposal(this.m).subscribe(suc => { console.log(suc);
+    this.sendtyps.emit(true)});
     //  this.router.navigate(['']);
 
   }

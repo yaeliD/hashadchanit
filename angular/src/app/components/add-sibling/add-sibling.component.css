@@ -3,7 +3,9 @@
     text-align: right;
     direction: rtl;
 }
-
+.e{
+    text-align: right;
+}
 .form-group {
     direction: rtl;
     text-align: right;
@@ -21,6 +23,15 @@ h3{
     border-color: #fbfcfd;
 }
 .born{
-    margin-left: 250px;
+    margin-left: 270px;
     text-align: right;
+}
+
+.h{
+    text-align: center;
+    font-size:30px ; 
+    color: rgb(199, 66, 66);
+    margin-top: 40px;
+    margin-left: 250px;
+
 }

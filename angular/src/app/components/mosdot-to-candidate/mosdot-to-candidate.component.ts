@@ -29,33 +29,33 @@ export class MosdotToCandidateComponent implements OnInit {
     console.log(this.sendMosdotToCandidate)
     this.addmosad();
     this.findmosdot();
-    this.miun();
+    // this.miun();
    
 
   }
-miun()
-{ debugger
-  for( let i=0 ;i<this.mosdList.length; i++)
-  {
-  if(this.min==true)
-  {
-    if(this.mosdList[i].sORy==false)
-    {
-      this.mosdListman[this.man]=this.mosdList[i];
-      this.man++;
-    }
-  }
-  else
-  {
-    if(this.mosdList[i].sORy==true)
-    {
-    this.mosdListwomen[this.woman]=this.mosdList[i];
-      this.woman++;
-    }
-  }
- }
- this.showEda = true;
-}
+// miun()
+// { debugger
+//   for( let i=0 ;i<this.mosdList.length; i++)
+//   {
+//   if(this.min==true)
+//   {
+//     if(this.mosdList[i].sORy==false)
+//     {
+//       this.mosdListman[this.man]=this.mosdList[i];
+//       this.man++;
+//     }
+//   }
+//   else
+//   {
+//     if(this.mosdList[i].sORy==true)
+//     {
+//     this.mosdListwomen[this.woman]=this.mosdList[i];
+//       this.woman++;
+//     }
+//   }
+//  }
+//  this.showEda = true;
+// }
   addmosad()
   {
    
@@ -67,7 +67,11 @@ miun()
    {
     this.sendMosdotToCandidate.emit(this.mc);
   }
-   findmosdot() { this.ser.findmosdot().subscribe(suc => { this.mosdList = suc; console.log(suc); }); }// פו המציגה את רשימת מוסדות
+   findmosdot() { this.ser.findmosdot().subscribe(suc => { this.mosdList = suc; console.log(suc);this.showEda=true
+  console.log("min "+this.min)
+  this.mosdList=this.mosdList.filter(m=>m.sORy!=this.min)
+  console.log(this.mosdList)
+  }); }// פו המציגה את רשימת מוסדות
 
 
 }

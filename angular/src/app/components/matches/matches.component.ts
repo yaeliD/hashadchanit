@@ -38,9 +38,12 @@ export class MatchesComponent implements OnInit {
   flag:boolean;
   mORs: boolean;
   IsMan:boolean;
+  display = "none";
   constructor(public ser: ServicMatchesService, public router: Router) { }
 
   ngOnInit() {
+    this.openModal();
+
     this.usernow = sessionStorage.getItem("userNow");
     if(this.usernow!="y")
     {
@@ -52,7 +55,13 @@ export class MatchesComponent implements OnInit {
     
   }
 
-
+ 
+    openModal() {
+      this.display = "block";
+    }
+    onCloseHandled() {
+      this.display = "none";
+    }
 
 matches()
  {

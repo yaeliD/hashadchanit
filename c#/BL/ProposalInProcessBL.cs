@@ -42,6 +42,13 @@ namespace BL
             List<ProposalInProcessDto> ProposalInProceslistDTOs = ProposalInProcessDto.Todto1(ProposalInProceslistDal);
             return ProposalInProceslistDTOs;
         }
+
+        public static List<ProposalInProcessDto> MAtchThatClosedSuccessfully()
+        {
+            List<ProposalInProcess> ProposalInProceslistDal = Dal.ProposalInProcessDal.MAtchThatClosedSuccessfully();
+            List<ProposalInProcessDto> ProposalInProceslistDTOs = ProposalInProcessDto.Todto1(ProposalInProceslistDal);
+            return ProposalInProceslistDTOs;
+        }
     }
    
 }

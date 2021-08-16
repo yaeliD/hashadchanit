@@ -1,4 +1,4 @@
-<!-- כשמועמד מנסה להכנס לתוכן  -->
+<!--  כשמועמד מנסה להכנס לתוכן  -->
 <div *ngIf="!view" class="m">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
@@ -10,18 +10,21 @@
         <div class="modal-body">
           <p>עליך להירשם למערכת</p>
           <a class="nav-link" routerLink="/Register" routerLinkActive="active">הרשמה</a>
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">אני השדכנית</a>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" (click)="onCloseHandled()">סגור</button>
         </div>
       </div>
     </div>
-  </div>
-</div>
+   </div>
+</div> 
 <!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
 
 <div *ngIf="view">
   <form class="needs-validation" novalidate>
+    <div class="h1">סינון לפי בחירה אישית </div><br>
     <div class="all">
       <div class="footer">
       <mat-form-field appearance="fill">
@@ -129,86 +132,47 @@
                 <mat-label>גיל מינימלי</mat-label>
                 <input matInput name="minAge"  type="number" [(ngModel)]="minAge">
               </mat-form-field></td><br>
-
-        <!-- <mat-form-field appearance="fill" class="ea" *ngIf="gmin">
-          <mat-label>גיל מינימלי</mat-label>
-          <input matInput [matDatepicker]="picker" name="MinAge" [(ngModel)]="minAge">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="ea" *ngIf="gmax ">
-          <mat-label>גיל מקסימלי</mat-label>
-          <input matInput [matDatepicker]="picker" name="MaxAge" [(ngModel)]="c.MaxAge">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field> -->
       </div>
       <br>
       <div class="form-row">
-        <input type="button" class="save" value="סינון" (click)="onclick()">
-        <input type="button" class="save" value="ביטול הסינון" (click)="onclickB()">
+        <button mat-raised-button color="primary"(click)="onclick()">סינון</button>
+        <button mat-raised-button color="primary"(click)="onclickB()">ביטול הסינון</button>
       </div>
     </div>
     <br><br>
     <div class="oun">
-      <div class="h"> הצגת התאמות למועמד/ת לפי פלאפון </div>
+      <div class="h"> הצגת התאמות למועמד/ת לפי פלאפון </div><br>
       <div class="form-row">
         <br>
-        <div class="h">
+       
           <mat-form-field class="example-full-width" appearance="fill" class>
-           <mat-label style="text-align: center;">פון </mat-label>
+           <mat-label >פון </mat-label>
             <input matInput name="phone" [(ngModel)]="cc.phone" type="tel">
           </mat-form-field>
-        </div>
+       
 
 
 
       </div>
-      <!-- <div class="col-md-2 mb-2">
-            <legend class="col-form-label col-sm-2 pt-0">מין :</legend>
-            <div class="form-check">
-              <label class="form-check-label" for="gridRadios1">
-                🤵
-              </label>
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="זכר"
-                (click)="minM()">
-            </div>
-            <div class="form-check">
-              <label class="form-check-label" for="gridRadios2">
-                👰
-              </label>
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="נקבה"
-                (click)="minW()">
-            </div>
-          </div>
-          <td>
-            <mat-form-field class="example-full-width" class="e" appearance="fill">
-              <mat-label> שם פרטי </mat-label>
-              <input matInput name="FNameCandidates" [(ngModel)]="cc.FNameCandidates">
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field class="example-full-width" class="e" appearance="fill">
-              <mat-label> שם משפחה </mat-label>
-              <input matInput name="LNameCandidates" [(ngModel)]="cc.LNameCandidates">
-            </mat-form-field>
-          </td> -->
-
-
 
       <br>
       <div class="form-row">
-        <input type="button" class="save" value="סינון" (click)="FindCandidatebyfilterparm()">
-        <input type="button" class="save" value="ביטול הסינון" (click)="sinun()">
+        <button mat-raised-button color="primary"(click)="FindCandidatebyfilterparm()">סינון</button>
+        <button mat-raised-button color="primary"(click)="sinun()">ביטול הסינון</button>
+     
       </div>
     </div>
     <br><br>
-    <div class="group" *ngIf="mORw==2">
+    <div class="i" *ngIf="mORw">
+      <mat-icon>favorite</mat-icon>
+       <mat-icon>להצעה</mat-icon>
+       <button mat-icon-button color="warn" value="להצעה"  aria-label="Example icon button with a heart icon" ></button></div> 
+    <div class="group" *ngIf="mORw>=2">
 
 
-      <app-candidatedetmatches *ngFor="let item of bool" [isMan]="cc.IsMan" [m]="item"></app-candidatedetmatches>
+      <app-candidatedetmatches *ngFor="let item of bool" [isMan]="null" [m]="item"></app-candidatedetmatches>
       <br><br>
-      <app-candidatedetmatches *ngFor="let item of matches" [isMan]="cc.IsMan" [m]="item"></app-candidatedetmatches>
+      <app-candidatedetmatches *ngFor="let item of matches" [isMan]="null" [m]="item"></app-candidatedetmatches>
 
 
 

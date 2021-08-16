@@ -84,4 +84,10 @@ this.woman=true;
 
   }
 
+  checkIsMan()
+  {
+    debugger
+    return this.isMan;
+  }
+
 }

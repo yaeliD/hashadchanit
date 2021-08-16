@@ -1,0 +1,34 @@
+<!--  כשמועמד מנסה להכנס לתוכן  -->
+<div *ngIf="!view" class="m">
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">אינך רשאי/ת לצפות בתוכן</h4>
+          </div>
+          <br>
+          <div class="modal-body">
+            <p>עליך להירשם למערכת</p>
+            <a class="nav-link" routerLink="/Register" routerLinkActive="active">הרשמה</a>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">אני השדכנית</a>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="onCloseHandled()">סגור</button>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div> 
+  <!--  כאשר השדכנית נכנסת הצגת התאמות עלפי המערכת  -->
+  
+  <div *ngIf="view">
+    <div class="h">שידוכים שניסגרו</div>
+    <br>
+    <div *ngIf="!mORs" class="h"> המערכת ממתינה לקבלת שידוכים שנסגרו </div>
+    <br>
+    <form  class="needs-validation" novalidate> 
+      <div *ngIf="mORs" class="group"><app-match-that-closed-successfullydi  style="margin-left: 40%; margin-top: 1.5%;" 
+         *ngFor="let item of ProposalInProceslistClosed ;let i=index" [identity]="i" class="a" [m]="item"></app-match-that-closed-successfullydi></div>
+    </form>
+  </div>

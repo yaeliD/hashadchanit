@@ -28,7 +28,7 @@ namespace shadchanut.Controllers
         [Route("AddStepsOfProposal")]
         public IHttpActionResult AddstepsOfProposal(StepsOfProposalDto m)
         {
-            bool success = BL.StepsOfProposaBl.AddstepsOfProposal(m); ;
+            bool success = BL.StepsOfProposaBl.AddstepsOfProposal(m); 
             return Ok(success);
         }
     }

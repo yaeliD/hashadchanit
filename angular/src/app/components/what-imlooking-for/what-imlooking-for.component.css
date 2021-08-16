@@ -26,6 +26,14 @@ div.re{
   direction: initial;
  
 }
+.h{
+  text-align: center;
+  font-size:30px ; 
+  color: rgb(199, 66, 66);
+  margin-top: 40px;
+  margin-right: 100px
+
+}
 .m{
   text-align:right;
   direction: rtl;

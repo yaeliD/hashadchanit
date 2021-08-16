@@ -34,8 +34,14 @@ namespace Dal
                     using (The_MatchmakerEntities db = new The_MatchmakerEntities())
                     {
 
-                        List<ProposalInProcess> slist = db.ProposalInProcess.Include(p=>p.Candidates).Include(p=>p.Candidates1).Select(x => x).ToList();
-                        return slist;
+                    //List<StepsOfProposal> slist1 = db.StepsOfProposal.Where(s => s.results==true).ToList();
+                    List<ProposalInProcess> slist = db.ProposalInProcess
+                        .Include(p => p.Candidates)
+                        .Include(p => p.Candidates1)
+                        .Where(x => x.Candidates.inprocess==true || x.Candidates1.inprocess==true).ToList();
+                        //.Where(x => slist1.Any(mm => mm.ProposalInProcessCode == x.codeP)).ToList();
+                    
+                    return slist;
                     }
                 }
                 catch (Exception e)
@@ -44,6 +50,30 @@ namespace Dal
                     return null;
                 }
             
+        }
+
+        public static List<ProposalInProcess> MAtchThatClosedSuccessfully()
+        {
+            try
+            {
+                using (The_MatchmakerEntities db = new The_MatchmakerEntities())
+                {
+
+                    //List<StepsOfProposal> slist1 = db.StepsOfProposal.Where(s => s.results==true).ToList();
+                    List<ProposalInProcess> slist = db.ProposalInProcess
+                        .Include(p => p.Candidates)
+                        .Include(p => p.Candidates1)
+                        .Where(x => x.Candidates.inprocess == false || x.Candidates1.inprocess == false).ToList();
+                    //.Where(x => slist1.Any(mm => mm.ProposalInProcessCode == x.codeP)).ToList();
+
+                    return slist;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
         }
 
         public static List<TypesOfSteps> GetTypeOfStepsForProcess(int mp)

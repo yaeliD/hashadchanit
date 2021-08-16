@@ -25,6 +25,10 @@ export class ServicMatchInProcessService {
     return this.http.get<ProposalInProcess[]>("https://localhost:44390//api/ProposalInProcess/ProposalInProceslist")
 
   }
+  MatchThatClosedSuccessfully(){
+    return this.http.get<ProposalInProcess[]>("https://localhost:44390//api/ProposalInProcess/matchThatClosedSuccessfully")
+
+  }
   typsofsteps(mp:number)
   {
     return this.http.get<TypesOfSteps[]>("https://localhost:44390//api/typsofsteps/Typsofsteps/"+mp)

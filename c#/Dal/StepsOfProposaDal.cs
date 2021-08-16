@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Dal
 {
@@ -12,7 +13,7 @@ namespace Dal
         {
             using (The_MatchmakerEntities db = new The_MatchmakerEntities())
             {
-                List<StepsOfProposal> stepList = db.StepsOfProposal.Where(x => x.ProposalInProcessCode==id).ToList();
+                List<StepsOfProposal> stepList = db.StepsOfProposal.Include(m=>m.TypesOfSteps).Where(x => x.ProposalInProcessCode==id).ToList();
                 return stepList;
             }
         }
@@ -22,10 +23,31 @@ namespace Dal
             
                 using (The_MatchmakerEntities db = new The_MatchmakerEntities())
                 {
-                    db.StepsOfProposal
+
+                 ProposalInProcess p = db.ProposalInProcess.FirstOrDefault(x => x.codeP == mDal.ProposalInProcessCode);
+                if (mDal.results == false || mDal.results == null && mDal.codeStep!=11)
+                {
+                    p.Candidates1.inprocess = null;
+                    p.Candidates.inprocess = null;
+                }
+                else
+                     if (mDal.results == false)
+                {
+                    p.Candidates1.inprocess = false;
+                    p.Candidates.inprocess = false;
+                }
+                else
+                     if (mDal.results == true)
+                {
+                    p.Candidates1.inprocess = true;
+                    p.Candidates.inprocess = true;
+                }
+                db.StepsOfProposal
                 
                     .Add(mDal);
                     db.SaveChanges();
+          
+                   
                     return mDal;
                 }
          

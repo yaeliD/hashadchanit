@@ -61,9 +61,13 @@ export class ShiducimComponent implements OnInit {
   after:boolean=false;
   minAge:number;
   maxAge:number;
+  display = "none";
+
   constructor(public ser: ServicMatchesService, public router: Router) { }
 
   ngOnInit(){
+    this.openModal();
+
     this.usernow = sessionStorage.getItem("userNow");
     if(this.usernow!="y")
     {
@@ -74,6 +78,13 @@ export class ShiducimComponent implements OnInit {
     this.getStatusList();
     this.findmosdot();
   }
+  openModal() {
+    this.display = "block";
+  }
+  onCloseHandled() {
+    this.display = "none";
+  }
+
   selectthis(i){
   if(i==1 && this.fn==true )
      this.fn=false;
@@ -217,6 +228,6 @@ sinun()
   this.cc.LastName=null;
   this.cc.phone=null;
   this.cc.IsMan=null;
-  this.mORs=true;
+  this.mORw=0;
 }
 }

@@ -8,14 +8,14 @@ div.my ,.y{
 margin-right: 200px;
 }
 h1{
-    color: rgb(240, 83, 83);
+    color: rgb(199, 66, 66);
     margin-top:90px ;
     text-align: center;
 
 }
 
 div.m{
-    border:3px rounded  rgb(240, 83, 83);
+    color: rgb(199, 66, 66);
 margin-right: 500px;
 margin-left: 500px;
 
@@ -28,7 +28,7 @@ margin-left: 500px;
 }
 .btn {
     color: #fff;
-    background-color: #e82b49;
+    color: rgb(199, 66, 66);
     border-color: #fbfcfd;
 }
 .save{
@@ -58,6 +58,11 @@ h1{
     text-align:right;
     direction: rtl;
  }
+ .ei{
+    text-align:right;
+    direction: rtl;
+    margin-left: 20px;
+ }
 //  .mat-form-field-infix {
 //     display: block;
 //     position: relative;
@@ -69,10 +74,22 @@ h1{
 // .mat-form-field-appearance-fill .mat-form-field-flex {
 //     background-color: rgb(128, 211, 128);
 // }
+.h{
+    text-align: center;
+    font-size:30px ; 
+    color: rgb(199, 66, 66);
+    margin-top: 40px;
+    margin-left: 250px;
+
+}
 .born{
     margin-left: 250px;
 }
 .status{
     margin-left: 300px;
   
+}
+.example-card{
+    margin-left: 200px;
+    margin-right: 200px;
 }

@@ -1,7 +1,8 @@
 <form #form="ngForm">
 
     <div *ngFor="let s of c;let i=index">
-      <h3> טלפונים לבירורים </h3>
+      <div class="h"> טלפונים לבירורים </div>
+      <br>
       <td><mat-form-field class="example-full-width" class="e" appearance="fill">
         <mat-label> שם פרטי </mat-label>
         <input matInput [name]="i+1" [(ngModel)]="c[i].ContactName">
@@ -15,10 +16,10 @@
         <input matInput [name]="i+1" [(ngModel)]="c[i].description">
       </mat-form-field></td><br> 
     </div>
-    <input type="button" (click)="addContact()" value="+" >
-    <br><br>
+    <button mat-raised-button color="primary"  (click)="addContact()">➕</button>
 
-    <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="finish()">הבא</button>
+
+    <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="finish()">הבא</button>
 
     </form>
            

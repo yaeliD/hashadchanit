@@ -1,54 +1,54 @@
     <div class="detaillscandideta">
     <div class="wi">
-        <h5>{{c?.Candidate.FNameCandidates}}</h5>
-        <h5>{{c?.Candidate.LNameCandidates}}</h5>
-        <h5>{{c?.Candidate.dateOFbirth| date: 'dd/MM/yyyy'}}</h5>
-        <h5>{{c?.Candidate.heightCandidates}}</h5>
-        <h5 height="400" width="400" >{{c?.Candidate.photoLink}}</h5>
-        <h5>{{c?.Candidate.address}}</h5>
-        <h5>{{c?.Candidate.nameFather}}</h5>
-        <h5>{{c?.Candidate.nameMother}}</h5>
-        <h5>{{c?.Candidate.occupationFather}}</h5>
-        <h5>{{c?.Candidate.occupationMother}}</h5>
-        <h5>{{c?.Candidate.familyStatus}}</h5>
-        <h5>{{c?.Candidate.AdaNameFather}}</h5>
-        <h5>{{c?.Candidate.AdaNameMother}}</h5>
-        <h5>{{c?.Candidate.phone}}</h5>
-        <h5>{{c?.Candidate.StatusName}}</h5>
-        <h5>{{this.coui}}</h5>
-        <h5>{{c?.OccupationAfterName}}</h5>
-        <h5>{{c?.currentOccupationName}}</h5>
-        <h5> משפחה</h5>
-        <h5><p *ngFor="let x of c?.Candidate.Siblings">
-            שם: {{x.name}}{{""}}
-            בת: {{x.datebir| date: 'dd/MM/yyyy'}}{{""}}
-            נשואי/ה: {{x.isMarried}}{{""}}
-            תאור: {{x.description}}</p></h5>
-        <h5> ליצירת קשר </h5>
-        <h5><p *ngFor="let x of c?.Candidate.Contacts">שם: {{x.ContactName}}{{""}}
-            פון: {{x.PhoneNumber}}{{""}}
-            תאור: {{x.description}}</p></h5>
-        <h5>מוסדות לימוד</h5>
-        <h5><p *ngFor="let x of c?.Candidate.Mosdot">שם מוסד: {{x.MosadName}}{{""}}
-            תאריך סיום הלימודים : {{x.yearOfFinish| date: 'dd/MM/yyyy'}}</p></h5>
-            <h5>מה אני מחפש?</h5>
-        <h5>גיל מקסימלי : {{c?.WhatLooking.MaxAge| date: 'dd/MM/yyyy'}}</h5>
-        <h5>גיל מינימלי : {{c?.WhatLooking.MinAge| date: 'dd/MM/yyyy'}}</h5>
-        <h5>גובה מקסימלי: {{c?.WhatLooking.MaxHeight}}</h5>
-        <h5>גובה מינימלי: {{c?.WhatLooking.MinHeight}}</h5>
-        <h5>תאור: {{c?.WhatLooking.description}}</h5>
-        <h5> עדות </h5>
-        <h5><p *ngFor="let x of c?.WhatLooking.Comunities">{{x.ComunityName}}</p></h5>
-        <h5>סטטוס/ים</h5>
-        <h5><p *ngFor="let x of c?.WhatLooking.status1">{{x.statusName}}</p></h5>
+        <div class="r">
+        <div class="h">: פרטים אישיים</div>
+        <p>שם פרטי: {{c?.Candidate.FNameCandidates}}</p>
+        <p>   שם משפחה: {{c?.Candidate.LNameCandidates}}</p>
+        <p>  תאריך לידה: {{c?.Candidate.dateOFbirth| date: 'dd/MM/yyyy'}}</p>
+        <p>  גובה: {{c?.Candidate.heightCandidates}}</p> 
+        <p>סטטוס אישי:{{c?.Candidate.StatusName}}</p>
+        <p height="400" width="400" >{{c?.Candidate.photoLink}}</p>
+        <p>כתובת : {{c?.Candidate.address}}</p>
+        <p>פון אישי:{{c?.Candidate.phone}}</p>
+        <p>כיסוי ראוש :{{this.coui}}</p>
+        <p>עיסוק נוכחי:{{c?.currentOccupationName}}</p>
+        <p>עיסוק עתידי:{{c?.OccupationAfterName}}</p></div>
+       <div class="r">
+        <div class="h"> : פרטי משפחה </div>
+        <p> שם אב:{{c?.Candidate.nameFather}}</p>
+        <p>שם אם :{{c?.Candidate.nameMother}}</p>
+        <p>עיסוק אב :{{c?.Candidate.occupationFather}}</p>
+        <p> עיסוק אם :{{c?.Candidate.occupationMother}}</p>
+        <p>מצב משפחתי:{{c?.Candidate.familyStatus}}</p>
+        <p>עדה אב:{{c?.Candidate.AdaNameFather}}</p>
+        <p>עדה אם:{{c?.Candidate.AdaNameMother}}</p>
+        <h3 *ngFor="let x of c?.Candidate.Siblings">
+          <p>  שם: {{x.name}}</p>
+          <p> תאריך לידה : {{x.datebir| date: 'dd/MM/yyyy'}}</p>
+          <p>האם נשואי/ה : {{x.isMarried}}</p>   
+          <p>  תאור: {{x.description}}</p></h3></div>
+        
+       <div class="r"><div class="h"> :ליצירת קשר </div>
+        <div *ngFor="let x of c?.Candidate.Contacts">
+            <p>שם: {{x.ContactName}}</p>
+            <p>פון: {{x.PhoneNumber}}</p> 
+            <p>  תאור: {{x.description}}</p></div></div> 
+       
+       <div class="r"> <div class="h">: מוסדות לימוד</div>
+        <h3 *ngFor="let x of c?.Candidate.Mosdot">
+           <p>שם מוסד: {{x.MosadName}}</p> 
+           <p> תאריך סיום הלימודים : {{x.yearOfFinish| date: 'dd/MM/yyyy'}}</p> </h3> </div>
+
+           <div class="r"> <div class="h">?מה אני מחפש</div>
+        <p>גיל מקסימלי : {{c?.WhatLooking.MaxAge| date: 'dd/MM/yyyy'}}</p>
+        <p>גיל מינימלי : {{c?.WhatLooking.MinAge| date: 'dd/MM/yyyy'}}</p>
+        <p>גובה מקסימלי: {{c?.WhatLooking.MaxHeight}}</p>
+        <p>גובה מינימלי: {{c?.WhatLooking.MinHeight}}</p>
+        <p>תאור: {{c?.WhatLooking.description}}</p>
+        <p> עדות </p>
+        <h3><p *ngFor="let x of c?.WhatLooking.Comunities">{{x.ComunityName}}</p></h3>
+        <p>סטטוס/ים</p>
+        <h3><p *ngFor="let x of c?.WhatLooking.status1">{{x.statusName}}</p></h3></div>
     </div>
 </div>
 
-<!-- public occupationFather?:string,public occupationMother?:string,  public familyStatus?:string,public AdaNameFather?:string,
-public AdaNameMother?:string, public phone?:string, public  StatusName?:string,public Siblings?:Sibling[],public Contacts?:Contact[],public Mosdot?:MosdotToCandidate[]
-){ -->
- 
-
-
-<!--     
-<input *ngIf=!flag type="button"  class="save" value="עריכת המתכון" (click)="mydelails()"> --> -->

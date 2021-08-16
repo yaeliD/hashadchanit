@@ -33,6 +33,15 @@ namespace shadchanut.Controllers
                 return Ok(ProposalInProceslist);
             return BadRequest();
         }
-
+        
+                [HttpGet]
+        [Route("matchThatClosedSuccessfully")]
+        public IHttpActionResult MAtchThatClosedSuccessfully()
+        {
+            List<ProposalInProcessDto> ProposalInProceslist = BL.ProposalInProcessBL.MAtchThatClosedSuccessfully();
+            if (ProposalInProceslist.Count() > 0)
+                return Ok(ProposalInProceslist);
+            return BadRequest();
+        }
     }
 }

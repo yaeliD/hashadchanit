@@ -19,9 +19,9 @@ namespace Dal
         public int codeStep { get; set; }
         public Nullable<System.DateTime> dateStep { get; set; }
         public string comments { get; set; }
-        public bool results { get; set; }
+        public Nullable<bool> results { get; set; }
     
-        public virtual TypesOfSteps TypesOfSteps { get; set; }
         public virtual ProposalInProcess ProposalInProcess { get; set; }
+        public virtual TypesOfSteps TypesOfSteps { get; set; }
     }
 }

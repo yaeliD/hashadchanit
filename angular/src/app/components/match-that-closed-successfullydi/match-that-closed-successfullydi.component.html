@@ -37,13 +37,8 @@
             מעקב פגישות 
             </button>
             <div *ngIf="SHOW">
-             <app-match-details [refresh]="refresh"  class="a"  [cm]="m.codeP"></app-match-details>
+             <app-match-details   class="a"  [cm]="m.codeP"></app-match-details>
   
-             <button class="btn btn-link collapsed" data-toggle="collapse" 
-             (click)="addff()"
-             [attr.data-target]="'#a'+identity" aria-expanded="false" aria-controls="collapseTwo"  >
-             הוספת פגישה  </button>
-             <app-steps-of-proposal *ngIf="addf" [mp]="m.codeP" (sendtyps)="savetyps($event)"></app-steps-of-proposal>
            
             </div></div>
             </h5>

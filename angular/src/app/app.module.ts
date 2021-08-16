@@ -32,6 +32,8 @@ import { AbbreviatedfilteringComponent } from './components/abbreviatedfiltering
 import { StepsOfProposalComponent } from './components/steps-of-proposal/steps-of-proposal.component';
 import { MatchinprocesssortComponent } from './components/matchinprocesssort/matchinprocesssort.component';
 import { MatchDetailsComponent } from './components/match-details/match-details.component';
+import { MatchThatClosedSuccessfullyComponent } from './components/match-that-closed-successfully/match-that-closed-successfully.component';
+import { MatchThatClosedSuccessfullydiComponent } from './components/match-that-closed-successfullydi/match-that-closed-successfullydi.component';
 
 
 
@@ -59,7 +61,9 @@ import { MatchDetailsComponent } from './components/match-details/match-details.
    AbbreviatedfilteringComponent,
    StepsOfProposalComponent,
    MatchinprocesssortComponent,
-   MatchDetailsComponent
+   MatchDetailsComponent,
+   MatchThatClosedSuccessfullyComponent,
+   MatchThatClosedSuccessfullydiComponent
   ],
   imports: [
     

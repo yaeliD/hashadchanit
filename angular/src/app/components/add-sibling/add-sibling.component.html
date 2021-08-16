@@ -1,7 +1,7 @@
 <form #form="ngForm">
-<div *ngFor="let s of siblings;let i=index" class="card-header">
-  <h3>פרטי המשפחה </h3> 
-
+<div *ngFor="let s of siblings;let i=index" >
+  <div class="h">פרטי המשפחה </div> 
+<br>
 <td><mat-form-field class="example-full-width" class="e" appearance="fill">
   <mat-label> שם פרטי אח/ות </mat-label>
   <input matInput [name]="i+1" [(ngModel)]="siblings[i].name">
@@ -23,10 +23,11 @@
       </mat-form-field></td><br>  
 
 </div>
-<input type="button" (click)="addSibling()" value="+" >
-<br><br>
-<button mat-raised-button color="warn" [disabled]="!form.valid" (click)="finish()">הבא</button>
 
+
+<button mat-raised-button color="primary"  (click)="addSibling()">➕</button>
+   
+<button mat-raised-button color="primary" [disabled]="!form.valid" (click)="finish()">הבא</button>
 </form>
        
        

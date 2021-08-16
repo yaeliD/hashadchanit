@@ -12,7 +12,6 @@
     <EntitySet Name="Shadchnit" EntityType="The_MatchmakerModel.Shadchnit" />
     <EntitySet Name="Siblings" EntityType="The_MatchmakerModel.Siblings" />
     <EntitySet Name="Status" EntityType="The_MatchmakerModel.Status" />
-    <EntitySet Name="TypesOfSteps" EntityType="The_MatchmakerModel.TypesOfSteps" />
     <EntitySet Name="WhatImLookingFor" EntityType="The_MatchmakerModel.WhatImLookingFor" />
     <EntitySet Name="WomenCandidate" EntityType="The_MatchmakerModel.WomenCandidate" />
     <AssociationSet Name="FK_CandidateStatuses_Status" Association="The_MatchmakerModel.FK_CandidateStatuses_Status">
@@ -27,16 +26,7 @@
       <End Role="ListOfMosdot" EntitySet="ListOfMosdot" />
       <End Role="MosdotToCandidate" EntitySet="MosdotToCandidate" />
     </AssociationSet>
-    <EntitySet Name="StepsOfProposal" EntityType="The_MatchmakerModel.StepsOfProposal" />
-    <AssociationSet Name="FK_StepsOfProposal_TypesOfSteps" Association="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps">
-      <End Role="TypesOfSteps" EntitySet="TypesOfSteps" />
-      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
-    </AssociationSet>
     <EntitySet Name="ProposalInProcess" EntityType="The_MatchmakerModel.ProposalInProcess" />
-    <AssociationSet Name="FK_StepsOfProposal_ProposalInProcess" Association="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess">
-      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
-      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
-    </AssociationSet>
     <EntitySet Name="Candidates" EntityType="The_MatchmakerModel.Candidates" />
     <AssociationSet Name="FK__ManCandid__codeC__0697FACD" Association="The_MatchmakerModel.FK__ManCandid__codeC__0697FACD">
       <End Role="Candidates" EntitySet="Candidates" />
@@ -97,6 +87,16 @@
     <AssociationSet Name="FK_Siblings_Candidates" Association="The_MatchmakerModel.FK_Siblings_Candidates">
       <End Role="Candidates" EntitySet="Candidates" />
       <End Role="Siblings" EntitySet="Siblings" />
+    </AssociationSet>
+    <EntitySet Name="TypesOfSteps" EntityType="The_MatchmakerModel.TypesOfSteps" />
+    <EntitySet Name="StepsOfProposal" EntityType="The_MatchmakerModel.StepsOfProposal" />
+    <AssociationSet Name="FK_StepsOfProposal_ProposalInProcess" Association="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess">
+      <End Role="ProposalInProcess" EntitySet="ProposalInProcess" />
+      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StepsOfProposal_TypesOfSteps" Association="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps">
+      <End Role="TypesOfSteps" EntitySet="TypesOfSteps" />
+      <End Role="StepsOfProposal" EntitySet="StepsOfProposal" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CandidateStatuses">
@@ -206,14 +206,6 @@
     <NavigationProperty Name="CandidateStatuses" Relationship="The_MatchmakerModel.FK_CandidateStatuses_Status" FromRole="Status" ToRole="CandidateStatuses" />
     <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK_Candidates_Status" FromRole="Status" ToRole="Candidates" />
   </EntityType>
-  <EntityType Name="TypesOfSteps">
-    <Key>
-      <PropertyRef Name="codeTypeStep" />
-    </Key>
-    <Property Name="codeTypeStep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nameStep" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="StepsOfProposal" Relationship="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" FromRole="TypesOfSteps" ToRole="StepsOfProposal" />
-  </EntityType>
   <EntityType Name="WhatImLookingFor">
     <Key>
       <PropertyRef Name="CodeCW" />
@@ -269,31 +261,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="StepsOfProposal">
-    <Key>
-      <PropertyRef Name="stepPcode" />
-    </Key>
-    <Property Name="ProposalInProcessCode" Type="Int32" Nullable="false" />
-    <Property Name="stepPcode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="codeStep" Type="Int32" Nullable="false" />
-    <Property Name="dateStep" Type="DateTime" Precision="0" />
-    <Property Name="comments" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="results" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="TypesOfSteps" Relationship="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" FromRole="StepsOfProposal" ToRole="TypesOfSteps" />
-    <NavigationProperty Name="ProposalInProcess" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="StepsOfProposal" ToRole="ProposalInProcess" />
-  </EntityType>
-  <Association Name="FK_StepsOfProposal_TypesOfSteps">
-    <End Type="The_MatchmakerModel.TypesOfSteps" Role="TypesOfSteps" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TypesOfSteps">
-        <PropertyRef Name="codeTypeStep" />
-      </Principal>
-      <Dependent Role="StepsOfProposal">
-        <PropertyRef Name="codeStep" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="ProposalInProcess">
     <Key>
       <PropertyRef Name="codeP" />
@@ -302,22 +269,10 @@
     <Property Name="codeBT" Type="Int32" Nullable="false" />
     <Property Name="codeBN" Type="Int32" Nullable="false" />
     <Property Name="stepMeeting" Type="Int32" />
-    <NavigationProperty Name="StepsOfProposal" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="ProposalInProcess" ToRole="StepsOfProposal" />
     <NavigationProperty Name="Candidates" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3D5E1FD2" FromRole="ProposalInProcess" ToRole="Candidates" />
     <NavigationProperty Name="Candidates1" Relationship="The_MatchmakerModel.FK__ProposalI__codeB__3E52440B" FromRole="ProposalInProcess" ToRole="Candidates" />
+    <NavigationProperty Name="StepsOfProposal" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="ProposalInProcess" ToRole="StepsOfProposal" />
   </EntityType>
-  <Association Name="FK_StepsOfProposal_ProposalInProcess">
-    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="1" />
-    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProposalInProcess">
-        <PropertyRef Name="codeP" />
-      </Principal>
-      <Dependent Role="StepsOfProposal">
-        <PropertyRef Name="ProposalInProcessCode" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Candidates">
     <Key>
       <PropertyRef Name="codeCandidates" />
@@ -535,6 +490,51 @@
       </Principal>
       <Dependent Role="Siblings">
         <PropertyRef Name="candidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TypesOfSteps">
+    <Key>
+      <PropertyRef Name="codeTypeStep" />
+    </Key>
+    <Property Name="codeTypeStep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameStep" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StepsOfProposal" Relationship="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" FromRole="TypesOfSteps" ToRole="StepsOfProposal" />
+  </EntityType>
+  <EntityType Name="StepsOfProposal">
+    <Key>
+      <PropertyRef Name="stepPcode" />
+    </Key>
+    <Property Name="ProposalInProcessCode" Type="Int32" Nullable="false" />
+    <Property Name="stepPcode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeStep" Type="Int32" Nullable="false" />
+    <Property Name="dateStep" Type="DateTime" Precision="0" />
+    <Property Name="comments" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="results" Type="Boolean" />
+    <NavigationProperty Name="ProposalInProcess" Relationship="The_MatchmakerModel.FK_StepsOfProposal_ProposalInProcess" FromRole="StepsOfProposal" ToRole="ProposalInProcess" />
+    <NavigationProperty Name="TypesOfSteps" Relationship="The_MatchmakerModel.FK_StepsOfProposal_TypesOfSteps" FromRole="StepsOfProposal" ToRole="TypesOfSteps" />
+  </EntityType>
+  <Association Name="FK_StepsOfProposal_ProposalInProcess">
+    <End Type="The_MatchmakerModel.ProposalInProcess" Role="ProposalInProcess" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProposalInProcess">
+        <PropertyRef Name="codeP" />
+      </Principal>
+      <Dependent Role="StepsOfProposal">
+        <PropertyRef Name="ProposalInProcessCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StepsOfProposal_TypesOfSteps">
+    <End Type="The_MatchmakerModel.TypesOfSteps" Role="TypesOfSteps" Multiplicity="1" />
+    <End Type="The_MatchmakerModel.StepsOfProposal" Role="StepsOfProposal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesOfSteps">
+        <PropertyRef Name="codeTypeStep" />
+      </Principal>
+      <Dependent Role="StepsOfProposal">
+        <PropertyRef Name="codeStep" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

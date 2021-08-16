@@ -12,6 +12,7 @@ import { StepsOfProposal } from 'class/StepsOfProposal';
 export class MatchDetailsComponent implements OnInit {
   stepList:StepsOfProposal[]=[];
 @Input() cm:number;
+@Input() refresh:number
   constructor(public ser: ServicMatchInProcessService , public router: Router, public active: ActivatedRoute,  public route:ActivatedRoute) { }
 
   ngOnInit():void {
@@ -26,7 +27,7 @@ export class MatchDetailsComponent implements OnInit {
     
       getmachdetails()
       {
-        this.ser.getmachDetails(this.cm).subscribe(suc => { this.stepList = suc; this.cm=-1;
+        this.ser.getmachDetails(this.cm).subscribe(suc => { this.stepList = suc; 
         console.log(suc)})
       }
       
